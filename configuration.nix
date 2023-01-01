@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
       home-manager.nixosModule
     ];
@@ -34,25 +35,48 @@
     nixpkgs.config = {
       allowUnfree = true;
       packageOverrides = pkgs: rec {
-        hackneyed = pkgs.hackneyed.overrideAttrs ( finalAttrs: previousAttrs:
-        {buildFlags = [ "-j20" "-B" "THEME_NAME=Hackneyed-Dark" 
-        "COMMON_SOURCE=theme/common-dark.svg" 
-        "RSVG_SOURCE=theme/right-handed-dark.svg" 
-        "LSVG_SOURCE=theme/left-handed-dark.svg"  "theme" "theme.left" ];
-        });
+        hackneyed = pkgs.hackneyed.overrideAttrs (finalAttrs: previousAttrs:
+          {
+            buildFlags = [
+              "-j20"
+              "-B"
+              "THEME_NAME=Hackneyed-Dark"
+              "COMMON_SOURCE=theme/common-dark.svg"
+              "RSVG_SOURCE=theme/right-handed-dark.svg"
+              "LSVG_SOURCE=theme/left-handed-dark.svg"
+              "theme"
+              "theme.left"
+            ];
+          });
         papirus-icon-theme = pkgs.papirus-icon-theme.override {
           color = "adwaita";
         };
       };
     };
-    home.packages = [ pkgs.gnome.nautilus pkgs.tilix
-    pkgs.firefox pkgs.gopass pkgs.hyprland pkgs.grim
-    pkgs.texlive.combined.scheme-full
-    pkgs.nomacs pkgs.okular
-    pkgs.wl-clipboard pkgs.pipes-rs pkgs.vscode-fhs
-    pkgs.sway-contrib.grimshot pkgs.wlogout pkgs.pavucontrol
-    pkgs.clash pkgs.viu pkgs.vanilla-dmz pkgs.hackneyed
-    pkgs.orchis-theme pkgs.papirus-folders pkgs.papirus-icon-theme];
+    home.packages = [
+      pkgs.gnome.nautilus
+      pkgs.tilix
+      pkgs.firefox
+      pkgs.gopass
+      pkgs.hyprland
+      pkgs.grim
+      pkgs.texlive.combined.scheme-full
+      pkgs.nomacs
+      pkgs.okular
+      pkgs.wl-clipboard
+      pkgs.pipes-rs
+      pkgs.vscode-fhs
+      pkgs.sway-contrib.grimshot
+      pkgs.wlogout
+      pkgs.pavucontrol
+      pkgs.clash
+      pkgs.viu
+      pkgs.vanilla-dmz
+      pkgs.hackneyed
+      pkgs.orchis-theme
+      pkgs.papirus-folders
+      pkgs.papirus-icon-theme
+    ];
     home.sessionVariables = {
       XDG_SCREENSHOTS_DIR = "$HOME/Pictures/ScreenShots";
       EDITOR = "vim";
@@ -63,7 +87,7 @@
       enable = true;
       createDirectories = true;
     };
-    
+
     gtk = {
       enable = true;
       theme.name = "Orchis-Red-Dark-Compact";
@@ -87,7 +111,7 @@
           normal.family = "Hack Nerd Font";
           size = 14.0;
         };
-        
+
         # Colors (Desert)
         colors = {
           bright = {
@@ -117,7 +141,7 @@
           primary = {
             background = "#333333";
             foreground = "#ffffff";
-          };  
+          };
           selection = {
             background = "#b5d5ff";
             text = "#000000";
@@ -129,247 +153,247 @@
       enable = true;
       settings = {
         mainBar = {
-        layer = "bottom";
-        position = "bottom";
-        modules-left = [
+          layer = "bottom";
+          position = "bottom";
+          modules-left = [
             "sway/workspaces"
             "sway/mode"
-        ];
-        modules-center = [
+          ];
+          modules-center = [
             "clock"
-        ];
-        modules-right = [
+          ];
+          modules-right = [
             "network"
-    	    "backlight"
+            "backlight"
             "pulseaudio"
-    	    "battery"
-    	    "idle_inhibitor"
-    	    "tray"
-    	    "custom/grimshot"
+            "battery"
+            "idle_inhibitor"
+            "tray"
+            "custom/grimshot"
             "custom/power"
-        ];
-        "sway/workspaces" = {
+          ];
+          "sway/workspaces" = {
             disable-scroll = true;
             all-outputs = false;
             format = "{icon}";
             format-icons = {
-                "1" = "一";
-                "2" = "二";
-                "3" = "三";
-                "4" = "四";
-                "5" = "五";
-                "6" = "六";
-                "7" = "七";
-                "8" = "八";
-                "9" = "九";
-                "10" = "十";
-                urgent = "";
-                focused = "";
-                default = "";
+              "1" = "一";
+              "2" = "二";
+              "3" = "三";
+              "4" = "四";
+              "5" = "五";
+              "6" = "六";
+              "7" = "七";
+              "8" = "八";
+              "9" = "九";
+              "10" = "十";
+              urgent = "";
+              focused = "";
+              default = "";
             };
-        };
-        "sway/mode" = {
+          };
+          "sway/mode" = {
             format = "<span style=\"italic\">{}</span>";
-        };
-        "sway/language" = {
+          };
+          "sway/language" = {
             format = "{long} ";
-        };
-        clock = {
+          };
+          clock = {
             format = "{:%R %a %d/%m/%Y}";
             tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-        };
-        cpu = {
+          };
+          cpu = {
             format = "{usage}% @ {max_frequency}GHz ";
-        };
-        temperature = {
+          };
+          temperature = {
             thermal-zone = 2;
             hwmon-path = "/sys/class/hwmon/hwmon0/temp2_input";
             critical-threshold = 80;
             format-critical = "{temperatureC}°C {icon}";
             format = "{temperatureC}°C {icon}";
             format-icons = [
-                ""
+              ""
             ];
-        };
-        memory = {
+          };
+          memory = {
             format = "{used:0.2f}/{total:0.2f} ";
-        };
-        backlight = {
+          };
+          backlight = {
             # device = "acpi_video1";
             format = "{percent}% {icon}";
-            format-icons = ["" ""];
-        };
-        disk = {
+            format-icons = [ "" "" ];
+          };
+          disk = {
             states = {
-                good = 0;
-                warning = 70;
-                critical = 95;
+              good = 0;
+              warning = 70;
+              critical = 95;
             };
             interval = 5;
             format = "{percentage_used}% {free} ";
             path = "/";
-        };
-        network = {
+          };
+          network = {
             format-wifi = "{essid} ({signalStrength}%) ";
             format-ethernet = "{ifname} ";
             format-alt = "{ifname}: {ipaddr}/{cidr} ";
             format-linked = "{ifname} (No IP) ";
             format-disconnected = "Disconnected ";
-        };
-        pulseaudio = {
+          };
+          pulseaudio = {
             format = "{volume}% {icon} {format_source}";
             format-bluetooth = "{volume}% {icon} {format_source}";
             format-muted = "婢 {format_source}";
             format-source = "{volume}% ";
             format-source-muted = "";
             format-icons = {
-                headphones = "";
-                speaker = "蓼";
-                hdmi = "﴿";
-                headset = "";
-                phone = "";
-                portable = "";
-                car = "";
-                hifi = "";
-                default = ["" "" ""];
+              headphones = "";
+              speaker = "蓼";
+              hdmi = "﴿";
+              headset = "";
+              phone = "";
+              portable = "";
+              car = "";
+              hifi = "";
+              default = [ "" "" "" ];
             };
             scroll-step = 1;
             on-click = "pavucontrol";
-        };
-        idle_inhibitor = {
+          };
+          idle_inhibitor = {
             format = "{icon}";
             format-icons = {
-                activated = "";
-                deactivated = "";
+              activated = "";
+              deactivated = "";
             };
-        };
-        battery = {
+          };
+          battery = {
             format = "{icon}";
-            format-icons = ["" "" "" "" ""];
+            format-icons = [ "" "" "" "" "" ];
             states = {
-                good = 75;
-                medium = 50;
-                warning = 30;
-                critical = 15;
+              good = 75;
+              medium = 50;
+              warning = 30;
+              critical = 15;
             };
             # format = "{capacity}% {icon}";
             format-charging = "{capacity}% ";
             format-plugged = "{capacity}% ";
             format-plugged-full = "";
             format-alt = "{time} {icon}";
-        };
-        tray = {
+          };
+          tray = {
             _icon-size = 21;
             spacing = 10;
-        };
-        "custom/power" = {
+          };
+          "custom/power" = {
             format = "YAKKHINI";
             tooltip = false;
             on-click = "wlogout";
-        };
-        "custom/grimshot" = {
+          };
+          "custom/grimshot" = {
             format = "";
             on-click = "grimshot save output $HOME/Pictures/ScreenShots/$USER@$HOST_`date +%Y%m%d%H%M%S.png`";
             on-click-middle = "grimshot save window $HOME/Pictures/ScreenShots/$USER@$HOST_`date +%Y%m%d%H%M%S.png`";
             on-click-right = "grimshot save area $HOME/Pictures/ScreenShots/$USER@$HOST_`date +%Y%m%d%H%M%S.png`";
             tooltip = false;
-        };
+          };
         };
       };
-      style = 
-      ''
-       * {
-           font-family:  'PT Sans Narrow', 'DroidSansMono Nerd Font Mono', sans-serif;
-           font-size: 18px;
-           font-weight: bold;
-       }
+      style =
+        ''
+          * {
+              font-family:  'PT Sans Narrow', 'DroidSansMono Nerd Font Mono', sans-serif;
+              font-size: 18px;
+              font-weight: bold;
+          }
        
-       window#waybar {
-           background: #251A1B;
-           transition-property: background-color;
-           transition-duration: .5s;
-       }
+          window#waybar {
+              background: #251A1B;
+              transition-property: background-color;
+              transition-duration: .5s;
+          }
        
-       #workspaces,
-       #language,
-       #clock,
-       #battery,
-       #cpu,
-       #memory,
-       #temperature,
-       #backlight,
-       #network,
-       #backlight,
-       #battery,
-       #pulseaudio,
-       #custom-media,
-       #tray,
-       #disk,
-       #mode,
-       #idle_inhibitor,
-       #custom-power,
-       #custom-grimshot
-       {
-           color: #E5BB9E;
-           background: #AB1716;
-           margin: 4px 0px;
-           padding: 2px 10px;
-           border: 0px solid rgba(0, 0, 0, 0);
-           border-radius: 0px;
-           background-clip: padding-box;
-       }
+          #workspaces,
+          #language,
+          #clock,
+          #battery,
+          #cpu,
+          #memory,
+          #temperature,
+          #backlight,
+          #network,
+          #backlight,
+          #battery,
+          #pulseaudio,
+          #custom-media,
+          #tray,
+          #disk,
+          #mode,
+          #idle_inhibitor,
+          #custom-power,
+          #custom-grimshot
+          {
+              color: #E5BB9E;
+              background: #AB1716;
+              margin: 4px 0px;
+              padding: 2px 10px;
+              border: 0px solid rgba(0, 0, 0, 0);
+              border-radius: 0px;
+              background-clip: padding-box;
+          }
        
-       #clock, #network, #backlight, #tray, #idle_inhibitor, #custom-power {
-           border-top-left-radius: 90px;
-           border-bottom-left-radius: 90px;
-           margin-left: 4px;
-       }
+          #clock, #network, #backlight, #tray, #idle_inhibitor, #custom-power {
+              border-top-left-radius: 90px;
+              border-bottom-left-radius: 90px;
+              margin-left: 4px;
+          }
        
-       #clock, #battery, #network, #custom-grimshot, #idle_inhibitor, #custom-power {
-           border-top-right-radius: 90px;
-           border-bottom-right-radius: 90px;
-           margin-right: 4px;
-       }
+          #clock, #battery, #network, #custom-grimshot, #idle_inhibitor, #custom-power {
+              border-top-right-radius: 90px;
+              border-bottom-right-radius: 90px;
+              margin-right: 4px;
+          }
        
-       #custom-power {
-           margin-right: 0px;
+          #custom-power {
+              margin-right: 0px;
        
-       }
+          }
        
-       #workspaces {
-           margin-left: 0px;
-           padding: 0px 0px;
-           border-radius: 90px;
-           margin: 4px 0px;
-       }
+          #workspaces {
+              margin-left: 0px;
+              padding: 0px 0px;
+              border-radius: 90px;
+              margin: 4px 0px;
+          }
        
-       #workspaces button {
-           padding: 0px 8px;
-           margin: 0px 0px;
-           color: #CEA9A6;
-           border-radius: 90px;
-       }
+          #workspaces button {
+              padding: 0px 8px;
+              margin: 0px 0px;
+              color: #CEA9A6;
+              border-radius: 90px;
+          }
        
-       #workspaces button.focused {
-           color: #251A1B;
-           background-color: #E5BB9E;
-           border-radius: 90px;
-       }
+          #workspaces button.focused {
+              color: #251A1B;
+              background-color: #E5BB9E;
+              border-radius: 90px;
+          }
        
-       #workspaces button:hover {
-           box-shadow: inherit;
-           text-shadow: inherit;
-           border-radius: 90px;
-       }
+          #workspaces button:hover {
+              box-shadow: inherit;
+              text-shadow: inherit;
+              border-radius: 90px;
+          }
        
-       #network.disconnected,
-       #temperature.critical,
-       #pulseaudio.muted,
-       #idle_inhibitor.activated {
-           color: #251A1B;
-           background-color: #CEA9A6;
-       } 
-      '';
+          #network.disconnected,
+          #temperature.critical,
+          #pulseaudio.muted,
+          #idle_inhibitor.activated {
+              color: #251A1B;
+              background-color: #CEA9A6;
+          } 
+        '';
     };
     programs.zsh = {
       enable = true;
@@ -380,11 +404,11 @@
         enable = true;
         prompt.theme = "powerlevel10k";
       };
-      initExtra = 
-      ''
-      # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-      [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-      '';
+      initExtra =
+        ''
+          # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+          [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+        '';
     };
     programs.git = {
       enable = true;
@@ -399,32 +423,32 @@
     programs.emacs.enable = true;
     programs.vim = {
       enable = true;
-      extraConfig = 
+      extraConfig =
         ''
-        syntax on
-        filetype on
-        set number
-        set relativenumber
-        set cursorline
-        set wrap
-        set showcmd
-        set wildmenu
-        set undofile
-        set nofoldenable
+          syntax on
+          filetype on
+          set number
+          set relativenumber
+          set cursorline
+          set wrap
+          set showcmd
+          set wildmenu
+          set undofile
+          set nofoldenable
         
-        set hlsearch
-        set incsearch
-        set ignorecase
-        set smartcase
-        set scrolloff=5
-        set textwidth=80
+          set hlsearch
+          set incsearch
+          set ignorecase
+          set smartcase
+          set scrolloff=5
+          set textwidth=80
         
-        cmap w!! w !sudo tee %
+          cmap w!! w !sudo tee %
         
-        " wayland clipboard support
-        xnoremap "+y y:call system("wl-copy", @")<cr>
-        nnoremap "+p :let @"=substitute(system("wl-paste --no-newline"), '<C-v><C-m>', ''', 'g')<cr>p
-        nnoremap "*p :let @"=substitute(system("wl-paste --no-newline --primary"), '<C-v><C-m>', ''', 'g')<cr>p
+          " wayland clipboard support
+          xnoremap "+y y:call system("wl-copy", @")<cr>
+          nnoremap "+p :let @"=substitute(system("wl-paste --no-newline"), '<C-v><C-m>', ''', 'g')<cr>p
+          nnoremap "*p :let @"=substitute(system("wl-paste --no-newline --primary"), '<C-v><C-m>', ''', 'g')<cr>p
         '';
     };
     programs.git = {
@@ -436,25 +460,25 @@
       enable = true;
       config = rec {
         modifier = "Mod4";
-        startup = [ 
-          {command = "fcitx5";}
+        startup = [
+          { command = "fcitx5"; }
         ];
         seat = {
           "*".xcursor_theme = "Hackneyed 36";
         };
-        terminal = "alacritty"; 
+        terminal = "alacritty";
         output = {
           "*".bg = "/home/vortexlove/Pictures/Wallpaper/Blade_Runner_car.jpg tile";
           eDP-1.pos = "1920 0";
           DP-1.pos = "0 0";
-        };  
+        };
         gaps = {
           outer = 0;
           inner = 8;
           smartBorders = "on";
           smartGaps = true;
         };
-        bars = [ {command = "waybar";} ];
+        bars = [{ command = "waybar"; }];
       };
     };
     services = {
@@ -479,9 +503,9 @@
     enable = true;
     vt = 2;
     settings = rec {
-    default_session = {
-      command = "${pkgs.greetd.tuigreet}/bin/tuigreet --remember --time --cmd sway";
-      user = "yakkhini";
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --remember --time --cmd sway";
+        user = "yakkhini";
       };
     };
   };
@@ -491,7 +515,7 @@
   # networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
@@ -502,30 +526,30 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-  i18n.extraLocaleSettings = { LANGUAGE = "en_US.UTF-8";};
+  i18n.extraLocaleSettings = { LANGUAGE = "en_US.UTF-8"; };
   i18n.supportedLocales = [ "en_US.UTF-8/UTF-8" "zh_CN.UTF-8/UTF-8" ];
   console = {
     earlySetup = true;
     font = "Lat2-Terminus16";
-  #   keyMap = "us";
+    #   keyMap = "us";
     colors = [
-      "F2E9E1"           # Black
-      "B4637A"           # Red
-      "56949F"           # Green
-      "EA9D34"           # Yellow
-      "286983"           # Blue
-      "907AA9"           # Magenta
-      "D7827E"           # Cyan
-      "575279"           # Light gray
+      "F2E9E1" # Black
+      "B4637A" # Red
+      "56949F" # Green
+      "EA9D34" # Yellow
+      "286983" # Blue
+      "907AA9" # Magenta
+      "D7827E" # Cyan
+      "575279" # Light gray
 
-      "9893A5"           # Dark gray
-      "B4637A"           # Light Red
-      "56949F"           # Light Green
-      "EA9D34"           # Light Yellow
-      "286983"           # Light Blue
-      "907AA9"           # Light Magenta
-      "D7827E"           # Light Cyan
-      "575279"           # White
+      "9893A5" # Dark gray
+      "B4637A" # Light Red
+      "56949F" # Light Green
+      "EA9D34" # Light Yellow
+      "286983" # Light Blue
+      "907AA9" # Light Magenta
+      "D7827E" # Light Cyan
+      "575279" # White
     ];
     useXkbConfig = true; # use xkbOptions in tty.
   };
@@ -550,8 +574,8 @@
     defaultFonts = {
       emoji = [ "Openmoji" ];
       monospace = [ "Hack Nerd Font Mono" "Noto Sans Mono CJK SC" ];
-      sansSerif = [ "PT Sans" "Noto Sans Mono CJK SC"];
-      serif = ["PT Serif" "Noto Serif Mono CJK SC"];
+      sansSerif = [ "PT Sans" "Noto Sans Mono CJK SC" ];
+      serif = [ "PT Serif" "Noto Serif Mono CJK SC" ];
     };
   };
 
@@ -568,20 +592,20 @@
     fcitx.engines = with pkgs.fcitx-engines; [ rime ];
     fcitx5.enableRimeData = true;
     fcitx5.addons = with pkgs; [
-        fcitx5-rime
-        fcitx5-chinese-addons
-        fcitx5-gtk
+      fcitx5-rime
+      fcitx5-chinese-addons
+      fcitx5-gtk
     ];
-};
+  };
 
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
- # Wayland support
- # programs.sway.enable = true;
+  # Wayland support
+  # programs.sway.enable = true;
 
-  
+
 
   # Configure keymap in X11
   services.xserver.layout = "us";
