@@ -423,6 +423,8 @@
     programs.emacs.enable = true;
     programs.vim = {
       enable = true;
+      defaultEditor = true;
+      settings.undodir = ["$HOME/.vim/undo"];
       extraConfig =
         ''
           syntax on
