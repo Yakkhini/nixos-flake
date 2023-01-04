@@ -114,37 +114,55 @@
 
         # Colors (Desert)
         colors = {
-          bright = {
-            black = "#555555";
-            blue = "#87ceff";
-            cyan = "#ffd700";
-            green = "#55ff55";
-            magenta = "#ff55ff";
-            red = "#ff5555";
-            white = "#ffffff";
-            yellow = "#ffff55";
+          primary = {
+            background = "0x191724";
+            foreground = "0xe0def4";
           };
           cursor = {
-            cursor = "#00ff00";
-            text = "#000000";
+            text = "0xe0def4";
+            cursor = "0x524f67";
           };
-          normal = {
-            black = "#4d4d4d";
-            blue = "#cd853f";
-            cyan = "#ffa0a0";
-            green = "#98fb98";
-            magenta = "#ffdead";
-            red = "#ff2b2b";
-            white = "#f5deb3";
-            yellow = "#f0e68c";
+          vi_mode_cursor = {
+            text = "0xe0def4";
+            cursor = "0x524f67";
           };
-          primary = {
-            background = "#333333";
-            foreground = "#ffffff";
+          line_indicator = {
+            foreground = "None";
+            background = "None";
           };
           selection = {
-            background = "#b5d5ff";
-            text = "#000000";
+            text = "0xe0def4";
+            background = "0x403d52";
+          };
+          normal = {
+            black = "0x26233a";
+            red = "0xeb6f92";
+            green = "0x31748f";
+            yellow = "0xf6c177";
+            blue = "0x9ccfd8";
+            magenta = "0xc4a7e7";
+            cyan = "0xebbcba";
+            white = "0xe0def4";
+          };
+          bright = {
+            black = "0x6e6a86";
+            red = "0xeb6f92";
+            green = "0x31748f";
+            yellow = "0xf6c177";
+            blue = "0x9ccfd8";
+            magenta = "0xc4a7e7";
+            cyan = "0xebbcba";
+            white = "0xe0def4";
+          };
+          hints = {
+            start = {
+              foreground = "#908caa";
+              background = "#1f1d2e";
+            };
+            end = {
+              foreground = "#6e6a86";
+              background = "#1f1d2e";
+            };
           };
         };
       };
@@ -424,7 +442,7 @@
     programs.vim = {
       enable = true;
       defaultEditor = true;
-      settings.undodir = ["$HOME/.vim/undo"];
+      settings.undodir = [ "$HOME/.vim/undo" ];
       extraConfig =
         ''
           syntax on
