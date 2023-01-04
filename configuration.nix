@@ -64,6 +64,7 @@
       pkgs.nomacs
       pkgs.okular
       pkgs.wl-clipboard
+      pkgs.wlsunset
       pkgs.pipes-rs
       pkgs.vscode-fhs
       pkgs.sway-contrib.grimshot
