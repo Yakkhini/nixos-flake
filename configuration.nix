@@ -423,15 +423,15 @@
       enableAutosuggestions = true;
       enableCompletion = true;
       enableSyntaxHighlighting = true;
+      historySubstringSearch = {
+        enable = true;
+        searchUpKey = "^[OA";
+        searchDownKey = "^[OB";
+      };
       prezto = {
         enable = true;
-        prompt.theme = "powerlevel10k";
+        prompt.theme = "pure";
       };
-      initExtra =
-        ''
-          # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-          [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-        '';
     };
     programs.git = {
       enable = true;
