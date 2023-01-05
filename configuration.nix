@@ -65,6 +65,8 @@
       pkgs.okular
       pkgs.wl-clipboard
       pkgs.wlsunset
+      pkgs.swayidle
+      pkgs.swaylock # additional config: security.pam.services.swaylock
       pkgs.pipes-rs
       pkgs.vscode-fhs
       pkgs.sway-contrib.grimshot
@@ -414,6 +416,9 @@
           } 
         '';
     };
+    programs.swaylock.settings = {
+      image = "/home/vortexlove/Pictures/Wallpaper/Blade_runner_1.jpg";
+    };
     programs.zsh = {
       enable = true;
       enableAutosuggestions = true;
@@ -483,6 +488,15 @@
         modifier = "Mod4";
         startup = [
           { command = "fcitx5"; }
+          {
+            command =
+              ''
+                swayidle -w \
+                  timeout 300 'swaylock -f -c 000000' \
+                  timeout 600 'swaymsg " output * dpms off "' resume 'swaymsg " output * dpms on "' \
+                  before-sleep 'swaylock -f -c 000000'
+              '';
+          }
         ];
         seat = {
           "*".xcursor_theme = "Hackneyed 36";
@@ -690,6 +704,9 @@
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
+
+  # Pam
+  security.pam.services.swaylock = { };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
