@@ -72,7 +72,6 @@
       pkgs.sway-contrib.grimshot
       pkgs.wlogout
       pkgs.pavucontrol
-      pkgs.clash
       pkgs.viu
       pkgs.vanilla-dmz
       pkgs.hackneyed
@@ -528,8 +527,6 @@
   };
 
   systemd.services.greetd.serviceConfig = {
-    # ExecStartPre = "kill -SIGRTMIN+21 1";
-    # ExecStopPost = "kill -SIGRTMIN+20 1";
     Type = "idle";
   };
 
@@ -550,7 +547,83 @@
   # networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
+  networking = {
+    nftables = {
+      enable = true;
+      ruleset =
+        ''
+          table ip nat {
+            chain output {
+              type nat hook output priority filter; policy accept;
+              ip daddr 127.0.0.1/8 counter return
+              ip daddr 224.0.0.0/4 counter return
+              ip daddr 192.168.0.0/16 counter return
+              ip daddr 255.255.255.255/32 counter return
+              ip daddr 10.0.0.0/8 counter return
+              meta mark 7899 counter return
+              udp dport 1053 counter return
+              ip protocol tcp counter redirect to :7892
+              udp dport 53 counter redirect to :1053
+            }
+            chain prerouting {
+              type nat hook prerouting priority dstnat; policy accept;
+
+              ip protocol tcp counter redirect to :7892
+              udp dport 53 counter redirect to :1053
+              tcp dport 7892 counter
+              tcp dport 53 counter
+              meta mark 123 counter
+            }
+            chain debug {
+              type filter hook prerouting priority filter; policy accept;
+              ip protocol tcp counter
+              tcp dport 7892 counter
+              udp dport 1053 counter
+              udp dport 53 counter
+            }
+          }
+
+          table ip mangle {
+              chain output {
+                type route hook output priority mangle; policy accept;
+                ip daddr 127.0.0.1/8 counter return
+                ip daddr 224.0.0.0/4 counter return
+                ip daddr 192.168.0.0/16 counter return
+                ip daddr 255.255.255.255/32 counter return
+                ip daddr 10.0.0.0/8 counter return
+                udp dport 53 counter return
+                # ip protocol udp counter mark set 1
+            }
+              chain prerouting {
+                type filter hook prerouting priority mangle; policy accept;
+                ip daddr 127.0.0.1/8 counter return
+                ip daddr 224.0.0.0/4 counter return
+                ip daddr 192.168.0.0/16 counter return
+                ip daddr 255.255.255.255/32 counter return
+                ip daddr 10.0.0.0/8 counter return
+                # ip protocol udp tproxy to 127.0.0.1:7892
+            }
+          }
+        '';
+    };
+    networkmanager = {
+      enable = true; # Easiest to use and most distros use this by default.
+      firewallBackend = "nftables";
+    };
+  };
+
+  # Clash deamon service
+  systemd.services.clash-daemon = {
+    enable = true;
+    description = "Clash daemon, A rule-based proxy in Go.";
+    after = [ "network.target" ];
+    serviceConfig = {
+      Type = "simple";
+      Restart = "always";
+      ExecStart = "${pkgs.clash}/bin/clash -d /home/yakkhini/.config/clash";
+    };
+    wantedBy = [ "multi-user.target" ];
+  };
 
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
@@ -670,6 +743,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    clash
     greetd.wlgreet
     greetd.tuigreet
     neofetch
