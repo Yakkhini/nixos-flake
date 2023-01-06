@@ -10,8 +10,13 @@
     };
   };
 
-  outputs = { self, nixpkgs, nur, ... }@attrs: {
-    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
+  outputs = {
+    self,
+    nixpkgs,
+    nur,
+    ...
+  } @ attrs: {
+    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
     nixosConfigurations.yaksis-desktop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = attrs;

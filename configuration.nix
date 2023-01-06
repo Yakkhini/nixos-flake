@@ -1,20 +1,23 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, lib, pkgs, home-manager, nur, ... }:
-
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      home-manager.nixosModule
-      nur.nixosModules.nur
-    ];
+  config,
+  lib,
+  pkgs,
+  home-manager,
+  nur,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    home-manager.nixosModule
+    nur.nixosModules.nur
+  ];
 
-  nix.settings.substituters = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.substituters = ["https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Use the GRUB boot loader.
   boot.loader = {
@@ -31,24 +34,23 @@
   };
 
   # Home Manager
-  home-manager.users.yakkhini = { pkgs, ... }: {
+  home-manager.users.yakkhini = {pkgs, ...}: {
     home.stateVersion = "22.11";
     nixpkgs.config = {
       allowUnfree = true;
       packageOverrides = pkgs: rec {
-        hackneyed = pkgs.hackneyed.overrideAttrs (finalAttrs: previousAttrs:
-          {
-            buildFlags = [
-              "-j20"
-              "-B"
-              "THEME_NAME=Hackneyed-Dark"
-              "COMMON_SOURCE=theme/common-dark.svg"
-              "RSVG_SOURCE=theme/right-handed-dark.svg"
-              "LSVG_SOURCE=theme/left-handed-dark.svg"
-              "theme"
-              "theme.left"
-            ];
-          });
+        hackneyed = pkgs.hackneyed.overrideAttrs (finalAttrs: previousAttrs: {
+          buildFlags = [
+            "-j20"
+            "-B"
+            "THEME_NAME=Hackneyed-Dark"
+            "COMMON_SOURCE=theme/common-dark.svg"
+            "RSVG_SOURCE=theme/right-handed-dark.svg"
+            "LSVG_SOURCE=theme/left-handed-dark.svg"
+            "theme"
+            "theme.left"
+          ];
+        });
         papirus-icon-theme = pkgs.papirus-icon-theme.override {
           color = "adwaita";
         };
@@ -242,7 +244,7 @@
           backlight = {
             # device = "acpi_video1";
             format = "{percent}% {icon}";
-            format-icons = [ "" "" ];
+            format-icons = ["" ""];
           };
           disk = {
             states = {
@@ -276,7 +278,7 @@
               portable = "";
               car = "";
               hifi = "";
-              default = [ "" "" "" ];
+              default = ["" "" ""];
             };
             scroll-step = 1;
             on-click = "pavucontrol";
@@ -290,7 +292,7 @@
           };
           battery = {
             format = "{icon}";
-            format-icons = [ "" "" "" "" "" ];
+            format-icons = ["" "" "" "" ""];
             states = {
               good = 75;
               medium = 50;
@@ -321,100 +323,99 @@
           };
         };
       };
-      style =
-        ''
-          * {
-              font-family:  'PT Sans Narrow', 'DroidSansMono Nerd Font Mono', sans-serif;
-              font-size: 18px;
-              font-weight: bold;
-          }
-       
-          window#waybar {
-              background: #251A1B;
-              transition-property: background-color;
-              transition-duration: .5s;
-          }
-       
-          #workspaces,
-          #language,
-          #clock,
-          #battery,
-          #cpu,
-          #memory,
-          #temperature,
-          #backlight,
-          #network,
-          #backlight,
-          #battery,
-          #pulseaudio,
-          #custom-media,
-          #tray,
-          #disk,
-          #mode,
-          #idle_inhibitor,
-          #custom-power,
-          #custom-grimshot
-          {
-              color: #E5BB9E;
-              background: #AB1716;
-              margin: 4px 0px;
-              padding: 2px 10px;
-              border: 0px solid rgba(0, 0, 0, 0);
-              border-radius: 0px;
-              background-clip: padding-box;
-          }
-       
-          #clock, #network, #backlight, #tray, #idle_inhibitor, #custom-power {
-              border-top-left-radius: 90px;
-              border-bottom-left-radius: 90px;
-              margin-left: 4px;
-          }
-       
-          #clock, #battery, #network, #custom-grimshot, #idle_inhibitor, #custom-power {
-              border-top-right-radius: 90px;
-              border-bottom-right-radius: 90px;
-              margin-right: 4px;
-          }
-       
-          #custom-power {
-              margin-right: 0px;
-       
-          }
-       
-          #workspaces {
-              margin-left: 0px;
-              padding: 0px 0px;
-              border-radius: 90px;
-              margin: 4px 0px;
-          }
-       
-          #workspaces button {
-              padding: 0px 8px;
-              margin: 0px 0px;
-              color: #CEA9A6;
-              border-radius: 90px;
-          }
-       
-          #workspaces button.focused {
-              color: #251A1B;
-              background-color: #E5BB9E;
-              border-radius: 90px;
-          }
-       
-          #workspaces button:hover {
-              box-shadow: inherit;
-              text-shadow: inherit;
-              border-radius: 90px;
-          }
-       
-          #network.disconnected,
-          #temperature.critical,
-          #pulseaudio.muted,
-          #idle_inhibitor.activated {
-              color: #251A1B;
-              background-color: #CEA9A6;
-          } 
-        '';
+      style = ''
+        * {
+            font-family:  'PT Sans Narrow', 'DroidSansMono Nerd Font Mono', sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        window#waybar {
+            background: #251A1B;
+            transition-property: background-color;
+            transition-duration: .5s;
+        }
+
+        #workspaces,
+        #language,
+        #clock,
+        #battery,
+        #cpu,
+        #memory,
+        #temperature,
+        #backlight,
+        #network,
+        #backlight,
+        #battery,
+        #pulseaudio,
+        #custom-media,
+        #tray,
+        #disk,
+        #mode,
+        #idle_inhibitor,
+        #custom-power,
+        #custom-grimshot
+        {
+            color: #E5BB9E;
+            background: #AB1716;
+            margin: 4px 0px;
+            padding: 2px 10px;
+            border: 0px solid rgba(0, 0, 0, 0);
+            border-radius: 0px;
+            background-clip: padding-box;
+        }
+
+        #clock, #network, #backlight, #tray, #idle_inhibitor, #custom-power {
+            border-top-left-radius: 90px;
+            border-bottom-left-radius: 90px;
+            margin-left: 4px;
+        }
+
+        #clock, #battery, #network, #custom-grimshot, #idle_inhibitor, #custom-power {
+            border-top-right-radius: 90px;
+            border-bottom-right-radius: 90px;
+            margin-right: 4px;
+        }
+
+        #custom-power {
+            margin-right: 0px;
+
+        }
+
+        #workspaces {
+            margin-left: 0px;
+            padding: 0px 0px;
+            border-radius: 90px;
+            margin: 4px 0px;
+        }
+
+        #workspaces button {
+            padding: 0px 8px;
+            margin: 0px 0px;
+            color: #CEA9A6;
+            border-radius: 90px;
+        }
+
+        #workspaces button.focused {
+            color: #251A1B;
+            background-color: #E5BB9E;
+            border-radius: 90px;
+        }
+
+        #workspaces button:hover {
+            box-shadow: inherit;
+            text-shadow: inherit;
+            border-radius: 90px;
+        }
+
+        #network.disconnected,
+        #temperature.critical,
+        #pulseaudio.muted,
+        #idle_inhibitor.activated {
+            color: #251A1B;
+            background-color: #CEA9A6;
+        }
+      '';
     };
     programs.swaylock.settings = {
       image = "/home/vortexlove/Pictures/Wallpaper/Blade_runner_1.jpg";
@@ -448,38 +449,36 @@
     programs.vim = {
       enable = true;
       defaultEditor = true;
-      settings.undodir = [ "$HOME/.vim/undo" ];
-      extraConfig =
-        ''
-          syntax on
-          filetype on
-          set number
-          set relativenumber
-          set cursorline
-          set wrap
-          set showcmd
-          set wildmenu
-          set undofile
-          set nofoldenable
-        
-          set hlsearch
-          set incsearch
-          set ignorecase
-          set smartcase
-          set scrolloff=5
-          set textwidth=80
-        
-          cmap w!! w !sudo tee %
-        
-          " wayland clipboard support
-          xnoremap "+y y:call system("wl-copy", @")<cr>
-          nnoremap "+p :let @"=substitute(system("wl-paste --no-newline"), '<C-v><C-m>', ''', 'g')<cr>p
-          nnoremap "*p :let @"=substitute(system("wl-paste --no-newline --primary"), '<C-v><C-m>', ''', 'g')<cr>p
-        '';
+      settings.undodir = ["$HOME/.vim/undo"];
+      extraConfig = ''
+        syntax on
+        filetype on
+        set number
+        set relativenumber
+        set cursorline
+        set wrap
+        set showcmd
+        set wildmenu
+        set undofile
+        set nofoldenable
+
+        set hlsearch
+        set incsearch
+        set ignorecase
+        set smartcase
+        set scrolloff=5
+        set textwidth=80
+
+        cmap w!! w !sudo tee %
+
+        " wayland clipboard support
+        xnoremap "+y y:call system("wl-copy", @")<cr>
+        nnoremap "+p :let @"=substitute(system("wl-paste --no-newline"), '<C-v><C-m>', ''', 'g')<cr>p
+        nnoremap "*p :let @"=substitute(system("wl-paste --no-newline --primary"), '<C-v><C-m>', ''', 'g')<cr>p
+      '';
     };
     programs.git = {
       delta.enable = true;
-
     };
     programs.gitui.enable = true;
     wayland.windowManager.sway = {
@@ -487,15 +486,14 @@
       config = rec {
         modifier = "Mod4";
         startup = [
-          { command = "fcitx5"; }
+          {command = "fcitx5";}
           {
-            command =
-              ''
-                swayidle -w \
-                  timeout 300 'swaylock -f -c 000000' \
-                  timeout 600 'swaymsg " output * dpms off "' resume 'swaymsg " output * dpms on "' \
-                  before-sleep 'swaylock -f -c 000000'
-              '';
+            command = ''
+              swayidle -w \
+                timeout 300 'swaylock -f -c 000000' \
+                timeout 600 'swaymsg " output * dpms off "' resume 'swaymsg " output * dpms on "' \
+                before-sleep 'swaylock -f -c 000000'
+            '';
           }
         ];
         seat = {
@@ -513,7 +511,7 @@
           smartBorders = "on";
           smartGaps = true;
         };
-        bars = [{ command = "waybar"; }];
+        bars = [{command = "waybar";}];
       };
     };
     services = {
@@ -551,61 +549,63 @@
   networking = {
     nftables = {
       enable = true;
-      /*ruleset =
-        ''
-          table ip nat {
+      /*
+      ruleset =
+      ''
+        table ip nat {
+          chain output {
+            type nat hook output priority filter; policy accept;
+            ip daddr 127.0.0.1/8 counter return
+            ip daddr 224.0.0.0/4 counter return
+            ip daddr 192.168.0.0/16 counter return
+            ip daddr 255.255.255.255/32 counter return
+            ip daddr 10.0.0.0/8 counter return
+            meta mark 7899 counter return
+            udp dport 1053 counter return
+            ip protocol tcp counter redirect to :7892
+            udp dport 53 counter redirect to :1053
+          }
+          chain prerouting {
+            type nat hook prerouting priority dstnat; policy accept;
+
+            ip protocol tcp counter redirect to :7892
+            udp dport 53 counter redirect to :1053
+            tcp dport 7892 counter
+            tcp dport 53 counter
+            meta mark 123 counter
+          }
+          chain debug {
+            type filter hook prerouting priority filter; policy accept;
+            ip protocol tcp counter
+            tcp dport 7892 counter
+            udp dport 1053 counter
+            udp dport 53 counter
+          }
+        }
+
+        table ip mangle {
             chain output {
-              type nat hook output priority filter; policy accept;
+              type route hook output priority mangle; policy accept;
               ip daddr 127.0.0.1/8 counter return
               ip daddr 224.0.0.0/4 counter return
               ip daddr 192.168.0.0/16 counter return
               ip daddr 255.255.255.255/32 counter return
               ip daddr 10.0.0.0/8 counter return
-              meta mark 7899 counter return
-              udp dport 1053 counter return
-              ip protocol tcp counter redirect to :7892
-              udp dport 53 counter redirect to :1053
-            }
+              udp dport 53 counter return
+              # ip protocol udp counter mark set 1
+          }
             chain prerouting {
-              type nat hook prerouting priority dstnat; policy accept;
-
-              ip protocol tcp counter redirect to :7892
-              udp dport 53 counter redirect to :1053
-              tcp dport 7892 counter
-              tcp dport 53 counter
-              meta mark 123 counter
-            }
-            chain debug {
-              type filter hook prerouting priority filter; policy accept;
-              ip protocol tcp counter
-              tcp dport 7892 counter
-              udp dport 1053 counter
-              udp dport 53 counter
-            }
+              type filter hook prerouting priority mangle; policy accept;
+              ip daddr 127.0.0.1/8 counter return
+              ip daddr 224.0.0.0/4 counter return
+              ip daddr 192.168.0.0/16 counter return
+              ip daddr 255.255.255.255/32 counter return
+              ip daddr 10.0.0.0/8 counter return
+              # ip protocol udp tproxy to 127.0.0.1:7892
           }
-
-          table ip mangle {
-              chain output {
-                type route hook output priority mangle; policy accept;
-                ip daddr 127.0.0.1/8 counter return
-                ip daddr 224.0.0.0/4 counter return
-                ip daddr 192.168.0.0/16 counter return
-                ip daddr 255.255.255.255/32 counter return
-                ip daddr 10.0.0.0/8 counter return
-                udp dport 53 counter return
-                # ip protocol udp counter mark set 1
-            }
-              chain prerouting {
-                type filter hook prerouting priority mangle; policy accept;
-                ip daddr 127.0.0.1/8 counter return
-                ip daddr 224.0.0.0/4 counter return
-                ip daddr 192.168.0.0/16 counter return
-                ip daddr 255.255.255.255/32 counter return
-                ip daddr 10.0.0.0/8 counter return
-                # ip protocol udp tproxy to 127.0.0.1:7892
-            }
-          }
-        '';*/
+        }
+      '';
+      */
     };
     networkmanager = {
       enable = true; # Easiest to use and most distros use this by default.
@@ -617,13 +617,13 @@
   systemd.services.clash-daemon = {
     enable = true;
     description = "Clash daemon, A rule-based proxy in Go.";
-    after = [ "network.target" ];
+    after = ["network.target"];
     serviceConfig = {
       Type = "simple";
       Restart = "always";
       ExecStart = "${config.nur.repos.linyinfeng.clash-premium}/bin/clash-premium -d /home/yakkhini/.config/clash";
     };
-    wantedBy = [ "multi-user.target" ];
+    wantedBy = ["multi-user.target"];
   };
 
   # Set your time zone.
@@ -635,8 +635,8 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-  i18n.extraLocaleSettings = { LANGUAGE = "en_US.UTF-8"; };
-  i18n.supportedLocales = [ "en_US.UTF-8/UTF-8" "zh_CN.UTF-8/UTF-8" ];
+  i18n.extraLocaleSettings = {LANGUAGE = "en_US.UTF-8";};
+  i18n.supportedLocales = ["en_US.UTF-8/UTF-8" "zh_CN.UTF-8/UTF-8"];
   console = {
     earlySetup = true;
     font = "Lat2-Terminus16";
@@ -664,7 +664,7 @@
   };
   # fonts
   fonts.fonts = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "Hack" "DroidSansMono" ]; })
+    (nerdfonts.override {fonts = ["FiraCode" "Hack" "DroidSansMono"];})
     openmoji-color
     noto-fonts
     noto-fonts-cjk
@@ -681,15 +681,15 @@
   fonts.fontconfig = {
     enable = true;
     defaultFonts = {
-      emoji = [ "Openmoji" ];
-      monospace = [ "Hack Nerd Font Mono" "Noto Sans Mono CJK SC" ];
-      sansSerif = [ "PT Sans" "Noto Sans Mono CJK SC" ];
-      serif = [ "PT Serif" "Noto Serif Mono CJK SC" ];
+      emoji = ["Openmoji"];
+      monospace = ["Hack Nerd Font Mono" "Noto Sans Mono CJK SC"];
+      sansSerif = ["PT Sans" "Noto Sans Mono CJK SC"];
+      serif = ["PT Serif" "Noto Serif Mono CJK SC"];
     };
   };
 
   #envar
-  environment.pathsToLink = [ "/share/zsh" ];
+  environment.pathsToLink = ["/share/zsh"];
   environment.sessionVariables = {
     GTK_IM_MODULE = "fcitx";
     QT_IM_MODULE = "fcitx";
@@ -698,7 +698,7 @@
   # Input method
   i18n.inputMethod = {
     enabled = "fcitx5";
-    fcitx.engines = with pkgs.fcitx-engines; [ rime ];
+    fcitx.engines = with pkgs.fcitx-engines; [rime];
     fcitx5.enableRimeData = true;
     fcitx5.addons = with pkgs; [
       fcitx5-rime
@@ -707,14 +707,11 @@
     ];
   };
 
-
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
   # Wayland support
   # programs.sway.enable = true;
-
-
 
   # Configure keymap in X11
   services.xserver.layout = "us";
@@ -738,7 +735,7 @@
   users.users.yakkhini = {
     isNormalUser = true;
     shell = pkgs.zsh;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = ["wheel"]; # Enable ‘sudo’ for the user.
   };
 
   # List packages installed in system profile. To search, run:
@@ -781,7 +778,7 @@
   # services.openssh.enable = true;
 
   # Pam
-  security.pam.services.swaylock = { };
+  security.pam.services.swaylock = {};
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -801,6 +798,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.11"; # Did you read the comment?
-
 }
-
