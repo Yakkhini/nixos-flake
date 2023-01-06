@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, lib, pkgs, home-manager, ... }:
+{ config, lib, pkgs, home-manager, nur, ... }:
 
 {
   imports =
@@ -10,6 +10,7 @@
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
       home-manager.nixosModule
+      nur.nixosModules.nur
     ];
 
   nix.settings.substituters = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
@@ -550,7 +551,7 @@
   networking = {
     nftables = {
       enable = true;
-      ruleset =
+      /*ruleset =
         ''
           table ip nat {
             chain output {
@@ -604,7 +605,7 @@
                 # ip protocol udp tproxy to 127.0.0.1:7892
             }
           }
-        '';
+        '';*/
     };
     networkmanager = {
       enable = true; # Easiest to use and most distros use this by default.
@@ -620,7 +621,7 @@
     serviceConfig = {
       Type = "simple";
       Restart = "always";
-      ExecStart = "${pkgs.clash}/bin/clash -d /home/yakkhini/.config/clash";
+      ExecStart = "${config.nur.repos.linyinfeng.clash-premium}/bin/clash-premium -d /home/yakkhini/.config/clash";
     };
     wantedBy = [ "multi-user.target" ];
   };
@@ -743,7 +744,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    clash
+    config.nur.repos.linyinfeng.clash-premium
     greetd.wlgreet
     greetd.tuigreet
     neofetch
