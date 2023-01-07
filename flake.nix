@@ -13,15 +13,18 @@
   outputs = {
     self,
     nixpkgs,
+    home-manager,
     nur,
     ...
-  } @ attrs: {
+  } @ inputs: {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
     nixosConfigurations.yaksis-desktop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = attrs;
+      specialArgs = inputs;
       modules = [
-        ./configuration.nix
+        home-manager.nixosModule
+        nur.nixosModules.nur
+        ./host
       ];
     };
   };
