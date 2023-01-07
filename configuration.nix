@@ -60,6 +60,7 @@
       pkgs.gnome.nautilus
       pkgs.tilix
       pkgs.firefox
+      pkgs.brave
       pkgs.gopass
       pkgs.hyprland
       pkgs.grim
@@ -84,6 +85,7 @@
     ];
     home.sessionVariables = {
       XDG_SCREENSHOTS_DIR = "$HOME/Pictures/ScreenShots";
+      BROWSER = "brave";
       EDITOR = "vim";
       GTK_THEME = "Orchis-Red-Dark-Compact";
       GDK_BACKEND = "x11";
