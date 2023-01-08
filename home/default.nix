@@ -7,6 +7,14 @@
 }: {
   home-manager.users.yakkhini = {pkgs, ...}: {
     home.stateVersion = "22.11";
+    imports = [
+      ./programs
+      ./nixpkgs.nix
+      ./packages.nix
+      ./services.nix
+      ./waylandSway.nix
+    ];
+    /*
     nixpkgs.config = {
       allowUnfree = true;
       packageOverrides = pkgs: rec {
@@ -54,6 +62,7 @@
       pkgs.papirus-folders
       pkgs.papirus-icon-theme
     ];
+    */
     home.sessionVariables = {
       XDG_SCREENSHOTS_DIR = "$HOME/Pictures/ScreenShots";
       BROWSER = "brave";
@@ -75,6 +84,7 @@
       font.name = "PT Sans Caption";
       font.size = 14;
     };
+    /*
     programs.alacritty = {
       enable = true;
       settings = {
@@ -491,5 +501,6 @@
       swayidle.enable = true;
       dunst.enable = true;
     };
+    */
   };
 }
