@@ -17,6 +17,7 @@
     pkgs.pipes-rs
     pkgs.vscode-fhs
     pkgs.emacs
+    pkgs.logseq
     pkgs.sway-contrib.grimshot
     pkgs.wlogout
     pkgs.pavucontrol
