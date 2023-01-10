@@ -23,7 +23,7 @@
   fonts.fontconfig = {
     enable = true;
     defaultFonts = {
-      emoji = ["Openmoji"];
+      emoji = ["Openmoji Color"];
       monospace = ["Hack Nerd Font Mono" "Noto Sans Mono CJK SC"];
       sansSerif = ["PT Sans" "Noto Sans Mono CJK SC"];
       serif = ["PT Serif" "Noto Serif Mono CJK SC"];
