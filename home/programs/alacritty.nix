@@ -1,0 +1,72 @@
+{pkgs, ...}: {
+  programs.alacritty = {
+    enable = true;
+    settings = {
+      # Background opacity
+      #
+      # Window opacity as a floating point number from `0.0` to `1.0`.
+      # The value `0.0` is completely transparent and `1.0` is opaque.
+      window.opacity = 0.8;
+
+      # Font configuration
+      font = {
+        normal.family = "Hack Nerd Font";
+        size = 14.0;
+      };
+
+      # Colors (Desert)
+      colors = {
+        primary = {
+          background = "0x191724";
+          foreground = "0xe0def4";
+        };
+        cursor = {
+          text = "0xe0def4";
+          cursor = "0x524f67";
+        };
+        vi_mode_cursor = {
+          text = "0xe0def4";
+          cursor = "0x524f67";
+        };
+        line_indicator = {
+          foreground = "None";
+          background = "None";
+        };
+        selection = {
+          text = "0xe0def4";
+          background = "0x403d52";
+        };
+        normal = {
+          black = "0x26233a";
+          red = "0xeb6f92";
+          green = "0x31748f";
+          yellow = "0xf6c177";
+          blue = "0x9ccfd8";
+          magenta = "0xc4a7e7";
+          cyan = "0xebbcba";
+          white = "0xe0def4";
+        };
+        bright = {
+          black = "0x6e6a86";
+          red = "0xeb6f92";
+          green = "0x31748f";
+          yellow = "0xf6c177";
+          blue = "0x9ccfd8";
+          magenta = "0xc4a7e7";
+          cyan = "0xebbcba";
+          white = "0xe0def4";
+        };
+        hints = {
+          start = {
+            foreground = "#908caa";
+            background = "#1f1d2e";
+          };
+          end = {
+            foreground = "#6e6a86";
+            background = "#1f1d2e";
+          };
+        };
+      };
+    };
+  };
+}
