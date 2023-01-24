@@ -16,8 +16,6 @@
   imports = [
     ./hardware-configuration.nix
     ./boot.nix
-    # home-manager.nixosModule
-    # nur.nixosModules.nur
     ../system
     ../home
   ];

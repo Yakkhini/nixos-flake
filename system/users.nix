@@ -9,6 +9,6 @@
   users.users.yakkhini = {
     isNormalUser = true;
     shell = pkgs.zsh;
-    extraGroups = ["wheel"]; # Enable ‘sudo’ for the user.
+    extraGroups = ["wheel" "systemd-network"]; # Enable ‘sudo’ for the user.
   };
 }

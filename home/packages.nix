@@ -4,6 +4,8 @@
     pkgs.tilix
     pkgs.firefox
     pkgs.brave
+    pkgs.neomutt
+    pkgs.msmtp
     pkgs.gopass
     pkgs.hyprland
     pkgs.grim
