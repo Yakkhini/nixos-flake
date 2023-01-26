@@ -6,6 +6,7 @@
     pkgs.brave
     pkgs.neomutt
     pkgs.msmtp
+    pkgs.tdesktop
     pkgs.gopass
     pkgs.hyprland
     pkgs.grim
