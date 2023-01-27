@@ -42,6 +42,9 @@
     XMODIFIERS = "@im=fcitx";
   };
 
+  # Enable MTP service to serve android file transfer.
+  services.gvfs.enable = true;
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
