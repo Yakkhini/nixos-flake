@@ -24,7 +24,6 @@
       BROWSER = "brave";
       EDITOR = "vim";
       GTK_THEME = "Orchis-Red-Dark-Compact";
-      GDK_BACKEND = "x11";
     };
     xdg.userDirs = {
       enable = true;
