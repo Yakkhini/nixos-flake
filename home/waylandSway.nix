@@ -29,6 +29,10 @@
         smartBorders = "on";
         smartGaps = true;
       };
+      floating.criteria = [
+        {app_id = "pinentry-qt";}
+        {app_id = "org.gnome.Nautilus";}
+      ];
       bars = [{command = "waybar";}];
     };
   };

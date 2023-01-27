@@ -3,6 +3,7 @@
   lib,
   pkgs,
   home-manager,
+  nix-doom-emacs,
   ...
 }: {
   home-manager.useGlobalPkgs = true;
@@ -11,6 +12,7 @@
   home-manager.users.yakkhini = {pkgs, ...}: {
     home.stateVersion = "22.11";
     imports = [
+      nix-doom-emacs.hmModule
       ./programs
       ./email.nix
       ./nixpkgs.nix
