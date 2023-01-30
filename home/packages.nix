@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   home.packages = [
     pkgs.gnome.nautilus
     pkgs.tilix
@@ -29,5 +33,6 @@
     pkgs.orchis-theme
     pkgs.papirus-folders
     pkgs.papirus-icon-theme
+    config.nur.repos.YisuiMilena.hmcl-bin
   ];
 }

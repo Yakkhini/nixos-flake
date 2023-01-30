@@ -3,6 +3,7 @@
   lib,
   pkgs,
   home-manager,
+  nur,
   nix-doom-emacs,
   ...
 }: {
@@ -13,6 +14,7 @@
     home.stateVersion = "22.11";
     imports = [
       nix-doom-emacs.hmModule
+      nur.nixosModules.nur
       ./programs
       ./email.nix
       ./nixpkgs.nix

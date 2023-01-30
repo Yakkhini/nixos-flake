@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  nur,
   ...
 }: {
   # List packages installed in system profile. To search, run:
