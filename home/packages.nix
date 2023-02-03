@@ -23,7 +23,7 @@
     pkgs.swaylock # additional config: security.pam.services.swaylock
     pkgs.pipes-rs
     pkgs.vscode-fhs
-    pkgs.logseq
+    # pkgs.logseq
     pkgs.sway-contrib.grimshot
     pkgs.wlogout
     pkgs.pavucontrol

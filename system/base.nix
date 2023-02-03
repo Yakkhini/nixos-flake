@@ -10,26 +10,27 @@
   #console
   console = {
     earlySetup = true;
-    font = "Lat2-Terminus16";
+    font = "LatArCyrHeb-19";
     #   keyMap = "us";
     colors = [
-      "F2E9E1" # Black
-      "B4637A" # Red
-      "56949F" # Green
-      "EA9D34" # Yellow
-      "286983" # Blue
-      "907AA9" # Magenta
-      "D7827E" # Cyan
-      "575279" # Light gray
+      "393552"           # Black
+      "EB6F92"           # Red
+      "9CCFD8"           # Green
+      "F6C177"           # Yellow
+      "3E8FB0"           # Blue
+      "C4A7E7"           # Magenta
+      "EA9A97"           # Cyan
+      "E0DEF4"           # Light gray
 
-      "9893A5" # Dark gray
-      "B4637A" # Light Red
-      "56949F" # Light Green
-      "EA9D34" # Light Yellow
-      "286983" # Light Blue
-      "907AA9" # Light Magenta
-      "D7827E" # Light Cyan
-      "575279" # White
+      "6E6A86"           # Dark gray
+      "EB6F92"           # Light Red
+      "9CCFD8"           # Light Green
+      "F6C177"           # Light Yellow
+      "3E8FB0"           # Light Blue
+      "C4A7E7"           # Light Magenta
+      "EA9A97"           # Light Cyan
+      "E0DEF4"           # White
+
     ];
     useXkbConfig = true; # use xkbOptions in tty.
   };
