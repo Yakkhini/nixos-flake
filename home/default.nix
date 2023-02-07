@@ -5,15 +5,17 @@
   home-manager,
   nur,
   nix-doom-emacs,
+  hyprland,
   ...
 }: {
-  home-manager.useGlobalPkgs = true;
+  home-manager.useGlobalPkgs = false;
   home-manager.useUserPackages = true;
 
   home-manager.users.yakkhini = {pkgs, ...}: {
     home.stateVersion = "22.11";
     imports = [
       nix-doom-emacs.hmModule
+      hyprland.homeManagerModules.default
       nur.nixosModules.nur
       ./programs
       ./email.nix
@@ -21,6 +23,7 @@
       ./packages.nix
       ./services.nix
       ./waylandSway.nix
+      ./waylandHyprland
     ];
 
     home.sessionVariables = {

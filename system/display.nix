@@ -15,7 +15,7 @@
     vt = 2;
     settings = rec {
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --remember --time --cmd sway";
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --remember --time --cmd Hyprland";
         user = "yakkhini";
       };
     };

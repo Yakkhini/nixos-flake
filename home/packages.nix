@@ -12,7 +12,6 @@
     pkgs.msmtp
     pkgs.tdesktop
     pkgs.gopass
-    pkgs.hyprland
     pkgs.grim
     pkgs.texlive.combined.scheme-full
     pkgs.nomacs
@@ -21,6 +20,13 @@
     pkgs.wlsunset
     pkgs.swayidle
     pkgs.swaylock # additional config: security.pam.services.swaylock
+    pkgs.bemenu
+
+    #for eww scripts:
+    pkgs.socat
+    pkgs.jq
+    pkgs.python3Minimal
+
     pkgs.pipes-rs
     pkgs.vscode-fhs
     # pkgs.logseq
