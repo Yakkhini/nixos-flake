@@ -11,17 +11,15 @@
         ];
         modules-right = [
           "idle_inhibitor"
+          "tray"
           "pulseaudio"
           "network"
           "cpu"
           "memory"
           "temperature"
           "backlight"
-          "keyboard-state"
           "battery"
-          "battery#bat2"
           "clock"
-          "tray"
         ];
         "wlr/workspaces" = {
           disable-scroll = true;
@@ -50,11 +48,12 @@
           format = "{long} ";
         };
         clock = {
-          format = "{:%R %a %d/%m/%Y}";
+          # "timezone": "America/New_York",
           tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+          format-alt = "{:%Y-%m-%d}";
         };
         cpu = {
-          format = "{usage}% @ {max_frequency}GHz ";
+          format = "{usage}% ";
         };
         temperature = {
           thermal-zone = 2;
@@ -67,7 +66,7 @@
           ];
         };
         memory = {
-          format = "{used:0.2f}/{total:0.2f} ";
+          format = "{}% ";
         };
         backlight = {
           # device = "acpi_video1";
@@ -119,7 +118,6 @@
           };
         };
         battery = {
-          format = "{icon}";
           format-icons = ["" "" "" "" ""];
           states = {
             good = 75;
@@ -127,10 +125,10 @@
             warning = 30;
             critical = 15;
           };
-          # format = "{capacity}% {icon}";
+          format = "{capacity}% {icon}";
           format-charging = "{capacity}% ";
           format-plugged = "{capacity}% ";
-          format-plugged-full = "";
+          format-plugged-full = "";
           format-alt = "{time} {icon}";
         };
         tray = {
@@ -154,8 +152,8 @@
     style = ''
             * {
           /* `otf-font-awesome` is required to be installed for icons */
-          font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-          font-size: 13px;
+          font-family: PT Sans, Hack Nerd Font, sans-serif;
+          font-size: 10px;
       }
 
       window#waybar {
