@@ -21,11 +21,7 @@
     pkgs.swayidle
     pkgs.swaylock # additional config: security.pam.services.swaylock
     pkgs.bemenu
-
-    #for eww scripts:
-    pkgs.socat
-    pkgs.jq
-    pkgs.python3Minimal
+    pkgs.hyprpaper
 
     pkgs.pipes-rs
     pkgs.vscode-fhs
