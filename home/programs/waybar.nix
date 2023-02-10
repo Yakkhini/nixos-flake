@@ -22,6 +22,7 @@
           "clock"
         ];
         "wlr/workspaces" = {
+          on-click = "activate";
           disable-scroll = true;
           all-outputs = false;
           format = "{icon}";
@@ -153,7 +154,7 @@
             * {
           /* `otf-font-awesome` is required to be installed for icons */
           font-family: PT Sans, Hack Nerd Font, sans-serif;
-          font-size: 10px;
+          font-size: 14px;
       }
 
       window#waybar {
