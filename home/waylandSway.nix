@@ -14,9 +14,9 @@
           '';
         }
       ];
-      seat = {
-        "*".xcursor_theme = "Hackneyed 36";
-      };
+      # seat = {
+      #   "*".xcursor_theme = "Hackneyed 36";
+      # };
       terminal = "alacritty";
       output = {
         "*".bg = "/home/vortexlove/Pictures/Wallpaper/Blade_Runner_car.jpg tile";

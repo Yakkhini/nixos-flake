@@ -31,7 +31,6 @@
     pkgs.pavucontrol
     pkgs.viu
     pkgs.vanilla-dmz
-    pkgs.hackneyed
     pkgs.orchis-theme
     pkgs.papirus-folders
     pkgs.papirus-icon-theme

@@ -31,7 +31,19 @@
       BROWSER = "brave";
       EDITOR = "vim";
       GTK_THEME = "Orchis-Red-Dark-Compact";
+      XCURSOR_SIZE = "32";
+      XCURSOR_NAME = "Bibata-Original-Classic";
     };
+
+    home.pointerCursor = {
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Original-Classic";
+      size = 32;
+      x11.defaultCursor = "Bibata-Original-Classic";
+      gtk.enable = true;
+      x11.enable = true;
+    };
+
     xdg.userDirs = {
       enable = true;
       createDirectories = true;
@@ -41,8 +53,8 @@
       enable = true;
       theme.name = "Orchis-Red-Dark-Compact";
       iconTheme.name = "Papirus-Dark";
-      cursorTheme.name = "Hackneyed";
-      cursorTheme.size = 36;
+      cursorTheme.name = "Bibata-Original-Classic";
+      cursorTheme.size = 32;
       font.name = "PT Sans Caption";
       font.size = 14;
     };
