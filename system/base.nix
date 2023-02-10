@@ -42,6 +42,9 @@
     XMODIFIERS = "@im=fcitx";
   };
 
+  # ADB
+  programs.adb.enable = true;
+
   # Enable MTP service to serve android file transfer.
   services.gvfs.enable = true;
 
