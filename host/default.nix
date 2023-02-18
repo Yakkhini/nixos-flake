@@ -8,6 +8,7 @@
 }: {
   nix.settings.substituters = ["https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"];
   nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.trusted-users = ["root" "@wheel"];
   # Systemwide nixpkgs config
   nixpkgs.config = {
     allowUnfree = true;

@@ -27,8 +27,17 @@
     ];
 
     home.sessionVariables = {
+      GDK_BACKEND = "wayland";
+      GDK_SCALE = "1.2";
+      QT_AUTO_SCREEN_SCALE_FACTOR = 1;
+      QT_QPA_PLATFORM = "wayland";
+      QT_WAYLAND_DISABLE_WINDOWDECORATION = 1;
+      QT_QPA_PLATFORMTHEME = "qt5ct";
+      XDG_CURRENT_DESKTOP = "Hyprland";
+      XDG_SESSION_TYPE = "wayland";
+      XDG_SESSION_DESKTOP = "Hyprland";
       XDG_SCREENSHOTS_DIR = "$HOME/Pictures/ScreenShots";
-      BROWSER = "brave";
+      BROWSER = "firefox";
       EDITOR = "vim";
       GTK_THEME = "Orchis-Red-Dark-Compact";
       XCURSOR_SIZE = "32";

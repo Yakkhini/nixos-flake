@@ -12,7 +12,7 @@
   ];
   nixpkgs.config = {
     allowUnfree = true;
-    packageOverrides = pkgs: rec {
+    packageOverrides = pkgs: {
       papirus-icon-theme = pkgs.papirus-icon-theme.override {
         color = "adwaita";
       };

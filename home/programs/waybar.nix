@@ -153,7 +153,7 @@
     style = ''
             * {
           /* `otf-font-awesome` is required to be installed for icons */
-          font-family: PT Sans, Hack Nerd Font, sans-serif;
+          font-family: PT Sans, Hack Nerd Font Mono, sans-serif;
           font-size: 14px;
       }
 
