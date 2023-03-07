@@ -4,36 +4,51 @@
   ...
 }: {
   home.packages = [
-    pkgs.gnome.nautilus
-    pkgs.tilix
-    pkgs.firefox
-    pkgs.brave
-    pkgs.neomutt
-    pkgs.msmtp
-    pkgs.tdesktop
-    pkgs.gopass
-    pkgs.grim
-    pkgs.texlive.combined.scheme-full
-    pkgs.nomacs
-    pkgs.okular
+    # Desktop Env
+    ## Wayland
     pkgs.wl-clipboard
     pkgs.wlsunset
     pkgs.swayidle
     pkgs.swaylock # additional config: security.pam.services.swaylock
     pkgs.bemenu
     pkgs.hyprpaper
-
-    pkgs.pipes-rs
-    pkgs.vscode-fhs
-    # pkgs.logseq
     pkgs.sway-contrib.grimshot
+    pkgs.grim
     pkgs.wlogout
-    pkgs.pavucontrol
+    ## icons & themes
+    pkgs.pipes-rs # Just for fun
     pkgs.viu
     pkgs.vanilla-dmz
     pkgs.orchis-theme
     pkgs.papirus-folders
     pkgs.papirus-icon-theme
-    config.nur.repos.YisuiMilena.hmcl-bin
+    ## others
+    pkgs.gnome.nautilus
+
+    # Shell
+    pkgs.tilix
+
+    # Browsers
+    pkgs.firefox
+    pkgs.brave
+
+    # Chat
+    pkgs.neomutt
+    pkgs.msmtp
+    pkgs.tdesktop
+
+    # Media
+    pkgs.pavucontrol
+    pkgs.nomacs # Images viewer
+    pkgs.okular # PDF reader
+
+    # Writing
+    pkgs.texlive.combined.scheme-full
+    pkgs.vscode-fhs
+    pkgs.logseq
+    pkgs.zotero
+
+    # Security
+    pkgs.gopass
   ];
 }
