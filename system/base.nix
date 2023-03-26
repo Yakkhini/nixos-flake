@@ -58,7 +58,10 @@
     noCheck = true;
     options = ["uid=yakkhini" "gid=users" "rw" "noatime"];
   };
-  
+
+  # Systemd tmpfiles.d
+  systemd.tmpfiles.rules = ["w /sys/power/image_size - - - - 0"];
+
   # ADB
   programs.adb.enable = true;
 
