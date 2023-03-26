@@ -13,6 +13,7 @@
     noto-fonts-emoji
     source-han-sans
     source-han-serif
+    source-han-mono
     paratype-pt-sans
     paratype-pt-serif
     paratype-pt-mono
@@ -24,9 +25,9 @@
     enable = true;
     defaultFonts = {
       emoji = ["OpenMoji Color"];
-      monospace = ["Hack Nerd Font Mono" "Noto Sans Mono CJK SC"];
-      sansSerif = ["PT Sans" "Noto Sans Mono CJK SC"];
-      serif = ["PT Serif" "Noto Serif Mono CJK SC"];
+      monospace = ["Hack Nerd Font Mono" "Source Han Mono SC"];
+      sansSerif = ["PT Sans" "Source Han Sans SC"];
+      serif = ["PT Serif" "Source Han Serif SC"];
     };
   };
 }
