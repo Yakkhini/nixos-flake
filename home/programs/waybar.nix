@@ -154,7 +154,7 @@
             * {
           /* `otf-font-awesome` is required to be installed for icons */
           font-family: PT Sans, Hack Nerd Font Mono, sans-serif;
-          font-size: 14px;
+          font-size: 20px;
       }
 
       window#waybar {
