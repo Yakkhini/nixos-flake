@@ -4,6 +4,9 @@
   pkgs,
   ...
 }: {
+  # For Mount NTFS disks
+  boot.supportedFilesystems = ["ntfs"];
+
   boot.loader = {
     efi.canTouchEfiVariables = true;
     efi.efiSysMountPoint = "/boot/efi";
