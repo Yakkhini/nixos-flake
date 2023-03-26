@@ -47,6 +47,7 @@
     pkgs.vscode-fhs
     pkgs.logseq
     pkgs.zotero
+    pkgs.wpsoffice-cn
 
     # Security
     pkgs.gopass
