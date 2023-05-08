@@ -25,6 +25,8 @@
     ## others
     pkgs.gnome.nautilus
 
+    # Tool (tlp for powersave, ncdu for disk management)
+
     # Shell
     pkgs.tilix
 
