@@ -62,6 +62,12 @@
   # Systemd tmpfiles.d
   systemd.tmpfiles.rules = ["w /sys/power/image_size - - - - 0"];
 
+  # Waydroid support
+  virtualisation = {
+    waydroid.enable = true;
+    lxd.enable = true;
+  };
+
   # ADB
   programs.adb.enable = true;
 
