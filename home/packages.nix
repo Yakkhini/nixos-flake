@@ -57,6 +57,7 @@
 
     #Code
     pkgs.julia-lts-bin
+    pkgs.poetry
 
     # Security
     pkgs.gopass
