@@ -51,6 +51,10 @@
     pkgs.zotero
     pkgs.wpsoffice-cn
 
+    # Study
+    pkgs.anki-bin
+    pkgs.gnome.pomodoro
+
     # Security
     pkgs.gopass
     pkgs.gopass-jsonapi
