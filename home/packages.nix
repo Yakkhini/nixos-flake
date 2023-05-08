@@ -53,5 +53,6 @@
 
     # Security
     pkgs.gopass
+    pkgs.gopass-jsonapi
   ];
 }
