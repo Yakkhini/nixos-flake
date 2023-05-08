@@ -55,6 +55,9 @@
     pkgs.anki-bin
     pkgs.gnome.pomodoro
 
+    #Code
+    pkgs.julia-lts-bin
+
     # Security
     pkgs.gopass
     pkgs.gopass-jsonapi
