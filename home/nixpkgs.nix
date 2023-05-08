@@ -14,7 +14,7 @@
     allowUnfree = true;
     packageOverrides = pkgs: {
       papirus-icon-theme = pkgs.papirus-icon-theme.override {
-        color = "adwaita";
+        color = "red";
       };
     };
   };

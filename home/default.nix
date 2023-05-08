@@ -37,7 +37,7 @@
       XDG_SCREENSHOTS_DIR = "$HOME/Pictures/ScreenShots";
       BROWSER = "firefox";
       EDITOR = "vim";
-      GTK_THEME = "Orchis-Red-Dark-Compact";
+      GTK_THEME = "Orchis-Red";
       XCURSOR_SIZE = "32";
       XCURSOR_NAME = "Bibata-Original-Classic";
     };
@@ -83,8 +83,8 @@
 
     gtk = {
       enable = true;
-      theme.name = "Orchis-Red-Dark-Compact";
-      iconTheme.name = "Papirus-Dark";
+      theme.name = "Orchis-Red";
+      iconTheme.name = "Papirus";
       cursorTheme.name = "Bibata-Original-Classic";
       cursorTheme.size = 32;
       font.name = "PT Sans Caption";

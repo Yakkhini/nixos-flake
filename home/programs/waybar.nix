@@ -11,8 +11,8 @@
         ];
         modules-right = [
           "idle_inhibitor"
-          "tray"
           "pulseaudio"
+          "tray"
           "network"
           "cpu"
           "memory"
@@ -362,7 +362,7 @@
       }
 
       #tray {
-          background-color: #2980b9;
+          background-color: #ecf0f1;
       }
 
       #tray > .passive {
