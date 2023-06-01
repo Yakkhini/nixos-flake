@@ -10,6 +10,10 @@
     };
     nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
     hyprland.url = "github:hyprwm/Hyprland";
+    hyprwm-contrib = {
+      url = "github:hyprwm/contrib";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -19,6 +23,7 @@
     nur,
     nix-doom-emacs,
     hyprland,
+    hyprwm-contrib,
     ...
   } @ inputs: {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;

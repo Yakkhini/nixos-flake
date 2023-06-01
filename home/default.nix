@@ -6,10 +6,13 @@
   nur,
   nix-doom-emacs,
   hyprland,
+  specialArgs,
   ...
 }: {
   home-manager.useGlobalPkgs = false;
   home-manager.useUserPackages = true;
+
+  home-manager.extraSpecialArgs = specialArgs;
 
   home-manager.users.yakkhini = {pkgs, ...}: {
     home.stateVersion = "22.11";

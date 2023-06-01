@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  hyprwm-contrib,
+  ...
+}: {
   nixpkgs.overlays = [
     (self: super: {
       waybar-hyprland = super.waybar.overrideAttrs (oldAttrs: {
@@ -9,6 +13,7 @@
         mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
       });
     })
+    hyprwm-contrib.overlays.default
   ];
   nixpkgs.config = {
     allowUnfree = true;
