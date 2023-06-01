@@ -13,6 +13,7 @@
           "idle_inhibitor"
           "pulseaudio"
           "tray"
+          "custom/grimblast"
           "network"
           "cpu"
           "memory"
@@ -141,11 +142,10 @@
           tooltip = false;
           on-click = "wlogout";
         };
-        "custom/grimshot" = {
+        "custom/grimblast" = {
           format = "";
-          on-click = "grimshot save output $HOME/Pictures/ScreenShots/$USER@$HOST_`date +%Y%m%d%H%M%S.png`";
-          on-click-middle = "grimshot save window $HOME/Pictures/ScreenShots/$USER@$HOST_`date +%Y%m%d%H%M%S.png`";
-          on-click-right = "grimshot save area $HOME/Pictures/ScreenShots/$USER@$HOST_`date +%Y%m%d%H%M%S.png`";
+          on-click = "grimblast --notify save area $HOME/Pictures/ScreenShots/$USER@$HOST_`date +%Y%m%d%H%M%S.png`";
+          on-click-right = "grimblast --notify save output $HOME/Pictures/ScreenShots/$USER@$HOST_`date +%Y%m%d%H%M%S.png`";
           tooltip = false;
         };
       };
@@ -237,6 +237,7 @@
       #wireplumber,
       #custom-media,
       #tray,
+      #custom-grimblast
       #mode,
       #idle_inhibitor,
       #scratchpad,
@@ -361,6 +362,12 @@
           background-color: #eb4d4b;
       }
 
+      #custom-grimblast {
+        margin: 0px 0px;
+        padding: 0px 10px;
+        background-color: #ecf0f1;
+        color: #2d3436;
+      }
       #tray {
           background-color: #ecf0f1;
       }
