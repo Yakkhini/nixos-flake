@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  hyprland,
   ...
 }: {
   home.packages = [
@@ -34,7 +35,6 @@
 
     # Browsers
     pkgs.firefox
-    pkgs.brave
 
     # Chat
     pkgs.neomutt
@@ -51,7 +51,6 @@
     pkgs.vscode-fhs
     pkgs.logseq
     pkgs.zotero
-    pkgs.wpsoffice-cn
 
     # Study
     pkgs.anki-bin
