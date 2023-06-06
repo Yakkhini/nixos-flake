@@ -42,6 +42,13 @@
     XMODIFIERS = "@im=fcitx";
   };
 
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      hyprland.packages.x86_64-linux.xdg-desktop-portal-hyprland
+    ];
+  };
+
   # Mount Disks
   fileSystems."/mnt/diskc" = {
     device = "/dev/nvme0n1p3";
@@ -98,8 +105,15 @@
   services.tlp.enable = true;
 
   # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  security.rtkit.enable = true;
+  services.pipewire = {
+  enable = true;
+  alsa.enable = true;
+  alsa.support32Bit = true;
+  pulse.enable = true;
+  # If you want to use JACK applications, uncomment this
+  #jack.enable = true;
+  };
 
   # Pam
   security.pam.services.swaylock = {}; # swaylock
