@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  hyprland,
+  ...
+}: {
   # imports = [
   #   ./eww.nix
   # ];

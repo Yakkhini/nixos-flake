@@ -1,4 +1,8 @@
-{pkgs, hyprland, ...}: {
+{
+  pkgs,
+  hyprland,
+  ...
+}: {
   programs.waybar = {
     enable = true;
     package = hyprland.packages.x86_64-linux.waybar-hyprland;
