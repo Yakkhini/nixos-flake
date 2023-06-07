@@ -86,31 +86,31 @@
             critical = 95;
           };
           interval = 5;
-          format = "{percentage_used}% {free} ";
+          format = "{percentage_used}% {free} 󰋊";
           path = "/";
         };
         network = {
           format-wifi = "{essid} ({signalStrength}%) ";
-          format-ethernet = "{ifname} ";
-          format-alt = "{ifname}: {ipaddr}/{cidr} ";
-          format-linked = "{ifname} (No IP) ";
-          format-disconnected = "Disconnected ";
+          format-ethernet = "{ifname} 󰈀";
+          format-alt = "{ifname}: {ipaddr}/{cidr} 󰖟";
+          format-linked = "{ifname} (No IP) 󰖟";
+          format-disconnected = "Disconnected 󰕑";
         };
         pulseaudio = {
           format = "{volume}% {icon} {format_source}";
           format-bluetooth = "{volume}% {icon} {format_source}";
-          format-muted = "婢 {format_source}";
+          format-muted = " {format_source}";
           format-source = "{volume}% ";
           format-source-muted = "";
           format-icons = {
-            headphones = "";
-            speaker = "蓼";
-            hdmi = "﴿";
-            headset = "";
+            headphones = "󰋋";
+            speaker = "󰓃";
+            hdmi = "󰽟";
+            headset = "󰋎";
             phone = "";
             portable = "";
             car = "";
-            hifi = "";
+            hifi = "󰐵";
             default = ["" "" ""];
           };
           scroll-step = 1;
@@ -124,7 +124,7 @@
           };
         };
         battery = {
-          format-icons = ["" "" "" "" ""];
+          format-icons = ["󰁺" "󰁼" "󰁿" "󰂁" "󰁹"];
           states = {
             good = 75;
             medium = 50;
@@ -132,9 +132,9 @@
             critical = 15;
           };
           format = "{capacity}% {icon}";
-          format-charging = "{capacity}% ";
+          format-charging = "{capacity}% 󰂄";
           format-plugged = "{capacity}% ";
-          format-plugged-full = "";
+          format-plugged-full = "󰁹";
           format-alt = "{time} {icon}";
         };
         tray = {
@@ -147,7 +147,7 @@
           on-click = "wlogout";
         };
         "custom/grimblast" = {
-          format = "";
+          format = "󰹑";
           on-click = "grimblast --notify save area $HOME/Pictures/ScreenShots/$USER@$HOST_`date +%Y%m%d%H%M%S.png`";
           on-click-right = "grimblast --notify save output $HOME/Pictures/ScreenShots/$USER@$HOST_`date +%Y%m%d%H%M%S.png`";
           tooltip = false;
