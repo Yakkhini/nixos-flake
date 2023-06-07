@@ -1,6 +1,6 @@
 # The Way to Nix
 
-> 须知 1：你不应当从本文章中照抄 **任何你不理解的命令和操作!** 我的博客只是二手知识，并且缺乏时效性。本篇文章主要写于 NixOS 22.11 版本。你对你机器负有第一责任，所以应尽量按照受维护的官方文档来执行操作尤其是高危操作（如 **安装系统**）。而文章的作用是帮助你了解和熟悉那些东西，达到祛魅和扫除迷茫的效果。
+> 须知 1：你不应当从本文章中照抄 **任何你不理解的命令和操作！** 我的博客只是二手知识，并且缺乏时效性。本篇文章主要写于 NixOS 22.11 版本。你对你机器负有第一责任，所以应尽量按照受维护的官方文档来执行操作尤其是高危操作（如 **安装系统**）。而文章的作用是帮助你了解和熟悉那些东西，达到祛魅和扫除迷茫的效果。
 > 
 > 须知 2：关于本文任何的表述错误、表述缺失、表述模糊，欢迎在两个仓库 [github:Yakkhini/YeChaNvCinema](https://github.com/Yakkhini/YeChaNvCinema) 和 [github:Yakkhini/nixos-flake](https://github.com/Yakkhini/nixos-flake)（这个暂为私密 repo）中提 Issues。如果感觉内容有帮助，也可以 star 这两个仓库。
 
@@ -91,7 +91,7 @@ Hello, world!
 
 ### 完美地从 Arch 系发行版中卸载 Nix 包管理器，并从官方源单用户重装
 
-在尝试过 Nix 包管理器后，想要转移到 NixOS这一发行版的想法由然而生。使用 **LUSTRATE** 安装的步骤在 [NixOS Manual 2.4.5. Installing from another Linux distribution](https://nixos.org/manual/nixos/stable/index.html#sec-installing-from-other-distro) 一节中可以找到。注意步骤 4 到 8 对于 **LUSTRATE** 可以忽略（详见 Note）。
+在尝试过 Nix 包管理器后，想要转移到 NixOS 这一发行版的想法由然而生。使用 **LUSTRATE** 安装的步骤在 [NixOS Manual 2.4.5. Installing from another Linux distribution](https://nixos.org/manual/nixos/stable/index.html#sec-installing-from-other-distro) 一节中可以找到。注意步骤 4 到 8 对于 **LUSTRATE** 可以忽略（详见 Note）。
 
 但是问题在于，我的机器在按照步骤安装时总会产生一些不被期望的结果。我猜测这是因为我的 Manjaro 已经很久没有更新，导致 nix 版本老旧，与 NixOS 22.11 不匹配的结果。同时，使用 pacman 安装的 nix 包是多用户安装，与手册中的单用户安装不符。
 
@@ -187,7 +187,7 @@ UUID=FAFF-EE0B      	/boot/efi 	vfat      	rw,relatime,fmask=0022,dmask=0022,cod
 
 ### 安装 NixOS
 
-按手册指导把剩下的工作做完后，我还做了一些备份工作（如导出 GPG 密钥），放在了我的 `$HOME` 文件夹里。然后应该做的事是把 `$HOME` 也加入 `/etc/NIXOS_LUSTRATE` 文件里。我没有执行这一步骤,不过 NixOS 仍然没有将原 `/home` 放入 `/old-root`。其实它也无法放入，因为我 `/home` 在硬盘中单独有一个分区且占用了巨大的存储空间，以至于无法挪到 `/old-root` 中。其实这是一个有风险的操作，还是在 LUSTRARE 文件里声明它比较好。
+按手册指导把剩下的工作做完后，我还做了一些备份工作（如导出 GPG 密钥），放在了我的 `$HOME` 文件夹里。然后应该做的事是把 `$HOME` 也加入`/etc/NIXOS_LUSTRATE`文件里。我没有执行这一步骤，不过 NixOS 仍然没有将原原 `/home` 放入 `/old-root`。其实它也无法放入，因为我 `/home` 在硬盘中单独有一个分区且占用了巨大的存储空间，以至于无法挪到 `/old-root` 中。其实这是一个有风险的操作，还是在 LUSTRARE 文件里声明它比较好。
 
 卸载了一些软件，以给新系统腾出来很多空间。接着就开始安装系统了。
 
@@ -405,7 +405,7 @@ Nerd Fonts 的 override 方法就是在 NixOS Wiki 中找到的。接下来，�
 
 Override 顾名思义 **覆盖**，即通过改变软件包打包的 `default.nix` 脚本中一些选项以达到改变安装在本地软件包样子的目的。在 [Nixpkgs Manual Chapter 4. Overriding](https://nixos.org/manual/nixpkgs/stable/#chap-overrides) 中详细讲述了该怎样 override 软件包。
 
-我们可以通过观察软件包的打包脚本来考虑怎样 override 它们。在 NixOS Official 主页的软件包搜索栏处搜索相关软件包名称，点击结果条目的 「📦 Source」就可以看到软件包的脚本。
+我们可以通过观察软件包的打包脚本来考虑怎样 override 它们。在 NixOS Official 主页的软件包搜索栏处搜索相关软件包名称，点击结果条目的「📦 Source」就可以看到软件包的脚本。
 
 有些软件包的打包脚本函数参数里就存在可配置项，如 [papirus](https://github.com/NixOS/nixpkgs/blob/nixos-22.11/pkgs/data/icons/papirus-icon-theme/default.nix) 中首行的 `color ? null` 代表着 `color` 参数可配置，缺省值为 `null`。
 
