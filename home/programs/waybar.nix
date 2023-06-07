@@ -90,6 +90,7 @@
           path = "/";
         };
         network = {
+          interface = "wl*";
           format-wifi = "{essid} ({signalStrength}%) ";
           format-ethernet = "{ifname} 󰈀";
           format-alt = "{ifname}: {ipaddr}/{cidr} 󰖟";
@@ -124,7 +125,7 @@
           };
         };
         battery = {
-          format-icons = ["󰁺" "󰁼" "󰁿" "󰂁" "󰁹"];
+          format-icons = ["" "" "" "" ""];
           states = {
             good = 75;
             medium = 50;
@@ -132,9 +133,9 @@
             critical = 15;
           };
           format = "{capacity}% {icon}";
-          format-charging = "{capacity}% 󰂄";
+          format-charging = "{capacity}% ";
           format-plugged = "{capacity}% ";
-          format-plugged-full = "󰁹";
+          format-plugged-full = "";
           format-alt = "{time} {icon}";
         };
         tray = {
