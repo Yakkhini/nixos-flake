@@ -3,7 +3,7 @@
     ./alacritty.nix
     ./bash.nix
     ./emacs.nix
-    ./email.nix
+    # ./email.nix
     ./git.nix
     ./swaylock.nix
     ./vim.nix

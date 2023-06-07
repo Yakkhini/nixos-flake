@@ -21,7 +21,6 @@
       hyprland.homeManagerModules.default
       nur.nixosModules.nur
       ./programs
-      ./email.nix
       ./nixpkgs.nix
       ./packages.nix
       ./services.nix

@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  hyprland,
   ...
 }: {
   # Set your time zone.
@@ -71,12 +72,12 @@
 
   # Waydroid support
   virtualisation = {
-    docker = {
-      enable = true;
-      rootless.enable = true;
-    };
-    waydroid.enable = true;
-    lxd.enable = true;
+    # docker = {
+    #   enable = true;
+    #   rootless.enable = true;
+    # };
+    # waydroid.enable = true;
+    # lxd.enable = true;
   };
 
   # ADB

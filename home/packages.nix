@@ -30,15 +30,10 @@
 
     # Tool (tlp for powersave, ncdu for disk management)
 
-    # Shell
-    pkgs.tilix
-
     # Browsers
     pkgs.firefox
 
     # Chat
-    pkgs.neomutt
-    pkgs.msmtp
     pkgs.tdesktop
 
     # Media
@@ -53,7 +48,6 @@
     pkgs.zotero
 
     # Study
-    pkgs.anki-bin
     pkgs.gnome.pomodoro
 
     #Code
