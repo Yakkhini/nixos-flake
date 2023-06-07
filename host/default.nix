@@ -3,12 +3,14 @@
   lib,
   pkgs,
   home-manager,
+  nixpkgs,
   nur,
   ...
 }: {
   nix.settings.substituters = ["https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"];
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nix.settings.trusted-users = ["root" "@wheel"];
+  nix.registry.pkgs.flake = nixpkgs;
   # Systemwide nixpkgs config
   nixpkgs.config = {
     allowUnfree = true;

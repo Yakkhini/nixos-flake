@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  nixpkgs,
   home-manager,
   nur,
   nix-doom-emacs,
@@ -14,7 +15,8 @@
 
   home-manager.extraSpecialArgs = specialArgs;
 
-  home-manager.users.yakkhini = {pkgs, ...}: {
+  home-manager.users.yakkhini = {pkgs, nixpkgs, ...}: {
+    nix.registry.pkgs.flake = nixpkgs;
     home.stateVersion = "22.11";
     imports = [
       nix-doom-emacs.hmModule
