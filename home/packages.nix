@@ -35,6 +35,7 @@
 
     # Chat
     pkgs.tdesktop
+    pkgs.qq
 
     # Media
     pkgs.pavucontrol
@@ -51,8 +52,11 @@
     pkgs.gnome.pomodoro
 
     #Code
+    pkgs.gnumake
     pkgs.julia-lts-bin
     pkgs.poetry
+    pkgs.clang
+    pkgs.clang-tools
 
     # Security
     pkgs.gopass
