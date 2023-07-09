@@ -15,7 +15,11 @@
 
   home-manager.extraSpecialArgs = specialArgs;
 
-  home-manager.users.yakkhini = {pkgs, nixpkgs, ...}: {
+  home-manager.users.yakkhini = {
+    pkgs,
+    nixpkgs,
+    ...
+  }: {
     nix.registry.pkgs.flake = nixpkgs;
     home.stateVersion = "22.11";
     imports = [
@@ -40,7 +44,6 @@
       XDG_SESSION_DESKTOP = "Hyprland";
       XDG_SCREENSHOTS_DIR = "$HOME/Pictures/ScreenShots";
       BROWSER = "firefox";
-      EDITOR = "vim";
       GTK_THEME = "Orchis-Red";
       XCURSOR_SIZE = "32";
       XCURSOR_NAME = "Bibata-Original-Classic";
