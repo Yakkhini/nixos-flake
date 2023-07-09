@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations +3
 sudo nix-env --profile /nix/var/nix/profiles/per-user/root/channels --delete-generations +3
