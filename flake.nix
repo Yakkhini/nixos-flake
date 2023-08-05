@@ -27,6 +27,10 @@
     ...
   } @ inputs: {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
+    devShells.x86_64-linux.default =
+      nixpkgs.legacyPackages.x86_64-linux.mkShell {
+      };
+
     nixosConfigurations.yaksis-desktop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = inputs;
