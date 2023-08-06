@@ -7,7 +7,10 @@
   nur,
   ...
 }: {
-  nix.settings.substituters = ["https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"];
+  nix.settings.substituters = [
+    "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+    "https://mirrors.ustc.edu.cn/nix-channels/store"
+  ];
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nix.settings.trusted-users = ["root" "@wheel"];
   nix.registry.pkgs.flake = nixpkgs;
@@ -23,14 +26,14 @@
     ../home
   ];
 
-   hardware.opengl = {
+  hardware.opengl = {
     enable = true;
     driSupport = true;
     driSupport32Bit = true;
     extraPackages = [
       pkgs.intel-media-driver
       pkgs.mesa.drivers
-      ];
+    ];
   };
 
   # Copy the NixOS configuration file and link it from the resulting system
