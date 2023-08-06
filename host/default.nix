@@ -23,6 +23,16 @@
     ../home
   ];
 
+   hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+    extraPackages = [
+      pkgs.intel-media-driver
+      pkgs.mesa.drivers
+      ];
+  };
+
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
   # accidentally delete configuration.nix.

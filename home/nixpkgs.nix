@@ -1,6 +1,5 @@
 {
   pkgs,
-  hyprland,
   hyprwm-contrib,
   ...
 }: {
