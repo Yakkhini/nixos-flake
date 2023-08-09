@@ -1,5 +1,6 @@
 {
   config,
+  nur,
   pkgs,
   hyprland,
   ...
@@ -35,6 +36,7 @@
 
     # Chat
     pkgs.tdesktop
+    config.nur.repos.linyinfeng.wemeet
     pkgs.qq
 
     # Media
