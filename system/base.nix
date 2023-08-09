@@ -83,6 +83,9 @@
   # ADB
   programs.adb.enable = true;
 
+  #Blueman
+  services.blueman.enable = true;
+
   # Enable MTP service to serve android file transfer.
   services.gvfs.enable = true;
 
