@@ -8,6 +8,10 @@
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
 
+  # Documentation.
+  documentation.enable = true;
+  documentation.dev.enable = true;
+
   #console
   console = {
     earlySetup = true;
