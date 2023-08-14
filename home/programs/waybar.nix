@@ -99,7 +99,7 @@
         };
         pulseaudio = {
           format = "{volume}% {icon} {format_source}";
-          format-bluetooth = "{volume}% {icon} {format_source}";
+          format-bluetooth = "{volume}% {icon} {format_source}";
           format-muted = " {format_source}";
           format-source = "{volume}% ";
           format-source-muted = "";
@@ -133,7 +133,7 @@
             critical = 15;
           };
           format = "{capacity}% {icon}";
-          format-charging = "{capacity}% ";
+          format-charging = "{capacity}% ";
           format-plugged = "{capacity}% ";
           format-plugged-full = "";
           format-alt = "{time} {icon}";
