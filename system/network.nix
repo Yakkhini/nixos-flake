@@ -8,10 +8,7 @@
     nftables = {
       enable = true;
     };
-    networkmanager = {
-      enable = true; # Easiest to use and most distros use this by default.
-      firewallBackend = "nftables";
-    };
+    networkmanager.enable = true; # Easiest to use and most distros use this by default.
   };
 
   # Clash deamon service

@@ -2,7 +2,6 @@
   config,
   nur,
   pkgs,
-  hyprland,
   ...
 }: {
   home.packages = [

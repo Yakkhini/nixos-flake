@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  hyprland,
   ...
 }: {
   # Set your time zone.
@@ -49,10 +48,13 @@
 
   xdg.portal = {
     enable = true;
+    config.common.default = "*";
+    xdgOpenUsePortal = true;
     extraPortals = [
-      hyprland.packages.x86_64-linux.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-hyprland
     ];
   };
+  xdg.sounds.enable = true;
 
   # Mount Disks
   fileSystems."/mnt/diskc" = {

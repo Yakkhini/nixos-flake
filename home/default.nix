@@ -5,7 +5,6 @@
   nixpkgs,
   home-manager,
   nur,
-  hyprland,
   specialArgs,
   ...
 }: {
@@ -22,7 +21,6 @@
     nix.registry.pkgs.flake = nixpkgs;
     home.stateVersion = "22.11";
     imports = [
-      hyprland.homeManagerModules.default
       nur.nixosModules.nur
       ./programs
       ./nixpkgs.nix

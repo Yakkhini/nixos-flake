@@ -1,11 +1,7 @@
-{
-  pkgs,
-  hyprland,
-  ...
-}: {
+{pkgs, ...}: {
   programs.waybar = {
     enable = true;
-    package = hyprland.packages.x86_64-linux.waybar-hyprland;
+    # package = hyprland.packages.x86_64-linux.waybar-hyprland;
     settings = {
       mainBar = {
         layer = "top";
