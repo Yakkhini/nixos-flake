@@ -1,13 +1,12 @@
 {pkgs, ...}: {
   programs.waybar = {
     enable = true;
-    # package = hyprland.packages.x86_64-linux.waybar-hyprland;
     settings = {
       mainBar = {
         layer = "top";
         position = "top";
         modules-left = [
-          "wlr/workspaces"
+          "hyprland/workspaces"
         ];
         modules-right = [
           "idle_inhibitor"
@@ -22,7 +21,7 @@
           "battery"
           "clock"
         ];
-        "wlr/workspaces" = {
+        "hyprland/workspaces" = {
           on-click = "activate";
           disable-scroll = true;
           all-outputs = false;
