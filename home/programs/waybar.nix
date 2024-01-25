@@ -90,9 +90,8 @@
           path = "/";
         };
         network = {
-          interface = "wl*";
           format-wifi = "{essid} ({signalStrength}%) ";
-          format-ethernet = "{ifname} 󰈀";
+          format-ethernet = "Ethernet: {ifname} 󰈀";
           format-alt = "{ifname}: {ipaddr}/{cidr} 󰖟";
           format-linked = "{ifname} (No IP) 󰖟";
           format-disconnected = "Disconnected 󰕑";
