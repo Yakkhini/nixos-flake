@@ -5,7 +5,6 @@
   nixpkgs,
   home-manager,
   nur,
-  nix-doom-emacs,
   hyprland,
   specialArgs,
   ...
@@ -23,7 +22,6 @@
     nix.registry.pkgs.flake = nixpkgs;
     home.stateVersion = "22.11";
     imports = [
-      nix-doom-emacs.hmModule
       hyprland.homeManagerModules.default
       nur.nixosModules.nur
       ./programs

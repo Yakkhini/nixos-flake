@@ -8,10 +8,6 @@
       url = "github:nix-community/home-manager/release-23.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-doom-emacs = {
-      url = "github:nix-community/nix-doom-emacs";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     hyprland = {
       url = "github:hyprwm/Hyprland/v0.27.2";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -27,7 +23,6 @@
     nixpkgs,
     home-manager,
     nur,
-    nix-doom-emacs,
     hyprland,
     hyprwm-contrib,
     ...
