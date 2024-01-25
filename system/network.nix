@@ -22,7 +22,7 @@
     serviceConfig = {
       Type = "simple";
       Restart = "always";
-      ExecStart = "${config.nur.repos.linyinfeng.clash-premium}/bin/clash-premium -d /home/yakkhini/.config/clash";
+      ExecStart = "${pkgs.clash-meta}/bin/clash-meta -d /home/yakkhini/.config/clash";
     };
     wantedBy = ["multi-user.target"];
   };

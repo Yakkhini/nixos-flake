@@ -9,7 +9,7 @@
   environment.systemPackages = with pkgs; [
     man-pages
     man-pages-posix
-    config.nur.repos.linyinfeng.clash-premium
+    clash-meta
     greetd.wlgreet
     greetd.tuigreet
     neofetch
