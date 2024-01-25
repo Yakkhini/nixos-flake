@@ -45,9 +45,7 @@
     pkgs.okular # PDF reader
 
     # Writing
-    pkgs.texlive.combined.scheme-full
     pkgs.vscode-fhs
-    pkgs.logseq
     pkgs.zotero
 
     # Study
@@ -55,7 +53,6 @@
 
     #Code
     pkgs.gnumake
-    pkgs.julia-lts-bin
     pkgs.poetry
     pkgs.clang
     pkgs.clang-tools
