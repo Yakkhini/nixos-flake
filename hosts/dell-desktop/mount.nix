@@ -1,4 +1,10 @@
-# Mount Disks
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
+  # Mount Disks
   fileSystems."/mnt/diskc" = {
     device = "/dev/nvme0n1p3";
     noCheck = true;
@@ -17,3 +23,4 @@
 
   # Systemd tmpfiles.d
   systemd.tmpfiles.rules = ["w /sys/power/image_size - - - - 0"];
+}
