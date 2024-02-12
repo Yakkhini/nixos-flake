@@ -25,8 +25,8 @@
   imports = [
     ./hardware-configuration.nix
     ./boot.nix
-    ../system
-    ../home
+    ../../system
+    ../../home
   ];
 
   hardware.opengl = {

@@ -27,13 +27,13 @@
       nixpkgs.legacyPackages.x86_64-linux.mkShell {
       };
 
-    nixosConfigurations.yaksis-desktop = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.yaksis-dell-desktop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = inputs;
       modules = [
         home-manager.nixosModule
         nur.nixosModules.nur
-        ./host
+        ./hosts/dell-desktop
       ];
     };
   };
