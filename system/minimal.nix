@@ -6,9 +6,6 @@
   ...
 }: {
   imports = [
-    ./base.nix
-    ./clash.nix
-    ./display.nix
     ./users.nix
     ./network.nix
     ./i18n.nix

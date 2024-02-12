@@ -25,6 +25,7 @@
   imports = [
     ./hardware-configuration.nix
     ./boot.nix
+    ./mount.nix
     ../../system
     ../../home
   ];
