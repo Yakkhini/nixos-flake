@@ -8,6 +8,10 @@
       url = "github:nix-community/NixOS-WSL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    vscode-server = {
+      url = "github:nix-community/nixos-vscode-server";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -24,6 +28,7 @@
     home-manager,
     nur,
     wsl,
+    vscode-server,
     hyprwm-contrib,
     ...
   } @ inputs: {
