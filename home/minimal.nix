@@ -5,6 +5,7 @@
   nixpkgs,
   home-manager,
   nur,
+  vscode-server,
   specialArgs,
   ...
 }: {
@@ -22,25 +23,16 @@
     home.stateVersion = "22.11";
     imports = [
       nur.nixosModules.nur
-      ./programs
-      ./nixpkgs.nix
-      ./packages.nix
-      ./services.nix
+      vscode-server.nixosModules.home
+      ./programs/minimal.nix
+      ./packages-minimal.nix
     ];
+
+    services.vscode-server.enable = true;
 
     xdg.userDirs = {
       enable = true;
       createDirectories = true;
-    };
-
-    gtk = {
-      enable = true;
-      theme.name = "Orchis-Red";
-      iconTheme.name = "Papirus";
-      cursorTheme.name = "Bibata-Original-Classic";
-      cursorTheme.size = 32;
-      font.name = "PT Sans Caption";
-      font.size = 14;
     };
   };
 }

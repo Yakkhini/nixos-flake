@@ -8,7 +8,7 @@
   imports = [
     ./users.nix
     ./network.nix
-    ./i18n.nix
+    # ./i18n.nix
     ./fonts.nix
     ./pkgs.nix
   ];
