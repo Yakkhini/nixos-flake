@@ -5,5 +5,8 @@
   ...
 }: {
   home.packages = [
+    # Security
+    pkgs.gopass
+    pkgs.gopass-jsonapi
   ];
 }
