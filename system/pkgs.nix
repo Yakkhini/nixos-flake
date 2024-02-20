@@ -10,6 +10,7 @@
     nixd
     man-pages
     man-pages-posix
+    cifs-utils
     clash-meta
     greetd.wlgreet
     greetd.tuigreet
