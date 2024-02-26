@@ -1,4 +1,9 @@
 {pkgs, ...}: {
+  programs.starship = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
@@ -8,10 +13,6 @@
       enable = true;
       searchUpKey = "^[OA";
       searchDownKey = "^[OB";
-    };
-    prezto = {
-      enable = true;
-      prompt.theme = "pure";
     };
   };
 }
