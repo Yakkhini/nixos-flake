@@ -23,6 +23,7 @@
     imports = [
       nur.nixosModules.nur
       ./programs
+      ./i18n.nix
       ./nixpkgs.nix
       ./packages.nix
       ./services.nix
