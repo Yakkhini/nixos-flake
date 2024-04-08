@@ -2,7 +2,7 @@
   description = "Yaksis' NisOS configuration flake.";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/NUR";
     wsl = {
       url = "github:nix-community/NixOS-WSL";
@@ -13,7 +13,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.11";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprwm-contrib = {
@@ -55,6 +55,15 @@
         nur.nixosModules.nur
         wsl.nixosModules.wsl
         ./hosts/thinkbook-wsl
+      ];
+    };
+    nixosConfigurations.yaksis-thinkbook-desktop = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = inputs;
+      modules = [
+        home-manager.nixosModule
+        nur.nixosModules.nur
+        ./hosts/thinkbook-desktop
       ];
     };
   };

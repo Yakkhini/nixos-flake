@@ -14,8 +14,6 @@
   #console
   console = {
     earlySetup = true;
-    font = "LatArCyrHeb-19";
-    #   keyMap = "us";
     colors = [
       "393552" # Black
       "EB6F92" # Red
@@ -80,7 +78,7 @@
   # programs.sway.enable = true;
 
   # Configure keymap in X11
-  services.xserver.layout = "us";
+  services.xserver.xkb.layout = "us";
   # services.xserver.xkbOptions = {
   #   "eurosign:e";
   #   "caps:escape" # map caps to escape.
