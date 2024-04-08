@@ -8,6 +8,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../system
+    ../../home
   ];
 
   # Use the systemd-boot EFI boot loader.
