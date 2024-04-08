@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nur.url = "github:nix-community/NUR";
     wsl = {
       url = "github:nix-community/NixOS-WSL";
@@ -25,6 +26,7 @@
   outputs = {
     self,
     nixpkgs,
+    nixos-hardware,
     home-manager,
     nur,
     wsl,
@@ -63,6 +65,12 @@
       modules = [
         home-manager.nixosModule
         nur.nixosModules.nur
+        "${nixos-hardware}/common/cpu/intel"
+        "${nixos-hardware}/common/gpu/intel"
+        "${nixos-hardware}/common/pc/laptop"
+        "${nixos-hardware}/common/pc/laptop/acpi_call.nix"
+        "${nixos-hardware}/common/pc/laptop/ssd"
+        "${nixos-hardware}/common/hidpi.nix"
         ./hosts/thinkbook-desktop
       ];
     };
