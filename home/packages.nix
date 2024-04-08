@@ -59,5 +59,7 @@
     # Security
     pkgs.gopass
     pkgs.gopass-jsonapi
+
+    pkgs.steam
   ];
 }
