@@ -14,6 +14,7 @@
 
   # For Mount NTFS disks
   boot.supportedFilesystems = ["ntfs"];
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -35,6 +36,17 @@
   };
 
   services.thermald.enable = lib.mkDefault true;
+
+  # Steam need 32bit libs
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+    extraPackages = [
+      pkgs.intel-media-driver
+    ];
+  };
+
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
   #
