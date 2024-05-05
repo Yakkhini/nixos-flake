@@ -33,7 +33,6 @@
     git.enable = true;
     zsh.enable = true;
     dconf.enable = true;
-    vim.defaultEditor = true;
     light.enable = true;
   };
 }

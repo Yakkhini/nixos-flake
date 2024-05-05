@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   programs.helix = {
     enable = true;
-    # defaultEditor = true;
+    defaultEditor = true;
     settings = {
       theme = "rose_pine_dawn";
       editor = {
