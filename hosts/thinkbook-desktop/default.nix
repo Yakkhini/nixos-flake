@@ -37,6 +37,9 @@
 
   services.thermald.enable = lib.mkDefault true;
 
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+
   # Steam need 32bit libs
   hardware.opengl = {
     enable = true;
