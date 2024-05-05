@@ -100,7 +100,4 @@
     # If you want to use JACK applications, uncomment this
     #jack.enable = true;
   };
-
-  # Pam
-  security.pam.services.swaylock = {}; # swaylock
 }
