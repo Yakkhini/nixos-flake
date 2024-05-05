@@ -38,6 +38,7 @@
     pkgs.tdesktop
     config.nur.repos.linyinfeng.wemeet
     pkgs.qq
+    pkgs.wechat-uos # license needed
 
     # Media
     pkgs.pavucontrol

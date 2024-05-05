@@ -9,6 +9,9 @@
   ];
   nixpkgs.config = {
     allowUnfree = true;
+    permittedInsecurePackages = [
+      "openssl-1.1.1w"
+    ];
     packageOverrides = pkgs: {
       papirus-icon-theme = pkgs.papirus-icon-theme.override {
         color = "red";
