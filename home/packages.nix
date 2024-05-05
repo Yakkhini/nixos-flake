@@ -10,7 +10,8 @@
     pkgs.wl-clipboard
     pkgs.wlsunset
     pkgs.swayidle
-    pkgs.swaylock # additional config: security.pam.services.swaylock
+    pkgs.hypridle
+    pkgs.hyprlock
     pkgs.bemenu
     pkgs.hyprpaper
     pkgs.sway-contrib.grimshot
