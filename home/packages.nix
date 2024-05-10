@@ -44,6 +44,7 @@
     pkgs.pavucontrol
     pkgs.nomacs # Images viewer
     pkgs.okular # PDF reader
+    pkgs.vlc
 
     # Writing
     pkgs.vscode-fhs
