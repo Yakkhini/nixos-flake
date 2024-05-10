@@ -34,5 +34,6 @@
     zsh.enable = true;
     dconf.enable = true;
     light.enable = true;
+    yazi.enable = true;
   };
 }
