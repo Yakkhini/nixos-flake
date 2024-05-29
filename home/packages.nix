@@ -56,6 +56,7 @@
     #Code
     pkgs.gnumake
     pkgs.poetry
+    pkgs.nixd
     pkgs.clang
     pkgs.clang-tools
 

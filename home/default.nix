@@ -5,6 +5,7 @@
   nixpkgs,
   home-manager,
   nur,
+  nixvim,
   specialArgs,
   ...
 }: {
@@ -22,6 +23,7 @@
     home.stateVersion = "22.11";
     imports = [
       nur.nixosModules.nur
+      nixvim.homeManagerModules.nixvim
       ./programs
       ./i18n.nix
       ./nixpkgs.nix
