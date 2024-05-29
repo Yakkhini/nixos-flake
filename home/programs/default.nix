@@ -10,6 +10,7 @@
     ./nixvim.nix
     ./shelltools.nix
     ./swaylock.nix
+    ./tofi.nix
     ./vim.nix
     ./waybar.nix
     ./zsh.nix

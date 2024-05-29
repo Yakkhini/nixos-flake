@@ -1,6 +1,5 @@
 {
   config,
-  nur,
   pkgs,
   ...
 }: {
@@ -12,7 +11,6 @@
     pkgs.swayidle
     pkgs.hypridle
     pkgs.hyprlock
-    pkgs.bemenu
     pkgs.hyprpaper
     pkgs.sway-contrib.grimshot
     pkgs.grim
