@@ -7,6 +7,7 @@
     # ./email.nix
     ./helix.nix
     ./git.nix
+    ./nixvim.nix
     ./shelltools.nix
     ./swaylock.nix
     ./vim.nix
