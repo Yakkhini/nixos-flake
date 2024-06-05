@@ -28,6 +28,7 @@
     pkgs.gnome.nautilus
 
     # Tool (tlp for powersave, ncdu for disk management)
+    pkgs.alejandra
 
     # Browsers
     pkgs.firefox
