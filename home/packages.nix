@@ -36,6 +36,7 @@
     # Chat
     pkgs.tdesktop
     config.nur.repos.linyinfeng.wemeet
+    pkgs.feishu
     pkgs.qq
     pkgs.wechat-uos # license needed
 
