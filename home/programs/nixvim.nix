@@ -24,7 +24,20 @@
     #   enable = true;
     #   colorscheme = "rose-pine";
     # };
-    colorschemes.oxocarbon.enable = true;
+    colorschemes.catppuccin = {
+      enable = true;
+      settings = {
+        flavour = "mocha";
+        term_colors = true;
+        integrations = {
+          lsp_saga = true;
+          neotree = true;
+          noice = true;
+          notify = true;
+          which_key = true;
+        };
+      };
+    };
     plugins = {
       alpha = {
         enable = true;
@@ -38,7 +51,6 @@
         };
       };
       bufferline.enable = true;
-      clangd-extensions.enable = true;
       cmp = {
         enable = true;
         settings.sources = [
@@ -79,7 +91,16 @@
         suggestion.enabled = false;
       };
       comment.enable = true;
+      conform-nvim = {
+        enable = true;
+        formattersByFt = {
+          nix = ["alejandra"];
+          c = ["clang-format"];
+          scala = ["scalafmt"];
+        };
+      };
       direnv.enable = true;
+      gitsigns.enable = true;
       indent-blankline.enable = true;
       telescope = {
         enable = true;
@@ -103,7 +124,10 @@
         };
       };
       lazygit.enable = true;
-      lualine.enable = true;
+      lualine = {
+        enable = true;
+        theme = "catppuccin";
+      };
       lsp = {
         enable = true;
         servers.clangd.enable = true;
@@ -111,6 +135,12 @@
         servers.nixd.enable = true;
       };
       lspsaga.enable = true;
+      lspkind = {
+        enable = true;
+        symbolMap = {
+          Copilot = "";
+        };
+      };
       luasnip = {
         enable = true;
         extraConfig = {
@@ -120,7 +150,13 @@
       };
       neo-tree = {
         enable = true;
-        addBlankLineAtTop = true;
+      };
+      neorg.enable = true;
+      noice.enable = true;
+      notify = {
+        enable = true;
+        maxHeight = 10;
+        maxWidth = 50;
       };
       nvim-autopairs.enable = true;
       toggleterm = {
@@ -191,10 +227,10 @@
         options.desc = "Close the current buffer";
       }
       {
-        mode = "t";
-        action = "<C-\\><C-n>";
-        key = "<Esc><Esc>";
-        options.desc = "Exit terminal mode";
+        mode = "n";
+        action = "<cmd>lua require('conform').format({lsp_fallback=true})<CR>";
+        key = "<leader>cf";
+        options.desc = "Format the current buffer";
       }
       {
         mode = "n";
