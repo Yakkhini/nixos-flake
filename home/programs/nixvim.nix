@@ -234,6 +234,24 @@
       }
       {
         mode = "n";
+        action = "<cmd>Lspsaga hover_doc<CR>";
+        key = "<leader>k";
+        options.desc = "Show hover documentation";
+      }
+      {
+        mode = "n";
+        action = "<cmd>Lspsaga peek_definition<CR>";
+        key = "gd";
+        options.desc = "Peek definition";
+      }
+      {
+        mode = "n";
+        action = "<cmd>Lspsaga code_action<CR>";
+        key = "<leader>a";
+        options.desc = "Show code actions";
+      }
+      {
+        mode = "n";
         action = "<cmd>Telescope session-lens<CR>";
         key = "<leader>fs";
         options.desc = "Search for a session";
