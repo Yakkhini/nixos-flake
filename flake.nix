@@ -17,6 +17,7 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    catppuccin.url = "github:catppuccin/nix";
     hyprwm-contrib = {
       url = "github:hyprwm/contrib";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -35,6 +36,7 @@
     nur,
     wsl,
     vscode-server,
+    catppuccin,
     hyprwm-contrib,
     nixvim,
     ...
@@ -69,6 +71,7 @@
       specialArgs = inputs;
       modules = [
         home-manager.nixosModule
+        catppuccin.nixosModules.catppuccin
         nur.nixosModules.nur
         "${nixos-hardware}/common/cpu/intel"
         "${nixos-hardware}/common/gpu/intel"

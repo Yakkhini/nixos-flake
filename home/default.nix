@@ -5,6 +5,7 @@
   nixpkgs,
   home-manager,
   nur,
+  catppuccin,
   nixvim,
   specialArgs,
   ...
@@ -23,6 +24,7 @@
     home.stateVersion = "22.11";
     imports = [
       nur.nixosModules.nur
+      catppuccin.homeManagerModules.catppuccin
       nixvim.homeManagerModules.nixvim
       ./programs
       ./i18n.nix
@@ -32,6 +34,8 @@
       ./waylandSway.nix
       ./waylandHyprland
     ];
+
+    catppuccin.flavor = "mocha";
 
     home.sessionVariables = {
       QT_AUTO_SCREEN_SCALE_FACTOR = 1;
