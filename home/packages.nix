@@ -65,6 +65,8 @@
     pkgs.gopass
     pkgs.gopass-jsonapi
 
-    pkgs.steam
+    (pkgs.steam.override {
+      extraPkgs = pkgs: [pkgs.source-han-sans]; # Add no-vf CJK fonts to show CJK characters correctly
+    })
   ];
 }
