@@ -14,7 +14,6 @@
     pkgs.hyprpaper
     pkgs.sway-contrib.grimshot
     pkgs.grim
-    pkgs.wlogout
     ## hyprwm contrib
     pkgs.grimblast
     ## icons & themes
