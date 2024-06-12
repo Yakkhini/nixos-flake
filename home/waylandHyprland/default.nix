@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{...}: {
   # Additional hyprlock & hy
   wayland.windowManager.hyprland = {
     enable = true;
@@ -7,6 +7,21 @@
 
   xdg.configFile."hypr/hyprlock.conf".source = ./hyprlock.conf;
   xdg.configFile."hypr/hypridle.conf".source = ./hypridle.conf;
+
+  services.mako = {
+    enable = true;
+    catppuccin.enable = true;
+
+    defaultTimeout = 5000;
+
+    height = 300;
+    width = 500;
+
+    font = "monospace 12";
+    borderRadius = 10;
+    borderSize = 2;
+    padding = "10";
+  };
 
   xsession.windowManager.i3.enable = true;
 
