@@ -48,9 +48,6 @@
       auto-session = {
         enable = true;
         autoSession.enableLastSession = true;
-        extraOptions = {
-          pre_save_cmds = ["Neotree close"];
-        };
       };
       bufferline.enable = true;
       cmp = {
@@ -152,6 +149,7 @@
       };
       neo-tree = {
         enable = true;
+        autoCleanAfterSessionRestore = true;
       };
       neorg.enable = true;
       noice = {
