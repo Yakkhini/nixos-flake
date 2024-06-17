@@ -19,6 +19,8 @@
       smartcase = true;
 
       termguicolors = true;
+
+      showmode = false; # We already have a statusline
     };
     # colorschemes.base16 = {
     #   enable = true;
@@ -152,7 +154,15 @@
         enable = true;
       };
       neorg.enable = true;
-      noice.enable = true;
+      noice = {
+        enable = true;
+        routes = [
+          {
+            view = "mini";
+            filter = {event = "msg_showmode";};
+          }
+        ];
+      };
       notify = {
         enable = true;
         maxHeight = 10;
