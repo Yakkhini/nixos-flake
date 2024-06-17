@@ -18,5 +18,7 @@
       searchUpKey = "^[OA";
       searchDownKey = "^[OB";
     };
+    history.ignoreAllDups = true;
+    history.ignoreSpace = true;
   };
 }
