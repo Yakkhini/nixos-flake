@@ -41,10 +41,9 @@
   programs.virt-manager.enable = true;
 
   # Steam need 32bit libs
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
     extraPackages = [
       pkgs.intel-media-driver
     ];

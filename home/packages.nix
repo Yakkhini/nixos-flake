@@ -24,7 +24,7 @@
     pkgs.papirus-folders
     pkgs.papirus-icon-theme
     ## others
-    pkgs.gnome.nautilus
+    pkgs.nautilus
 
     # Tool (tlp for powersave, ncdu for disk management)
     pkgs.p7zip
@@ -50,9 +50,6 @@
     pkgs.neovide
     pkgs.vscode-fhs
     pkgs.zotero
-
-    # Study
-    pkgs.gnome.pomodoro
 
     #Code
     pkgs.gnumake
