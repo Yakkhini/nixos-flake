@@ -50,6 +50,8 @@
     pkgs.neovide
     pkgs.vscode-fhs
     pkgs.zotero
+    pkgs.typst
+    pkgs.typst-lsp
 
     #Code
     pkgs.gnumake

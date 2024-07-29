@@ -132,6 +132,7 @@
         servers.clangd.enable = true;
         servers.metals.enable = true;
         servers.nixd.enable = true;
+        servers.typst-lsp.enable = true;
       };
       lspsaga.enable = true;
       lspkind = {
@@ -147,6 +148,7 @@
           store_selection_keys = "<Tab>";
         };
       };
+      markdown-preview.enable = true;
       neo-tree = {
         enable = true;
         autoCleanAfterSessionRestore = true;
