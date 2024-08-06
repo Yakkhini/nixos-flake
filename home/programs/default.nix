@@ -9,6 +9,7 @@
     ./git.nix
     ./nixvim.nix
     ./shelltools.nix
+    ./ssh.nix
     ./swaylock.nix
     ./tofi.nix
     ./vim.nix
