@@ -93,6 +93,7 @@
       conform-nvim = {
         enable = true;
         formattersByFt = {
+          haskell = ["ormolu"];
           nix = ["alejandra"];
           c = ["clang-format"];
           scala = ["scalafmt"];
@@ -130,6 +131,7 @@
       lsp = {
         enable = true;
         servers.clangd.enable = true;
+        servers.hls.enable = true;
         servers.metals.enable = true;
         servers.nixd.enable = true;
         servers.typst-lsp.enable = true;
