@@ -92,7 +92,7 @@
       comment.enable = true;
       conform-nvim = {
         enable = true;
-        formattersByFt = {
+        settings.formatters_by_ft = {
           haskell = ["ormolu"];
           nix = ["alejandra"];
           c = ["clang-format"];
@@ -145,7 +145,7 @@
       };
       luasnip = {
         enable = true;
-        extraConfig = {
+        settings = {
           enable_autosnippets = true;
           store_selection_keys = "<Tab>";
         };
