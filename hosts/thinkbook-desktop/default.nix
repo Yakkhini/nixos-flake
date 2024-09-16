@@ -21,6 +21,10 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  powerManagement = {
+    enable = true;
+  };
+
   nix.channel.enable = false;
 
   nix.settings.substituters = [

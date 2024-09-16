@@ -87,8 +87,8 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
-  # Save Power with tlp Service
-  services.tlp.enable = true;
+  # Save Power with suto-cpufreq Service
+  services.auto-cpufreq.enable = true;
 
   # Enable sound.
   security.rtkit.enable = true;
