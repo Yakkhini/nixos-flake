@@ -126,7 +126,7 @@
       lazygit.enable = true;
       lualine = {
         enable = true;
-        theme = "catppuccin";
+        settings.options.theme = "catppuccin";
       };
       lsp = {
         enable = true;
@@ -155,7 +155,7 @@
         enable = true;
         autoCleanAfterSessionRestore = true;
       };
-      neorg.enable = true;
+      # neorg.enable = true;
       noice = {
         enable = true;
         routes = [
