@@ -47,6 +47,7 @@
     pkgs.vlc
 
     # Writing
+    pkgs.wpsoffice-cn
     pkgs.neovide
     pkgs.vscode-fhs
     pkgs.zotero
