@@ -4,7 +4,7 @@
     ./bash.nix
     ./direnv.nix
     #./emacs.nix
-    # ./email.nix
+    ./email.nix
     ./helix.nix
     ./git.nix
     ./nixvim.nix
