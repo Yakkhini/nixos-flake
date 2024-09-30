@@ -5,6 +5,19 @@
     extraConfig = import ./hyprland.conf;
   };
 
+  services.hyprpaper = {
+    enable = true;
+    settings = {
+      ipc = "on";
+      splash = false;
+      splash_offset = 2.0;
+
+      preload = ["/home/yakkhini/Pictures/WallPapers/for-night-mode-lovers.webp"];
+
+      wallpaper = ", /home/yakkhini/Pictures/WallPapers/for-night-mode-lovers.webp";
+    };
+  };
+
   xdg.configFile."hypr/hyprlock.conf".source = ./hyprlock.conf;
   xdg.configFile."hypr/hypridle.conf".source = ./hypridle.conf;
 

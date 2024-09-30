@@ -1,5 +1,5 @@
 {pkgs, ...}: {
   programs.swaylock.settings = {
-    image = "/home/vortexlove/Pictures/Wallpaper/Blade_runner_1.jpg";
+    # image = "/home/yakkhini/Pictures/WallPapers/1168620.png";
   };
 }

@@ -19,7 +19,7 @@
       # };
       terminal = "alacritty";
       output = {
-        "*".bg = "/home/vortexlove/Pictures/Wallpaper/Blade_Runner_car.jpg tile";
+        # "*".bg = "/home/yakkhini/Pictures/WallPapers/for-night-mode-lovers.webp tile";
         eDP-1.pos = "1920 0";
         DP-1.pos = "0 0";
       };
