@@ -61,6 +61,7 @@
       specialArgs = inputs;
       modules = [
         home-manager.nixosModule
+        catppuccin.nixosModules.catppuccin
         nur.nixosModules.nur
         wsl.nixosModules.wsl
         ./hosts/thinkbook-wsl
