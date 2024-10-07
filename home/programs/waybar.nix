@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  catppuccin,
+  ...
+}: {
   programs.waybar = {
     enable = true;
     settings = {
@@ -149,6 +153,8 @@
         };
       };
     };
+
+    catppuccin.enable = true;
     style = ''
             * {
           /* `otf-font-awesome` is required to be installed for icons */
@@ -242,7 +248,8 @@
       #scratchpad,
       #mpd {
           padding: 0 10px;
-          color: #ffffff;
+          background-color: @surface0;
+          color: @text;
       }
 
       #window,
@@ -261,17 +268,14 @@
       }
 
       #clock {
-          background-color: #64727D;
+        color: @rosewater;
       }
 
       #battery {
-          background-color: #ffffff;
-          color: #000000;
       }
 
       #battery.charging, #battery.plugged {
-          color: #ffffff;
-          background-color: #26A65B;
+          color: @green;
       }
 
       @keyframes blink {
@@ -282,8 +286,8 @@
       }
 
       #battery.critical:not(.charging) {
-          background-color: #f53c3c;
-          color: #ffffff;
+          background-color: @red;
+          color: @text;
           animation-name: blink;
           animation-duration: 0.5s;
           animation-timing-function: linear;
@@ -292,47 +296,42 @@
       }
 
       label:focus {
-          background-color: #000000;
+        background-color: #000000;
       }
 
       #cpu {
-          background-color: #2ecc71;
-          color: #000000;
+        color: @blue;
       }
 
       #memory {
-          background-color: #9b59b6;
+        color: @blue;
       }
 
       #disk {
-          background-color: #964B00;
+        color: @blue;
       }
 
       #backlight {
-          background-color: #90b1b1;
+        color: @teal;
       }
 
       #network {
-          background-color: #2980b9;
+        color: @mauve;
       }
 
       #network.disconnected {
-          background-color: #f53c3c;
       }
 
       #pulseaudio {
-          background-color: #f1c40f;
-          color: #000000;
+        color: @pink;
       }
 
       #pulseaudio.muted {
-          background-color: #90b1b1;
-          color: #2a5c45;
+          background-color: @teal;
+          color: @subtext0;
       }
 
       #wireplumber {
-          background-color: #fff0f5;
-          color: #000000;
       }
 
       #wireplumber.muted {
@@ -354,7 +353,7 @@
       }
 
       #temperature {
-          background-color: #f0932b;
+        color: @maroon;
       }
 
       #temperature.critical {
@@ -364,11 +363,10 @@
       #custom-grimblast {
         margin: 0px 0px;
         padding: 0px 10px;
-        background-color: #ecf0f1;
-        color: #2d3436;
+        background-color: @surface0;
+        color: @text;
       }
       #tray {
-          background-color: #ecf0f1;
       }
 
       #tray > .passive {
@@ -381,12 +379,12 @@
       }
 
       #idle_inhibitor {
-          background-color: #2d3436;
+        color: @teal;
       }
 
       #idle_inhibitor.activated {
-          background-color: #ecf0f1;
-          color: #2d3436;
+        background-color: @rosewater;
+        color: @overlay1;
       }
 
       #mpd {
