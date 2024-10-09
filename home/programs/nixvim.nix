@@ -47,7 +47,7 @@
       };
       auto-session = {
         enable = true;
-        autoSession.enableLastSession = true;
+        settings.auto_restore_last_session = true;
       };
       bufferline.enable = true;
       cmp = {
@@ -134,7 +134,7 @@
         servers.hls.enable = true;
         servers.metals.enable = true;
         servers.nixd.enable = true;
-        servers.typst-lsp.enable = true;
+        servers.typst_lsp.enable = true;
       };
       lspsaga.enable = true;
       lspkind = {
