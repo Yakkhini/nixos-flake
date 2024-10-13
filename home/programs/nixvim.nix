@@ -22,10 +22,6 @@
 
       showmode = false; # We already have a statusline
     };
-    # colorschemes.base16 = {
-    #   enable = true;
-    #   colorscheme = "rose-pine";
-    # };
     colorschemes.catppuccin = {
       enable = true;
       settings = {
