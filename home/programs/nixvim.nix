@@ -131,7 +131,10 @@
       lsp = {
         enable = true;
         servers.clangd.enable = true;
-        servers.hls.enable = true;
+        servers.hls = {
+          enable = true;
+          installGhc = false;
+        };
         servers.metals.enable = true;
         servers.nixd.enable = true;
         servers.typst_lsp.enable = true;
