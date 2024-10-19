@@ -1,14 +1,5 @@
 {pkgs, ...}: {
-  programs.starship = {
-    enable = true;
-    enableZshIntegration = true;
-    catppuccin.enable = true;
-  };
-
-  programs.fzf.enable = true;
-  programs.zoxide.enable = true;
-
-  programs.zsh = {
+    programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
     enableCompletion = true;
