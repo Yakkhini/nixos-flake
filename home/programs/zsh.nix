@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-    programs.zsh = {
+  programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
     enableCompletion = true;
