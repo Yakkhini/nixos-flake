@@ -10,7 +10,8 @@
     times-newer-roman
     openmoji-color
     noto-fonts
-    noto-fonts-cjk
+    noto-fonts-cjk-sans
+    noto-fonts-cjk-serif
     noto-fonts-emoji
     source-han-sans
     source-han-serif
