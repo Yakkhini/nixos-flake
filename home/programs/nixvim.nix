@@ -157,7 +157,7 @@
       # neorg.enable = true;
       noice = {
         enable = true;
-        routes = [
+        settings.routes = [
           {
             view = "mini";
             filter = {event = "msg_showmode";};
