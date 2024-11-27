@@ -45,6 +45,7 @@
     pkgs.nomacs # Images viewer
     pkgs.okular # PDF reader
     pkgs.vlc
+    pkgs.yesplaymusic
 
     # Writing
     pkgs.wpsoffice-cn
