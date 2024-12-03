@@ -6,7 +6,9 @@
 }: {
   # fonts
   fonts.packages = with pkgs; [
-    (nerdfonts.override {fonts = ["FiraCode" "Hack" "DroidSansMono"];})
+    nerd-fonts.fira-code
+    nerd-fonts.hack
+    nerd-fonts.droid-sans-mono
     times-newer-roman
     openmoji-color
     noto-fonts
