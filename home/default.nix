@@ -36,6 +36,10 @@
     ];
 
     catppuccin.flavor = "mocha";
+    catppuccin.pointerCursor = {
+      accent = "dark";
+      enable = true;
+    };
 
     home.sessionVariables = {
       QT_AUTO_SCREEN_SCALE_FACTOR = 1;
@@ -48,17 +52,11 @@
       XDG_SCREENSHOTS_DIR = "$HOME/Pictures/ScreenShots";
       BROWSER = "firefox";
       GTK_THEME = "Orchis-Red";
-      XCURSOR_SIZE = "32";
-      XCURSOR_NAME = "Bibata-Original-Classic";
     };
 
     home.pointerCursor = {
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Original-Classic";
       size = 32;
-      x11.defaultCursor = "Bibata-Original-Classic";
-      gtk.enable = true;
-      x11.enable = true;
+      hyprcursor.enable = true;
     };
 
     xdg.userDirs = {
@@ -95,8 +93,6 @@
       enable = true;
       theme.name = "Orchis-Red";
       iconTheme.name = "Papirus";
-      cursorTheme.name = "Bibata-Original-Classic";
-      cursorTheme.size = 32;
       font.name = "PT Sans Caption";
       font.size = 14;
     };
