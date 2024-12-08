@@ -8,6 +8,7 @@
   programs.fzf.enable = true;
   programs.zoxide.enable = true;
 
+  programs.thefuck.enable = true;
   programs.navi.enable = true;
 
   programs.ripgrep.enable = true;
