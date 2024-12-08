@@ -134,6 +134,7 @@
         servers.metals.enable = true;
         servers.nixd.enable = true;
         servers.typst_lsp.enable = true;
+        servers.solargraph.enable = true;
       };
       lspsaga.enable = true;
       lspkind = {

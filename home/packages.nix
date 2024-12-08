@@ -57,6 +57,8 @@
     pkgs.typst-lsp
 
     #Code
+    pkgs.ruby
+    pkgs.ruby.gems.solargraph
     pkgs.gnumake
     pkgs.poetry
     pkgs.nixd
