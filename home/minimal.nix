@@ -26,7 +26,7 @@
     imports = [
       catppuccin.homeManagerModules.catppuccin
       nixvim.homeManagerModules.nixvim
-      nur.nixosModules.nur
+      nur.modules.homeManager.default
       vscode-server.nixosModules.home
       ./programs/minimal.nix
       ./packages-minimal.nix

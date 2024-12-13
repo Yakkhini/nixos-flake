@@ -51,7 +51,7 @@
       specialArgs = inputs;
       modules = [
         home-manager.nixosModule
-        nur.nixosModules.nur
+        nur.modules.nixos.default
         ./hosts/dell-desktop
       ];
     };
@@ -62,7 +62,7 @@
       modules = [
         home-manager.nixosModule
         catppuccin.nixosModules.catppuccin
-        nur.nixosModules.nur
+        nur.modules.nixos.default
         wsl.nixosModules.wsl
         ./hosts/thinkbook-wsl
       ];
@@ -73,13 +73,13 @@
       modules = [
         home-manager.nixosModule
         catppuccin.nixosModules.catppuccin
-        nur.nixosModules.nur
         "${nixos-hardware}/common/cpu/intel"
         "${nixos-hardware}/common/gpu/intel"
         "${nixos-hardware}/common/pc/laptop"
         "${nixos-hardware}/common/pc/laptop/acpi_call.nix"
         "${nixos-hardware}/common/pc/laptop/ssd"
         "${nixos-hardware}/common/hidpi.nix"
+        nur.modules.nixos.default
         ./hosts/thinkbook-desktop
       ];
     };

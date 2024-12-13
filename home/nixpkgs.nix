@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+  nur,
   hyprwm-contrib,
   ...
 }: {
@@ -17,7 +18,7 @@
         color = "red";
       };
       fcitx5-rime = pkgs.fcitx5-rime.override {
-        librime = config.nur.repos.xddxdd.lantianCustomized.librime-with-plugins;
+        librime = nur.legacyPackages."x86_64-linux".repos.xddxdd.lantianCustomized.librime-with-plugins;
       };
     };
   };

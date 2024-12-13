@@ -23,7 +23,7 @@
     nix.registry.pkgs.flake = nixpkgs;
     home.stateVersion = "22.11";
     imports = [
-      nur.nixosModules.nur
+      nur.modules.homeManager.default
       catppuccin.homeManagerModules.catppuccin
       nixvim.homeManagerModules.nixvim
       ./programs
