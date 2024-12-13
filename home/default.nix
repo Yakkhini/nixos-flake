@@ -67,7 +67,10 @@
     gtk = {
       enable = true;
       theme.name = "Orchis-Red";
-      iconTheme.name = "Papirus";
+      catppuccin.icon = {
+        enable = true;
+        accent = "maroon";
+      };
       font.name = "PT Sans Caption";
       font.size = 14;
     };

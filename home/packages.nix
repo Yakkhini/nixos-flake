@@ -21,8 +21,6 @@
     pkgs.viu
     pkgs.vanilla-dmz
     pkgs.orchis-theme
-    pkgs.papirus-folders
-    pkgs.papirus-icon-theme
     ## others
     pkgs.nautilus
 
