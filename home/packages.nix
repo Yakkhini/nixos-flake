@@ -27,6 +27,7 @@
     # Tool (tlp for powersave, ncdu for disk management)
     pkgs.p7zip
     pkgs.alejandra
+    pkgs.ueberzugpp # Image Preview for alacritty
 
     # Browsers
     pkgs.firefox
