@@ -1,8 +1,8 @@
 {pkgs, ...}: {
+  catppuccin.helix.enable = true;
   programs.helix = {
     enable = true;
     defaultEditor = true;
-    catppuccin.enable = true;
     settings = {
       editor = {
         line-number = "relative";

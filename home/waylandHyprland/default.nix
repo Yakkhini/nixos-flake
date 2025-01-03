@@ -23,9 +23,9 @@
 
   programs.wlogout.enable = true;
 
+  catppuccin.mako.enable = true;
   services.mako = {
     enable = true;
-    catppuccin.enable = true;
 
     defaultTimeout = 5000;
 

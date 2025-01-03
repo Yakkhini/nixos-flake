@@ -3,6 +3,7 @@
   catppuccin,
   ...
 }: {
+  catppuccin.waybar.enable = true;
   programs.waybar = {
     enable = true;
     settings = {
@@ -154,7 +155,6 @@
       };
     };
 
-    catppuccin.enable = true;
     style = ''
             * {
           /* `otf-font-awesome` is required to be installed for icons */

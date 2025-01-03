@@ -36,7 +36,7 @@
     ];
 
     catppuccin.flavor = "mocha";
-    catppuccin.pointerCursor = {
+    catppuccin.cursors = {
       accent = "dark";
       enable = true;
     };
@@ -64,13 +64,13 @@
       createDirectories = true;
     };
 
+    catppuccin.gtk.icon = {
+      enable = true;
+      accent = "maroon";
+    };
     gtk = {
       enable = true;
       theme.name = "Orchis-Red";
-      catppuccin.icon = {
-        enable = true;
-        accent = "maroon";
-      };
       font.name = "PT Sans Caption";
       font.size = 14;
     };

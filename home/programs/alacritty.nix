@@ -1,4 +1,5 @@
 {...}: {
+  catppuccin.alacritty.enable = true;
   programs.alacritty = {
     enable = true;
     settings = {
@@ -8,6 +9,5 @@
         size = 14.0;
       };
     };
-    catppuccin.enable = true;
   };
 }
