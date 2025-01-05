@@ -53,7 +53,8 @@
     pkgs.vscode-fhs
     pkgs.zotero
     pkgs.typst
-    pkgs.typst-lsp
+    pkgs.tinymist
+    pkgs.typstyle
 
     #Code
     pkgs.ruby

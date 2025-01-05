@@ -133,8 +133,15 @@
         };
         servers.metals.enable = true;
         servers.nixd.enable = true;
-        servers.typst_lsp.enable = true;
         servers.solargraph.enable = true;
+        servers.tinymist = {
+          enable = true;
+          settings = {
+            exportPdf = "onSave";
+            compileStatus = "enable";
+            formatterMode = "typstyle";
+          };
+        };
       };
       lspsaga.enable = true;
       lspkind = {
