@@ -27,13 +27,7 @@
       settings = {
         flavour = "mocha";
         term_colors = true;
-        integrations = {
-          lsp_saga = true;
-          neotree = true;
-          noice = true;
-          notify = true;
-          which_key = true;
-        };
+        default_integrations = true;
       };
     };
     plugins = {
@@ -98,7 +92,10 @@
         };
       };
       direnv.enable = true;
-      gitsigns.enable = true;
+      gitsigns = {
+        enable = true;
+        settings.current_line_blame = true;
+      };
       indent-blankline.enable = true;
       telescope = {
         enable = true;
@@ -192,7 +189,12 @@
           open_mapping = "[[<C-t>]]";
         };
       };
-      treesitter.enable = true;
+      treesitter = {
+        enable = true;
+        settings = {
+          highlight.enable = true;
+        };
+      };
       web-devicons.enable = true;
       which-key.enable = true;
     };
@@ -247,6 +249,12 @@
         action = "<cmd>bdelete<CR>";
         key = "<S-d>";
         options.desc = "Close the current buffer";
+      }
+      {
+        mode = "n";
+        action = "<cmd>BufferLineCloseOthers<CR>";
+        key = "<leader>bo";
+        options.desc = "Close all other buffers";
       }
       {
         mode = "n";
