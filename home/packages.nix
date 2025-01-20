@@ -28,6 +28,7 @@
     pkgs.p7zip
     pkgs.alejandra
     pkgs.ueberzugpp # Image Preview for alacritty
+    pkgs.hydra-check # Check the status of hydra jobs
 
     # Browsers
     pkgs.firefox
