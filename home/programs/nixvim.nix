@@ -173,8 +173,10 @@
       };
       notify = {
         enable = true;
-        maxHeight = 10;
-        maxWidth = 50;
+        settings = {
+          max_height = 10;
+          max_width = 50;
+        };
       };
       nvim-autopairs.enable = true;
       toggleterm = {
