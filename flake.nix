@@ -50,7 +50,7 @@
       system = "x86_64-linux";
       specialArgs = inputs;
       modules = [
-        home-manager.nixosModule
+        home-manager.nixosModules.home-manager
         nur.modules.nixos.default
         ./hosts/dell-desktop
       ];
@@ -60,7 +60,7 @@
       system = "x86_64-linux";
       specialArgs = inputs;
       modules = [
-        home-manager.nixosModule
+        home-manager.nixosModules.home-manager
         catppuccin.nixosModules.catppuccin
         nur.modules.nixos.default
         wsl.nixosModules.wsl
@@ -71,7 +71,7 @@
       system = "x86_64-linux";
       specialArgs = inputs;
       modules = [
-        home-manager.nixosModule
+        home-manager.nixosModules.home-manager
         catppuccin.nixosModules.catppuccin
         "${nixos-hardware}/common/cpu/intel"
         "${nixos-hardware}/common/gpu/intel"
