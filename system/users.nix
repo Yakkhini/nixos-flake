@@ -9,6 +9,6 @@
   users.users.yakkhini = {
     isNormalUser = true;
     shell = pkgs.zsh;
-    extraGroups = ["wheel" "networkmanager" "adbusers" "docker"]; # Enable ‘sudo’ for the user.
+    extraGroups = ["wheel" "networkmanager" "adbusers" "podman"];
   };
 }

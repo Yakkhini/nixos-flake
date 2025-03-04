@@ -52,14 +52,12 @@
   };
   xdg.sounds.enable = true;
 
-  # Waydroid support
+  # Podman
   virtualisation = {
-    # docker = {
-    #   enable = true;
-    #   rootless.enable = true;
-    # };
-    # waydroid.enable = true;
-    # lxd.enable = true;
+    podman = {
+      enable = true;
+      dockerCompat = true;
+    };
   };
 
   # ADB
