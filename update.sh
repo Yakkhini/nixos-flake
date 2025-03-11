@@ -2,4 +2,4 @@
 
 nix flake update
 git add flake.lock
-git commit -S -m "Update: `date +%Y%m%d` update."
+git commit -S -m "[update] `date +%Y%m%d` update"
