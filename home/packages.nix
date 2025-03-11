@@ -29,6 +29,8 @@
     pkgs.alejandra
     pkgs.ueberzugpp # Image Preview for alacritty
     pkgs.hydra-check # Check the status of hydra jobs
+    pkgs.podman-tui
+    pkgs.podman-compose
 
     # Browsers
     pkgs.firefox
