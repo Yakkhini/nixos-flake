@@ -73,12 +73,6 @@
       modules = [
         home-manager.nixosModules.home-manager
         catppuccin.nixosModules.catppuccin
-        "${nixos-hardware}/common/cpu/intel"
-        "${nixos-hardware}/common/gpu/intel"
-        "${nixos-hardware}/common/pc/laptop"
-        "${nixos-hardware}/common/pc/laptop/acpi_call.nix"
-        "${nixos-hardware}/common/pc/laptop/ssd"
-        "${nixos-hardware}/common/hidpi.nix"
         nur.modules.nixos.default
         ./hosts/thinkbook-desktop
       ];
