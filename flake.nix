@@ -74,6 +74,7 @@
         home-manager.nixosModules.home-manager
         catppuccin.nixosModules.catppuccin
         nur.modules.nixos.default
+        nixos-hardware.nixosModules.common-cpu-intel
         ./hosts/thinkbook-desktop
       ];
     };
