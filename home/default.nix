@@ -7,6 +7,7 @@
   nur,
   catppuccin,
   nixvim,
+  niri,
   specialArgs,
   ...
 }: {
@@ -26,6 +27,7 @@
       nur.modules.homeManager.default
       catppuccin.homeManagerModules.catppuccin
       nixvim.homeManagerModules.nixvim
+      niri.homeModules.niri
       ./programs
       ./i18n.nix
       ./nixpkgs.nix
@@ -33,6 +35,7 @@
       ./services.nix
       ./waylandSway.nix
       ./waylandHyprland
+      ./waylandNiri
     ];
 
     catppuccin.flavor = "mocha";

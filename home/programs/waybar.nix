@@ -11,13 +11,13 @@
         layer = "top";
         position = "top";
         modules-left = [
-          "hyprland/workspaces"
+          "niri/workspaces"
+          "niri/window"
         ];
         modules-right = [
           "idle_inhibitor"
           "pulseaudio"
           "tray"
-          "custom/grimblast"
           "network"
           "cpu"
           "memory"
@@ -26,7 +26,7 @@
           "battery"
           "clock"
         ];
-        "hyprland/workspaces" = {
+        "niri/workspaces" = {
           on-click = "activate";
           disable-scroll = true;
           all-outputs = false;
@@ -46,6 +46,9 @@
             focused = "";
             default = "";
           };
+        };
+        "niri/window" = {
+          separate-outputs = true;
         };
         "sway/mode" = {
           format = "<span style=\"italic\">{}</span>";

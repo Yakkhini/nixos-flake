@@ -14,6 +14,7 @@
     pkgs.hyprpaper
     pkgs.sway-contrib.grimshot
     pkgs.grim
+    pkgs.xwayland-satellite
     ## hyprwm contrib
     pkgs.grimblast
     ## icons & themes
