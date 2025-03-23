@@ -39,41 +39,43 @@
         enable = true;
         settings.auto_restore_last_session = true;
       };
-      bufferline.enable = true;
-      cmp = {
+      blink-cmp = {
         enable = true;
-        settings.sources = [
-          {
-            name = "copilot";
-            priority = 1000;
-          }
-          {
-            name = "nvim_lsp";
-            priority = 800;
-          }
-          {
-            name = "luasnip";
-            priority = 500;
-          }
-          {
-            name = "fuzzy_buffer";
-            priority = 100;
-          }
-          {
-            name = "fuzzy_path";
-            priority = 100;
-          }
+        settings.sources.default = [
+          "lsp"
+          "path"
+          "snippets"
+          "buffer"
+          "copilot"
         ];
-        settings.mapping = {
-          "<C-e>" = "cmp.mapping.close()";
-          "<CR>" = "cmp.mapping.confirm({ select = true })";
-          "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
-          "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
+        settings.completion = {
+          ghost_text.enabled = true;
+          list.selection.auto_insert = false;
+          list.selection.preselect = false;
         };
-        settings.experimental = {
-          ghost_text = true;
+        settings.signature.enabled = true;
+        settings.sources.providers = {
+          copilot = {
+            async = true;
+            module = "blink-copilot";
+            name = "copilot";
+            score_offset = 100;
+            # Optional configurations
+            opts = {
+              max_completions = 3;
+              max_attempts = 4;
+              kind = "Copilot";
+              debounce = 750;
+              auto_refresh = {
+                backward = true;
+                forward = true;
+              };
+            };
+          };
         };
       };
+      blink-copilot.enable = true;
+      bufferline.enable = true;
       copilot-lua = {
         enable = true;
         settings = {
@@ -182,12 +184,7 @@
       toggleterm = {
         enable = true;
         settings = {
-          direction = "float";
-          float_opts = {
-            border = "curved";
-            height = 30;
-            width = 130;
-          };
+          direction = "tab";
           open_mapping = "[[<C-t>]]";
         };
       };
