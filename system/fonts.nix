@@ -9,6 +9,7 @@
     nerd-fonts.fira-code
     nerd-fonts.hack
     nerd-fonts.droid-sans-mono
+    nerd-fonts.monaspace
     times-newer-roman
     openmoji-color
     noto-fonts
@@ -29,7 +30,7 @@
     enable = true;
     defaultFonts = {
       emoji = ["OpenMoji Color"];
-      monospace = ["Hack Nerd Font Mono" "Source Han Mono SC"];
+      monospace = ["MonaspiceNe Nerd Font Mono" "Source Han Mono SC"];
       sansSerif = ["PT Sans" "Source Han Sans SC"];
       serif = ["PT Serif" "Source Han Serif SC"];
     };

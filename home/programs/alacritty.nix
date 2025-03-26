@@ -5,7 +5,7 @@
     settings = {
       window.opacity = 0.9;
       font = {
-        normal.family = "Hack Nerd Font";
+        normal.family = "MonaspiceAr Nerd Font Mono";
         size = 14.0;
       };
     };

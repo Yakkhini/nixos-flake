@@ -161,7 +161,7 @@
     style = ''
             * {
           /* `otf-font-awesome` is required to be installed for icons */
-          font-family: PT Sans, Hack Nerd Font Mono, sans-serif;
+          font-family: PT Sans, MonaspiceNe Nerd Font Mono, sans-serif;
           font-size: 20px;
       }
 
