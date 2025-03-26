@@ -46,7 +46,7 @@
     # Media
     pkgs.pavucontrol
     pkgs.nomacs # Images viewer
-    pkgs.okular # PDF reader
+    pkgs.kdePackages.okular # PDF reader
     pkgs.vlc
     pkgs.yesplaymusic
 
