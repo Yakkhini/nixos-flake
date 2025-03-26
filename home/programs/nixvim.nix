@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   programs.nixvim = {
     enable = true;
     opts = {
@@ -26,6 +26,9 @@
     colorschemes.catppuccin = {
       enable = true;
       settings = {
+        styles = {
+          conditionals = ["standout"];
+        };
         flavour = "mocha";
         term_colors = true;
         default_integrations = true;

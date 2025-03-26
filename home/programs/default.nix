@@ -6,6 +6,7 @@
     ./email.nix
     ./helix.nix
     ./git.nix
+    ./neovide.nix
     ./nixvim.nix
     ./nushell.nix
     ./shelltools.nix

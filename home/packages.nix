@@ -53,7 +53,6 @@
     # Writing
     pkgs.wpsoffice-cn
     pkgs.obsidian
-    pkgs.neovide
     pkgs.vscode-fhs
     pkgs.zotero
     pkgs.typst
