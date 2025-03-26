@@ -7,6 +7,7 @@
     ./helix.nix
     ./git.nix
     ./nixvim.nix
+    ./nushell.nix
     ./shelltools.nix
     ./ssh.nix
     ./swaylock.nix

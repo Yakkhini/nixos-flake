@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   catppuccin.alacritty.enable = true;
   programs.alacritty = {
     enable = true;
@@ -7,6 +7,9 @@
       font = {
         normal.family = "MonaspiceAr Nerd Font Mono";
         size = 14.0;
+      };
+      terminal.shell = {
+        program = "${pkgs.nushell}/bin/nu";
       };
     };
   };

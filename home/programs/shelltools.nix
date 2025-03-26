@@ -1,11 +1,9 @@
 {...}: {
   catppuccin.starship.enable = true;
-  programs.starship = {
-    enable = true;
-    enableZshIntegration = true;
-  };
+  programs.starship.enable = true;
 
   programs.fzf.enable = true;
+  programs.carapace.enable = true;
   programs.zoxide.enable = true;
 
   programs.thefuck.enable = true;
