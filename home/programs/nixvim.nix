@@ -45,6 +45,7 @@
       };
       blink-cmp = {
         enable = true;
+        settings.keymap.preset = "enter";
         settings.sources.default = [
           "lsp"
           "path"
@@ -55,7 +56,6 @@
         settings.completion = {
           ghost_text.enabled = true;
           list.selection.auto_insert = false;
-          list.selection.preselect = false;
         };
         settings.signature.enabled = true;
         settings.sources.providers = {
