@@ -147,6 +147,7 @@
             formatterMode = "typstyle";
           };
         };
+        servers.verible.enable = true;
       };
       lspsaga.enable = true;
       lspkind = {
