@@ -25,7 +25,7 @@
     home.stateVersion = "22.11";
     imports = [
       nur.modules.homeManager.default
-      catppuccin.homeManagerModules.catppuccin
+      catppuccin.homeModules.catppuccin
       nixvim.homeManagerModules.nixvim
       niri.homeModules.niri
       ./programs

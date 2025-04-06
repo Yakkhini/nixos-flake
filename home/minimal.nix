@@ -24,7 +24,7 @@
     nix.registry.pkgs.flake = nixpkgs;
     home.stateVersion = "22.11";
     imports = [
-      catppuccin.homeManagerModules.catppuccin
+      catppuccin.homeModules.catppuccin
       nixvim.homeManagerModules.nixvim
       nur.modules.homeManager.default
       vscode-server.nixosModules.home
