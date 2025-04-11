@@ -9,6 +9,7 @@
     ./neovide.nix
     ./nixvim.nix
     ./nushell.nix
+    ./rclone.nix
     ./shelltools.nix
     ./ssh.nix
     ./swaylock.nix
