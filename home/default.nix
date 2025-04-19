@@ -74,7 +74,7 @@
     gtk = {
       enable = true;
       theme.name = "Orchis-Red";
-      font.name = "PT Sans Caption";
+      font.name = "sans-serif";
       font.size = 14;
     };
   };

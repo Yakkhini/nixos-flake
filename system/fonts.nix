@@ -19,9 +19,7 @@
     source-han-sans
     source-han-serif
     source-han-mono
-    paratype-pt-sans
-    paratype-pt-serif
-    paratype-pt-mono
+    ibm-plex
     fira-code
     fira-code-symbols
     dina-font
@@ -31,8 +29,8 @@
     defaultFonts = {
       emoji = ["OpenMoji Color"];
       monospace = ["MonaspiceNe Nerd Font Mono" "Source Han Mono SC"];
-      sansSerif = ["PT Sans" "Source Han Sans SC"];
-      serif = ["PT Serif" "Source Han Serif SC"];
+      sansSerif = ["IBM Plex Sans" "Source Han Sans SC"];
+      serif = ["IBM Plex Serif" "Source Han Serif SC"];
     };
   };
 }

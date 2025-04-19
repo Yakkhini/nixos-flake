@@ -161,8 +161,8 @@
     style = ''
             * {
           /* `otf-font-awesome` is required to be installed for icons */
-          font-family: PT Sans, MonaspiceNe Nerd Font Mono, sans-serif;
-          font-size: 20px;
+          font-family: sans-serif, MonaspiceNe NFP Light;
+          font-size: 16px;
       }
 
       window#waybar {
