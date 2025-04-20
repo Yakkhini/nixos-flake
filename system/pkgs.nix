@@ -19,6 +19,7 @@
     wget
     ranger
     ncdu
+    btop
     light
   ];
 
