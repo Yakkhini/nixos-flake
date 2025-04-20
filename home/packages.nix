@@ -36,12 +36,14 @@
     # Browsers
     pkgs.firefox
 
-    # Chat
+    # Communication
     pkgs.tdesktop
     pkgs.nur.repos.linyinfeng.wemeet
     pkgs.feishu
     pkgs.qq
-    pkgs.wechat-uos # license needed
+    pkgs.wechat-uos
+    pkgs.discord
+    pkgs.thunderbird
 
     # Media
     pkgs.pavucontrol
