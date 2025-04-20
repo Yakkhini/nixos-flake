@@ -54,7 +54,6 @@
       XDG_SESSION_DESKTOP = "Hyprland";
       XDG_SCREENSHOTS_DIR = "$HOME/Pictures/ScreenShots";
       BROWSER = "firefox";
-      GTK_THEME = "Orchis-Red";
     };
 
     home.pointerCursor = {
@@ -71,9 +70,9 @@
       enable = true;
       accent = "maroon";
     };
+
     gtk = {
       enable = true;
-      theme.name = "Orchis-Red";
       font.name = "sans-serif";
       font.size = 14;
     };
