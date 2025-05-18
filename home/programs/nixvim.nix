@@ -138,6 +138,7 @@
         };
         servers.metals.enable = true;
         servers.nixd.enable = true;
+        servers.ruff.enable = true;
         servers.solargraph.enable = true;
         servers.tinymist = {
           enable = true;

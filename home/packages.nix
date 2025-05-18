@@ -65,7 +65,8 @@
     pkgs.ruby
     pkgs.ruby.gems.solargraph
     pkgs.gnumake
-    pkgs.pdm
+    pkgs.uv
+    pkgs.ruff
     pkgs.nixd
     pkgs.clang
     pkgs.clang-tools
