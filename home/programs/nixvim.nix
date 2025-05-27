@@ -43,6 +43,25 @@
         enable = true;
         settings.auto_restore_last_session = true;
       };
+      avante = {
+        enable = true;
+        settings = {
+          auto_suggestions_provider = "copilot";
+          provider = "openrouter";
+          vendors = {
+            openrouter = {
+              __inherited_from = "openai";
+              endpoint = "https://openrouter.ai/api/v1";
+              api_key_name = "OPENROUTER_API_KEY";
+              model = "anthropic/claude-sonnet-4";
+            };
+          };
+          selector = {
+            provider = "telescope";
+            provider_opts = {};
+          };
+        };
+      };
       blink-cmp = {
         enable = true;
         settings.keymap.preset = "enter";
@@ -52,6 +71,9 @@
           "snippets"
           "buffer"
           "copilot"
+          "avante_commands"
+          "avante_mentions"
+          "avante_files"
         ];
         settings.completion = {
           ghost_text.enabled = true;
@@ -59,11 +81,29 @@
         };
         settings.signature.enabled = true;
         settings.sources.providers = {
+          avante_commands = {
+            name = "avante_commands";
+            module = "blink.compat.source";
+            score_offset = 90;
+            opts = {};
+          };
+          avante_files = {
+            name = "avante_files";
+            module = "blink.compat.source";
+            score_offset = 100;
+            opts = {};
+          };
+          avante_mentions = {
+            name = "avante_mentions";
+            module = "blink.compat.source";
+            score_offset = 1000;
+            opts = {};
+          };
           copilot = {
             async = true;
             module = "blink-copilot";
             name = "copilot";
-            score_offset = 100;
+            score_offset = 80;
             # Optional configurations
             opts = {
               max_completions = 3;
@@ -79,6 +119,7 @@
         };
       };
       blink-copilot.enable = true;
+      blink-compat.enable = true;
       bufferline.enable = true;
       copilot-lua = {
         enable = true;
@@ -283,7 +324,7 @@
       {
         mode = "n";
         action = "<cmd>Lspsaga code_action<CR>";
-        key = "<leader>a";
+        key = "<leader>c";
         options.desc = "Show code actions";
       }
       {

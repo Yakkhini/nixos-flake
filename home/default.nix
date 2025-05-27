@@ -54,6 +54,7 @@
       XDG_SESSION_DESKTOP = "Hyprland";
       XDG_SCREENSHOTS_DIR = "$HOME/Pictures/ScreenShots";
       BROWSER = "firefox";
+      OPENROUTER_API_KEY = "`cat ~/Public/openrouter`";
     };
 
     home.pointerCursor = {
