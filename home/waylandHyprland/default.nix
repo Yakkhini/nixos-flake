@@ -27,15 +27,23 @@
   services.mako = {
     enable = true;
 
-    defaultTimeout = 5000;
+    settings = {
+      actions = true;
+      anchor = "bottom-center";
+      default-timeout = 5000;
 
-    height = 300;
-    width = 500;
+      height = 300;
+      width = 500;
 
-    font = "monospace 12";
-    borderRadius = 10;
-    borderSize = 2;
-    padding = "10";
+      font = "monospace 12";
+      border-radius = 10;
+      border-size = 2;
+      padding = "10";
+
+      "actionable=true" = {
+        anchor = "bottom-right";
+      };
+    };
   };
 
   xsession.windowManager.i3.enable = true;
