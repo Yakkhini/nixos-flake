@@ -27,7 +27,8 @@
     ## others
     pkgs.nautilus
 
-    # Tool (ncdu for disk management)
+    # Tool
+    pkgs.kalker # Calculator
     pkgs.p7zip
     pkgs.alejandra
     pkgs.ueberzugpp # Image Preview for alacritty
