@@ -18,7 +18,6 @@
       ignorecase = true;
       smartcase = true;
 
-      shell = "${pkgs.nushell}/bin/nu";
       termguicolors = true;
 
       showmode = false; # We already have a statusline
