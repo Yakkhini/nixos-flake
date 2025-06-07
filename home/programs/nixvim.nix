@@ -242,6 +242,7 @@
           highlight.enable = true;
         };
       };
+      wakatime.enable = true;
       web-devicons.enable = true;
       which-key.enable = true;
     };
@@ -324,7 +325,7 @@
       {
         mode = "n";
         action = "<cmd>Lspsaga code_action<CR>";
-        key = "<leader>c";
+        key = "<leader>ca";
         options.desc = "Show code actions";
       }
       {
