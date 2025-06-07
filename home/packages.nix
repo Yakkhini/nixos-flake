@@ -19,6 +19,8 @@
     pkgs.grimblast
     ## icons & themes
     pkgs.pipes-rs # Just for fun
+    pkgs.sl
+    pkgs.cowsay
     pkgs.viu
     pkgs.vanilla-dmz
     pkgs.orchis-theme
@@ -50,10 +52,8 @@
     pkgs.nomacs # Images viewer
     pkgs.kdePackages.okular # PDF reader
     pkgs.vlc
-    pkgs.yesplaymusic
 
     # Writing
-    pkgs.wpsoffice-cn
     pkgs.obsidian
     pkgs.vscode-fhs
     pkgs.zotero
@@ -74,9 +74,5 @@
     # Security
     pkgs.gopass
     pkgs.gopass-jsonapi
-
-    (pkgs.steam.override {
-      extraPkgs = pkgs: [pkgs.source-han-sans]; # Add no-vf CJK fonts to show CJK characters correctly
-    })
   ];
 }
