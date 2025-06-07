@@ -45,9 +45,9 @@
 
   xdg.portal = {
     enable = true;
-    config.common.default = "*";
+    config.niri.default = "gnome";
     extraPortals = [
-      pkgs.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-gnome
     ];
   };
   xdg.sounds.enable = true;
