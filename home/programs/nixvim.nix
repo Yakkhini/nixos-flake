@@ -47,7 +47,7 @@
         settings = {
           auto_suggestions_provider = "copilot";
           provider = "openrouter";
-          vendors = {
+          providers = {
             openrouter = {
               __inherited_from = "openai";
               endpoint = "https://openrouter.ai/api/v1";
