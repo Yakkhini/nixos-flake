@@ -4,6 +4,7 @@
   pkgs,
   nixpkgs,
   home-manager,
+  nix-index-database,
   nur,
   catppuccin,
   nixvim,
@@ -28,6 +29,7 @@
       catppuccin.homeModules.catppuccin
       nixvim.homeManagerModules.nixvim
       niri.homeModules.niri
+      nix-index-database.hmModules.nix-index
       ./programs
       ./i18n.nix
       ./nixpkgs.nix

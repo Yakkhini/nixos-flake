@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{...}: {
   imports = [
     ./alacritty.nix
     ./bash.nix
@@ -7,6 +7,7 @@
     ./helix.nix
     ./git.nix
     ./neovide.nix
+    ./nix-index.nix
     ./nixvim.nix
     ./nushell.nix
     ./rclone.nix
