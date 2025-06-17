@@ -31,6 +31,7 @@
       enableSSHSupport = true;
       pinentryPackage = pkgs.pinentry-qt;
     };
+    nix-ld.enable = true;
     git.enable = true;
     zsh.enable = true;
     dconf.enable = true;
