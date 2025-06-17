@@ -17,6 +17,7 @@
     ./tofi.nix
     ./vim.nix
     ./waybar.nix
+    ./zed-editor.nix
     ./zsh.nix
   ];
 }
