@@ -12,6 +12,7 @@
     ./nushell.nix
     ./rclone.nix
     ./shelltools.nix
+    ./sioyek.nix
     ./ssh.nix
     ./swaylock.nix
     ./tofi.nix
