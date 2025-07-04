@@ -41,7 +41,7 @@
 
     # Communication
     pkgs.tdesktop
-    pkgs.nur.repos.linyinfeng.wemeet
+    pkgs.wemeet
     pkgs.feishu
     pkgs.qq
     pkgs.wechat-uos
