@@ -22,6 +22,10 @@
 
       showmode = false; # We already have a statusline
     };
+    clipboard = {
+      register = "unnamedplus"; # Use the system clipboard
+      providers.wl-copy.enable = true;
+    };
     colorschemes.catppuccin = {
       enable = true;
       settings = {
@@ -249,6 +253,12 @@
     globals.mapleader = " ";
 
     keymaps = [
+      {
+        mode = "v";
+        action = "\"*ygv";
+        key = "<LeftRelease>";
+        options.desc = "Yank selection to clipboard in visual mode with mouse";
+      }
       {
         mode = "n";
         action = "<C-w>h";
