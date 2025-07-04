@@ -11,6 +11,9 @@
     nerd-fonts.droid-sans-mono
     nerd-fonts.monaspace
     times-newer-roman
+    atkinson-hyperlegible-next
+    atkinson-hyperlegible
+    stix-two
     openmoji-color
     noto-fonts
     noto-fonts-cjk-sans
