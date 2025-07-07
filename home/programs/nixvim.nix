@@ -37,6 +37,39 @@
         default_integrations = true;
       };
     };
+    lsp = {
+      inlayHints.enable = true;
+      servers.clangd.enable = true;
+      servers.hls.enable = true;
+      servers.metals = {
+        enable = true;
+        settings = {
+          init_options.inlayHints.inferredTypes.enable = true;
+          root_markers = [
+            "build.sbt"
+            "build.sc"
+            "build.mill"
+            "build.gradle"
+            "pom.xml"
+            "settings.gradle"
+            "settings.gradle.kts"
+          ];
+        };
+      };
+      servers.nixd.enable = true;
+      servers.pylsp.enable = true;
+      servers.ruff.enable = true;
+      servers.solargraph.enable = true;
+      servers.tinymist = {
+        enable = true;
+        settings = {
+          exportPdf = "onSave";
+          compileStatus = "enable";
+          formatterMode = "typstyle";
+        };
+      };
+      servers.verible.enable = true;
+    };
     plugins = {
       alpha = {
         enable = true;
@@ -169,31 +202,10 @@
         };
       };
       lazygit.enable = true;
+      lspconfig.enable = true;
       lualine = {
         enable = true;
         settings.options.theme = "catppuccin";
-      };
-      lsp = {
-        enable = true;
-        servers.clangd.enable = true;
-        servers.hls = {
-          enable = true;
-          installGhc = false;
-        };
-        servers.metals.enable = true;
-        servers.nixd.enable = true;
-        servers.pylsp.enable = true;
-        servers.ruff.enable = true;
-        servers.solargraph.enable = true;
-        servers.tinymist = {
-          enable = true;
-          settings = {
-            exportPdf = "onSave";
-            compileStatus = "enable";
-            formatterMode = "typstyle";
-          };
-        };
-        servers.verible.enable = true;
       };
       lspsaga.enable = true;
       lspkind = {
