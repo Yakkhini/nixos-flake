@@ -222,10 +222,6 @@
         };
       };
       markdown-preview.enable = true;
-      neo-tree = {
-        enable = true;
-        autoCleanAfterSessionRestore = true;
-      };
       # neorg.enable = true;
       noice = {
         enable = true;
@@ -244,6 +240,12 @@
         };
       };
       nvim-autopairs.enable = true;
+      snacks = {
+        enable = true;
+        settings = {
+          explore.enable = true;
+        };
+      };
       toggleterm = {
         enable = true;
         settings = {
@@ -356,9 +358,9 @@
         options.desc = "Search for a session";
       }
       {
-        action = "<cmd>Neotree toggle<CR>";
-        key = "<C-n>";
-        options.desc = "Toggle the Neo file tree";
+        action = "<cmd>lua Snacks.picker.explorer()<CR>";
+        key = "<leader>e";
+        options.desc = "File Explorer";
       }
       {
         action = "<cmd>LazyGit<CR>";
