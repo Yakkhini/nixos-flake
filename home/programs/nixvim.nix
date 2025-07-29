@@ -199,27 +199,6 @@
         settings.current_line_blame = true;
       };
       indent-blankline.enable = true;
-      telescope = {
-        enable = true;
-        keymaps = {
-          "<leader>ff" = {
-            action = "find_files";
-            options.desc = "Telescope find files";
-          };
-          "<leader>fg" = {
-            action = "live_grep";
-            options.desc = "Telescope live grep";
-          };
-          "<leader>fb" = {
-            action = "buffers";
-            options.desc = "Telescope buffers";
-          };
-          "<leader>fh" = {
-            action = "help_tags";
-            options.desc = "Telescope help tags";
-          };
-        };
-      };
       lazygit.enable = true;
       lspconfig.enable = true;
       lualine = {
@@ -265,11 +244,32 @@
           explore.enable = true;
         };
       };
+      telescope = {
+        enable = true;
+        keymaps = {
+          "<leader>ff" = {
+            action = "find_files";
+            options.desc = "Telescope find files";
+          };
+          "<leader>fg" = {
+            action = "live_grep";
+            options.desc = "Telescope live grep";
+          };
+          "<leader>fb" = {
+            action = "buffers";
+            options.desc = "Telescope buffers";
+          };
+          "<leader>fh" = {
+            action = "help_tags";
+            options.desc = "Telescope help tags";
+          };
+        };
+      };
       toggleterm = {
         enable = true;
         settings = {
           direction = "tab";
-          open_mapping = "[[<C-t>]]";
+          open_mapping = "[[<C-/>]]";
         };
       };
       treesitter = {
@@ -375,6 +375,21 @@
         action = "<cmd>Lspsaga peek_definition<CR>";
         key = "gd";
         options.desc = "Peek definition";
+      }
+      {
+        mode = "n";
+        action = "<cmd>Lspsaga diagnostic_jump_next<CR>";
+        key = "<leader>cd";
+      }
+      {
+        mode = "n";
+        action = "<cmd>Lspsaga diagnostic_jump_next<CR>";
+        key = "]d";
+      }
+      {
+        mode = "n";
+        action = "<cmd>Lspsaga diagnostic_jump_prev<CR>";
+        key = "[d";
       }
       {
         mode = "n";
