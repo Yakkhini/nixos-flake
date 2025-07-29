@@ -156,7 +156,26 @@
       };
       blink-copilot.enable = true;
       blink-compat.enable = true;
-      bufferline.enable = true;
+      bufferline = {
+        enable = true;
+        settings.options = {
+          always_show_bufferline = true;
+          offsets = [
+            {
+              filetype = "neo-tree";
+              text = "Explorer";
+              highlight = "Directory";
+              text_align = "left";
+            }
+            {
+              filetype = "snacks_layout_box";
+            }
+            {
+              filetype = "toggleterm";
+            }
+          ];
+        };
+      };
       copilot-lua = {
         enable = true;
         settings = {
@@ -326,6 +345,18 @@
         action = "<cmd>BufferLineCloseOthers<CR>";
         key = "<leader>bo";
         options.desc = "Close all other buffers";
+      }
+      {
+        mode = "n";
+        action = "<cmd>BufferLineTogglePin<CR>";
+        key = "<leader>bp";
+        options.desc = "Toggle pin the current buffer";
+      }
+      {
+        mode = "n";
+        action = "<cmd>BufferLineGroupClose ungrouped<CR>";
+        key = "<leader>bP";
+        options.desc = "Close all unpin buffers";
       }
       {
         mode = "n";
