@@ -29,7 +29,7 @@
       catppuccin.homeModules.catppuccin
       nixvim.homeManagerModules.nixvim
       niri.homeModules.niri
-      nix-index-database.hmModules.nix-index
+      nix-index-database.homeModules.nix-index
       ./programs
       ./i18n.nix
       ./nixpkgs.nix
