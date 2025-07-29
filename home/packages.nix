@@ -43,6 +43,7 @@
     pkgs.tdesktop
     pkgs.wemeet
     pkgs.feishu
+    pkgs.nur.repos.xddxdd.dingtalk
     pkgs.qq
     pkgs.wechat-uos
     pkgs.discord
