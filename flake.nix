@@ -58,7 +58,7 @@
     homeConfigurations.yakkhini-minimal = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
-      imports = [
+      modules = [
         catppuccin.homeModules.catppuccin
         nixvim.homeManagerModules.nixvim
         nur.modules.homeManager.default
