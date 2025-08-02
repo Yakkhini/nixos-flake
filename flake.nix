@@ -58,24 +58,14 @@
     homeConfigurations.yakkhini-minimal = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
-      home.stateVersion = "22.11";
       imports = [
         catppuccin.homeModules.catppuccin
         nixvim.homeManagerModules.nixvim
         nur.modules.homeManager.default
         vscode-server.nixosModules.home
-        ./home/programs/minimal.nix
-        ./home/packages-minimal.nix
+        ./home.nix
       ];
 
-      catppuccin.flavor = "mocha";
-
-      services.vscode-server.enable = true;
-
-      xdg.userDirs = {
-        enable = true;
-        createDirectories = true;
-      };
       specialArgs = inputs;
     };
 
