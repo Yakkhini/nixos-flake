@@ -57,7 +57,6 @@
 
     homeConfigurations.yakkhini-minimal = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
-
       modules = [
         catppuccin.homeModules.catppuccin
         nixvim.homeManagerModules.nixvim
@@ -66,7 +65,6 @@
         ./home.nix
       ];
 
-      specialArgs = inputs;
     };
 
     nixosConfigurations.yaksis-dell-desktop = nixpkgs.lib.nixosSystem {
