@@ -55,6 +55,30 @@
       nixpkgs.legacyPackages.x86_64-linux.mkShell {
       };
 
+    homeConfigurations.yakkhini-minimal = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+
+      home.stateVersion = "22.11";
+      imports = [
+        catppuccin.homeModules.catppuccin
+        nixvim.homeManagerModules.nixvim
+        nur.modules.homeManager.default
+        vscode-server.nixosModules.home
+        ./home/programs/minimal.nix
+        ./home/packages-minimal.nix
+      ];
+
+      catppuccin.flavor = "mocha";
+
+      services.vscode-server.enable = true;
+
+      xdg.userDirs = {
+        enable = true;
+        createDirectories = true;
+      };
+      specialArgs = inputs;
+    };
+
     nixosConfigurations.yaksis-dell-desktop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = inputs;
