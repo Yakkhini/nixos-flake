@@ -13,8 +13,8 @@
 }: {
   home.stateVersion = "22.11";
   imports = [
-    ./programs/minimal.nix
-    ./packages-minimal.nix
+    ./home/programs/minimal.nix
+    ./home/packages-minimal.nix
   ];
 
   catppuccin.flavor = "mocha";
