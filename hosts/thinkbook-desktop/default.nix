@@ -34,7 +34,7 @@
   ];
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nix.settings.trusted-users = ["root" "@wheel"];
-  nix.registry.pkgs.flake = nixpkgs;
+
   # Systemwide nixpkgs config
   nixpkgs.config = {
     allowUnfree = true;

@@ -21,7 +21,6 @@
     nixpkgs,
     ...
   }: {
-    nix.registry.pkgs.flake = nixpkgs;
     home.stateVersion = "22.11";
     imports = [
       catppuccin.homeModules.catppuccin

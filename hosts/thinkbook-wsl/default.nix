@@ -22,8 +22,6 @@
   nix.settings.trusted-users = ["root" "@wheel"];
   nix.settings.auto-optimise-store = true;
 
-  nix.registry.pkgs.flake = nixpkgs;
-
   imports = [
     ../../home/minimal.nix
     ../../system/minimal.nix
