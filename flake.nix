@@ -64,7 +64,6 @@
         vscode-server.nixosModules.home
         ./home.nix
       ];
-
     };
 
     nixosConfigurations.yaksis-dell-desktop = nixpkgs.lib.nixosSystem {
