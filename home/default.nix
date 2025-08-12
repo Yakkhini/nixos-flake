@@ -27,7 +27,7 @@
     imports = [
       nur.modules.homeManager.default
       catppuccin.homeModules.catppuccin
-      nixvim.homeManagerModules.nixvim
+      nixvim.homeModules.nixvim
       niri.homeModules.niri
       nix-index-database.homeModules.nix-index
       ./programs

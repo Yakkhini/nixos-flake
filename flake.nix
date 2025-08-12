@@ -59,7 +59,7 @@
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
       modules = [
         catppuccin.homeModules.catppuccin
-        nixvim.homeManagerModules.nixvim
+        nixvim.homeModules.nixvim
         nur.modules.homeManager.default
         vscode-server.nixosModules.home
         ./home.nix
