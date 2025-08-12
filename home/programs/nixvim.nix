@@ -206,12 +206,6 @@
         settings.options.theme = "catppuccin";
       };
       lspsaga.enable = true;
-      lspkind = {
-        enable = true;
-        symbolMap = {
-          Copilot = "";
-        };
-      };
       luasnip = {
         enable = true;
         settings = {
