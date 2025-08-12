@@ -24,7 +24,7 @@
     home.stateVersion = "22.11";
     imports = [
       catppuccin.homeModules.catppuccin
-      nixvim.homeManagerModules.nixvim
+      nixvim.homeModules.nixvim
       nur.modules.homeManager.default
       vscode-server.nixosModules.home
       ./programs/minimal.nix
