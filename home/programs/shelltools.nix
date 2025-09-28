@@ -10,4 +10,6 @@
 
   programs.ripgrep.enable = true;
   programs.fd.enable = true;
+
+  programs.opencode.enable = true;
 }
