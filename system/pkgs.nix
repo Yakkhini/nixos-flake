@@ -12,8 +12,7 @@
     man-pages-posix
     cifs-utils
     clash-meta
-    greetd.wlgreet
-    greetd.tuigreet
+    tuigreet
     fastfetch
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
