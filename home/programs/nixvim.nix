@@ -27,7 +27,7 @@
       providers.wl-copy.enable = true;
     };
     colorschemes.catppuccin = {
-      enable = true;
+      enable = false;
       settings = {
         styles = {
           conditionals = ["standout"];
@@ -37,6 +37,8 @@
         default_integrations = true;
       };
     };
+    colorscheme = "github_light";
+    colorschemes.github-theme.enable = true;
     lsp = {
       inlayHints.enable = true;
       servers.clangd.enable = true;
