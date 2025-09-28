@@ -45,7 +45,7 @@
     pkgs.feishu
     pkgs.nur.repos.xddxdd.dingtalk
     pkgs.qq
-    pkgs.wechat-uos
+    pkgs.wechat
     pkgs.discord
     pkgs.thunderbird
 
