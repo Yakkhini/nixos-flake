@@ -45,7 +45,7 @@
       servers.hls.enable = true;
       servers.metals = {
         enable = true;
-        settings = {
+        config = {
           init_options.inlayHints.inferredTypes.enable = true;
           root_markers = [
             "build.sbt"
@@ -64,7 +64,7 @@
       servers.solargraph.enable = true;
       servers.tinymist = {
         enable = true;
-        settings = {
+        config = {
           exportPdf = "onSave";
           compileStatus = "enable";
           formatterMode = "typstyle";
@@ -247,6 +247,10 @@
             action = "find_files";
             options.desc = "Telescope find files";
           };
+          "<leader>fF" = {
+            action = "find_files no_ignore=true";
+            options.desc = "Telescope find files without ignore";
+          };
           "<leader>fg" = {
             action = "live_grep";
             options.desc = "Telescope live grep";
@@ -389,6 +393,16 @@
       }
       {
         mode = "n";
+        action = "<cmd>Gitsigns next_hunk<CR>";
+        key = "]g";
+      }
+      {
+        mode = "n";
+        action = "<cmd>Gitsigns prev_hunk<CR>";
+        key = "[g";
+      }
+      {
+        mode = "n";
         action = "<cmd>Lspsaga code_action<CR>";
         key = "<leader>ca";
         options.desc = "Show code actions";
@@ -406,8 +420,13 @@
       }
       {
         action = "<cmd>LazyGit<CR>";
-        key = "<leader>g";
+        key = "<leader>gg";
         options.desc = "Open LazyGit";
+      }
+      {
+        action = "<cmd>Gitsigns preview_hunk_inline<CR>";
+        key = "<leader>gp";
+        options.desc = "Preview git hunk";
       }
     ];
   };
