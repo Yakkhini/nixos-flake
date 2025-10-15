@@ -3,7 +3,6 @@
     ./alacritty.nix
     ./bash.nix
     ./direnv.nix
-    ./email.nix
     ./helix.nix
     ./git.nix
     ./neovide.nix
