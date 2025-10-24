@@ -1,6 +1,9 @@
-{...}: {
+{pkgs, ...}: {
   catppuccin.starship.enable = true;
-  programs.starship.enable = true;
+  programs.starship = {
+    enable = true;
+    settings = (with builtins; fromTOML (readFile "${pkgs.starship}/share/starship/presets/nerd-font-symbols.toml")) // {};
+  };
 
   programs.fzf.enable = true;
   programs.carapace.enable = true;
