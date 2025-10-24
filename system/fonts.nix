@@ -1,20 +1,14 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   # fonts
   fonts.packages = with pkgs; [
-    nerd-fonts.fira-code
-    nerd-fonts.hack
-    nerd-fonts.droid-sans-mono
     nerd-fonts.monaspace
+    nerd-fonts.symbols-only
     times-newer-roman
     atkinson-hyperlegible-next
     atkinson-hyperlegible
     stix-two
     openmoji-color
+    monaspace
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
@@ -23,17 +17,15 @@
     source-han-serif
     source-han-mono
     ibm-plex
-    fira-code
-    fira-code-symbols
     dina-font
   ];
   fonts.fontconfig = {
     enable = true;
     defaultFonts = {
       emoji = ["OpenMoji Color"];
-      monospace = ["MonaspiceNe Nerd Font Mono" "Source Han Mono SC"];
-      sansSerif = ["IBM Plex Sans" "Source Han Sans SC"];
-      serif = ["IBM Plex Serif" "Source Han Serif SC"];
+      monospace = ["Monaspace Neon" "OpenMoji Color" "Symbols Nerd Font Mono" "Source Han Mono SC"];
+      sansSerif = ["IBM Plex Sans" "OpenMoji" "Symbols Nerd Font Mono" "Source Han Sans SC"];
+      serif = ["IBM Plex Serif" "OpenMoji" "Symbols Nerd Font Mono" "Source Han Serif SC"];
     };
   };
 }

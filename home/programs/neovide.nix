@@ -3,12 +3,12 @@
     enable = true;
     settings = {
       font = {
-        normal = ["MonaspiceAr Nerd Font Propo"];
+        normal = ["MonaspiceAr Nerd Font Mono"];
         italic = {
-          family = "MonaspiceRn Nerd Font Propo";
+          family = "MonaspiceRn Nerd Font Mono";
         };
         bold = {
-          family = "MonaspiceKr Nerd Font Propo";
+          family = "MonaspiceKr Nerd Font Mono";
         };
         size = 14.0;
       };

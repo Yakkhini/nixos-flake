@@ -32,19 +32,19 @@
           all-outputs = false;
           format = "{icon}";
           format-icons = {
-            "1" = "一";
-            "2" = "二";
-            "3" = "三";
-            "4" = "四";
-            "5" = "五";
-            "6" = "六";
-            "7" = "七";
-            "8" = "八";
-            "9" = "九";
-            "10" = "十";
-            urgent = "";
-            focused = "";
-            default = "";
+            "1" = "󰲠";
+            "2" = "󰲢";
+            "3" = "󰲤";
+            "4" = "󰲦";
+            "5" = "󰲨";
+            "6" = "󰲪";
+            "7" = "󰲬";
+            "8" = "󰲮";
+            "9" = "󰲰";
+            "10" = "󰿬";
+            urgent = "󰀨";
+            focused = "󰺕";
+            default = "󱁍";
           };
         };
         "niri/window" = {
@@ -54,7 +54,7 @@
           format = "<span style=\"italic\">{}</span>";
         };
         "sway/language" = {
-          format = "{long} ";
+          format = "{long} 󰌓";
         };
         clock = {
           # "timezone": "America/New_York",
@@ -62,7 +62,7 @@
           format-alt = "{:%Y-%m-%d}";
         };
         cpu = {
-          format = "{usage}% ";
+          format = "{usage}% 󰘚";
         };
         temperature = {
           thermal-zone = 2;
@@ -71,16 +71,16 @@
           format-critical = "{temperatureC}°C {icon}";
           format = "{temperatureC}°C {icon}";
           format-icons = [
-            ""
+            "󰔏"
           ];
         };
         memory = {
-          format = "{}% ";
+          format = "{}% 󰓌";
         };
         backlight = {
           # device = "acpi_video1";
           format = "{percent}% {icon}";
-          format-icons = ["" ""];
+          format-icons = ["󰃞" "󰃝" "󰃟" "󰃠"];
         };
         disk = {
           states = {
@@ -93,7 +93,7 @@
           path = "/";
         };
         network = {
-          format-wifi = "{essid} ({signalStrength}%) ";
+          format-wifi = "{essid} ({signalStrength}%) 󰖩";
           format-ethernet = "Ethernet: {ifname} 󰈀";
           format-alt = "{ifname}: {ipaddr}/{cidr} 󰖟";
           format-linked = "{ifname} (No IP) 󰖟";
@@ -101,10 +101,10 @@
         };
         pulseaudio = {
           format = "{volume}% {icon} {format_source}";
-          format-bluetooth = "{volume}% {icon} {format_source}";
-          format-muted = " {format_source}";
-          format-source = "{volume}% ";
-          format-source-muted = "";
+          format-bluetooth = "{volume}% {icon}󰂯 {format_source}";
+          format-muted = "󰝟 {format_source}";
+          format-source = "{volume}% 󰍬";
+          format-source-muted = "󰍭";
           format-icons = {
             headphones = "󰋋";
             speaker = "󰓃";
@@ -114,7 +114,7 @@
             portable = "";
             car = "";
             hifi = "󰐵";
-            default = ["" "" ""];
+            default = ["󰕿" "󰖀" "󰕾"];
           };
           scroll-step = 1;
           on-click = "pavucontrol";
@@ -127,7 +127,7 @@
           };
         };
         battery = {
-          format-icons = ["" "" "" "" ""];
+          format-icons = ["󰂃" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
           states = {
             good = 75;
             medium = 50;
@@ -135,9 +135,9 @@
             critical = 15;
           };
           format = "{capacity}% {icon}";
-          format-charging = "{capacity}% ";
-          format-plugged = "{capacity}% ";
-          format-plugged-full = "";
+          format-charging = "{capacity}% 󰂄";
+          format-plugged = "{capacity}% 󰚥";
+          format-plugged-full = "󰁹";
           format-alt = "{time} {icon}";
         };
         tray = {
@@ -161,7 +161,7 @@
     style = ''
             * {
           /* `otf-font-awesome` is required to be installed for icons */
-          font-family: sans-serif, MonaspiceNe NFP Light;
+          font-family: sans-serif;
           font-size: 16px;
       }
 
