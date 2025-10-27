@@ -40,13 +40,13 @@
     pkgs.firefox
 
     # Communication
-    pkgs.telegram-desktop
+    # pkgs.telegram-desktop
     pkgs.wemeet
     pkgs.feishu
     pkgs.nur.repos.xddxdd.dingtalk
     pkgs.qq
     pkgs.wechat
-    pkgs.discord
+    # pkgs.discord
     pkgs.thunderbird
 
     # Media
