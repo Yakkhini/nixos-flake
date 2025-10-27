@@ -1,6 +1,6 @@
 {...}: {
   programs.clash-verge = {
-    enable = true;
+    enable = false;
     autoStart = true;
     serviceMode = true;
     tunMode = true;
