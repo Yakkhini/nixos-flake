@@ -40,7 +40,7 @@
     pkgs.firefox
 
     # Communication
-    pkgs.tdesktop
+    pkgs.telegram-desktop
     pkgs.wemeet
     pkgs.feishu
     pkgs.nur.repos.xddxdd.dingtalk

@@ -3,12 +3,13 @@
     enable = true;
     signing.key = "F27FB4A20C9CCAC0";
     signing.signByDefault = true;
-    userEmail = "59007159+Yakkhini@users.noreply.github.com";
-    userName = "Yaksis";
-    extraConfig = {
+    settings = {
+      user.email = "59007159+Yakkhini@users.noreply.github.com";
+      user.name = "Yaksis";
       init.defaultBranch = "main";
     };
-    delta.enable = true;
   };
+
   programs.lazygit.enable = true;
+  programs.delta.enable = true;
 }
