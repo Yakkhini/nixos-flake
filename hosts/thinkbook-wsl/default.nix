@@ -8,10 +8,12 @@
   lib,
   pkgs,
   nixpkgs,
+  catppuccin,
   ...
 }: {
   nix.channel.enable = false;
 
+  catppuccin.cache.enable = true;
   nix.settings.substituters = [
     "https://mirrors.cernet.edu.cn/nix-channels/store"
     "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"

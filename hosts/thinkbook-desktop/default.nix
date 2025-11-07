@@ -2,6 +2,7 @@
   config,
   lib,
   nixpkgs,
+  catppuccin,
   pkgs,
   ...
 }: {
@@ -27,6 +28,7 @@
 
   nix.channel.enable = false;
 
+  catppuccin.cache.enable = true;
   nix.settings.substituters = [
     "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
     "https://mirrors.ustc.edu.cn/nix-channels/store"
