@@ -1,14 +1,13 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
+{...}: {
   networking = {
     nftables = {
       enable = true;
     };
-    networkmanager.enable = true; # Easiest to use and most distros use this by default.
+    networkmanager = {
+      enable = true; # Easiest to use and most distros use this by default.
+      ethernet.macAddress = "random";
+      wifi.macAddress = "random";
+    };
   };
 
   # Open ports in the firewall.
