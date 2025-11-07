@@ -16,10 +16,10 @@
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = with config.boot.kernelPackages; [];
-  boot.extraModprobeConfig = ''
-    options xe force_probe=7d55
-    options i915 force_probe=!7d55
-  '';
+  # boot.extraModprobeConfig = ''
+  #   options xe force_probe=7d55
+  #   options i915 force_probe=!7d55
+  # '';
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/86344e08-a9e1-4c2c-978a-baf12cdf804c";
