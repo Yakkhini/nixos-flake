@@ -4,7 +4,6 @@
     ./bash.nix
     ./direnv.nix
     ./helix.nix
-    ./git.nix
     ./neovide.nix
     ./nix-index.nix
     ./nixvim.nix
@@ -15,6 +14,7 @@
     ./ssh.nix
     ./swaylock.nix
     ./tofi.nix
+    ./vcs.nix
     ./vim.nix
     ./waybar.nix
     ./zed-editor.nix
