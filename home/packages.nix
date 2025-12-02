@@ -54,6 +54,7 @@
     pkgs.nomacs # Images viewer
     pkgs.kdePackages.okular # PDF reader
     pkgs.vlc
+    pkgs.zoom-us
 
     # Writing
     pkgs.obsidian
