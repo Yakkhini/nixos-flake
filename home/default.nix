@@ -48,9 +48,11 @@
 
     home.sessionVariables = {
       QT_AUTO_SCREEN_SCALE_FACTOR = 1;
-      QT_QPA_PLATFORM = "wayland";
+      QT_QPA_PLATFORM = "wayland;xcb";
       QT_WAYLAND_DISABLE_WINDOWDECORATION = 1;
       QT_QPA_PLATFORMTHEME = "qt5ct";
+      SDL_VIDEODRIVER = "wayland";
+      SDL_VIDEO_WAYLAND_SCALE_TO_DISPLAY = 0;
       XDG_SESSION_TYPE = "wayland";
       XDG_SCREENSHOTS_DIR = "$HOME/Pictures/ScreenShots";
       BROWSER = "firefox";
