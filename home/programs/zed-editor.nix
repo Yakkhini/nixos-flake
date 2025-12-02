@@ -19,9 +19,8 @@
     ui_font_size = 22;
     buffer_font_family = "MonaspiceAr Nerd Font Mono";
     buffer_font_size = 20;
-    vim_mode = true;
+    helix_mode = true;
     vim = {
-      default_mode = "helix_normal";
       toggle_relative_line_numbers = true;
     };
     theme = {
