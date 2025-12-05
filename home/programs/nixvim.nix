@@ -193,6 +193,7 @@
           nix = ["alejandra"];
           c = ["clang-format"];
           scala = ["scalafmt"];
+          markdown = ["autocorrect"];
         };
       };
       direnv.enable = true;

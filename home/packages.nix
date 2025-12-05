@@ -63,6 +63,7 @@
     pkgs.typst
     pkgs.tinymist
     pkgs.typstyle
+    pkgs.autocorrect
 
     #Code
     pkgs.ruby
