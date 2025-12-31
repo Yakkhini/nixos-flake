@@ -203,12 +203,13 @@
       };
       indent-blankline.enable = true;
       lazygit.enable = true;
+      lsp.servers.julials.enable = true;
       lspconfig.enable = true;
+      lspsaga.enable = true;
       lualine = {
         enable = true;
         settings.options.theme = "catppuccin";
       };
-      lspsaga.enable = true;
       luasnip = {
         enable = true;
         settings = {
