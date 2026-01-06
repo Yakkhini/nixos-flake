@@ -50,6 +50,7 @@
     pkgs.thunderbird
 
     # Media
+    pkgs.nur.repos.yakkhini.vutronmusic
     pkgs.pavucontrol
     pkgs.nomacs # Images viewer
     pkgs.kdePackages.okular # PDF reader
