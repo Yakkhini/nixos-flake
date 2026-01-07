@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
 
@@ -59,9 +54,6 @@
       dockerCompat = true;
     };
   };
-
-  # ADB
-  programs.adb.enable = true;
 
   #Blueman
   services.blueman.enable = true;
