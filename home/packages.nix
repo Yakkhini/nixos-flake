@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = [
     # Desktop Env
     ## Wayland
@@ -11,7 +7,6 @@
     pkgs.swayidle
     pkgs.hypridle
     pkgs.hyprlock
-    pkgs.hyprpaper
     pkgs.sway-contrib.grimshot
     pkgs.grim
     pkgs.xwayland-satellite
