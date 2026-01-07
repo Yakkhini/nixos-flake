@@ -28,6 +28,7 @@
     pkgs.nautilus
 
     # Tool
+    pkgs.just
     pkgs.kalker # Calculator
     pkgs.p7zip
     pkgs.alejandra
