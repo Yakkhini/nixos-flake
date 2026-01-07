@@ -73,6 +73,7 @@
     pkgs.uv
     pkgs.ruff
     pkgs.nixd
+    pkgs.rustup
     pkgs.clang
     pkgs.clang-tools
 
