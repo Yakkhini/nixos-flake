@@ -61,6 +61,7 @@
       servers.nixd.enable = true;
       servers.pylsp.enable = true;
       servers.ruff.enable = true;
+      servers.rust_analyzer.enable = true;
       servers.solargraph.enable = true;
       servers.tinymist = {
         enable = true;
