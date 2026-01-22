@@ -7,7 +7,7 @@ switch:
 update:
   nix flake update
   git reset
-  git add nix.lock
+  git add flake.lock
   git commit -S -m "[update] `date +%Y%m%d` update"
 
 fmt:
