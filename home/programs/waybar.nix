@@ -63,6 +63,7 @@
         };
         cpu = {
           format = "{usage}% 󰘚";
+          on-click = "auto-cpufreq-gtk";
         };
         temperature = {
           thermal-zone = 2;
