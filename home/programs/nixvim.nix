@@ -27,7 +27,7 @@
       providers.wl-copy.enable = true;
     };
     colorschemes.catppuccin = {
-      enable = false;
+      enable = true;
       settings = {
         styles = {
           conditionals = ["standout"];
@@ -207,10 +207,7 @@
       lsp.servers.julials.enable = true;
       lspconfig.enable = true;
       lspsaga.enable = true;
-      lualine = {
-        enable = true;
-        settings.options.theme = "catppuccin";
-      };
+      lualine.enable = true;
       luasnip = {
         enable = true;
         settings = {
