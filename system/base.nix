@@ -64,8 +64,8 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Wayland support
-  # programs.sway.enable = true;
+  # Soteria GUI Policy Toolkit
+  security.soteria.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
