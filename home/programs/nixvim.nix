@@ -72,6 +72,7 @@
         };
       };
       servers.verible.enable = true;
+      servers.zls.enable = true;
     };
     plugins = {
       alpha = {
