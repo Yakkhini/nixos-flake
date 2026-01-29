@@ -2,35 +2,16 @@
   programs.niri.enable = true;
   programs.niri.package = pkgs.niri;
 
-  services.swww.enable = true;
-  catppuccin.mako.enable = true;
-
-  services.mako = {
+  programs.noctalia-shell = {
     enable = true;
-
-    settings = {
-      actions = true;
-      anchor = "bottom-center";
-      default-timeout = 5000;
-
-      height = 300;
-      width = 500;
-
-      font = "monospace 12";
-      border-radius = 10;
-      border-size = 2;
-      padding = "10";
-
-      "actionable=true" = {
-        anchor = "bottom-right";
-      };
-    };
+    systemd.enable = true;
   };
 
   # Ref: https://wiki.nixos.org/wiki/Swayidle
   services.swayidle = let
     # Lock command
-    lock = "${pkgs.niri}/bin/niri msg action spawn -- hyprlock";
+    # lock = "if pidof quickshell; then noctalia-shell ipc call lockScreen lock; else pidof hyprlock || ${pkgs.niri}/bin/niri msg action spawn -- hyprlock; fi";
+    lock = "if ${pkgs.procps}/bin/pidof quickshell; then ${pkgs.niri}/bin/niri msg action spawn -- noctalia-shell ipc call lockScreen lock; else pidof hyprlock || ${pkgs.niri}/bin/niri msg action spawn -- hyprlock; fi";
     # TODO: modify "display" function based on your window manager
     # Sway
     # display = status: "${pkgs.sway}/bin/swaymsg 'output * power ${status}'";
