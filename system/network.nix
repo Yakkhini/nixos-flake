@@ -5,8 +5,8 @@
     };
     networkmanager = {
       enable = true; # Easiest to use and most distros use this by default.
-      ethernet.macAddress = "random";
-      wifi.macAddress = "random";
+      ethernet.macAddress = "stable";
+      wifi.macAddress = "stable-ssid";
     };
   };
 
