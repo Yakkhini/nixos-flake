@@ -59,6 +59,7 @@
       XDG_SCREENSHOTS_DIR = "$HOME/Pictures/ScreenShots";
       BROWSER = "firefox";
       OPENROUTER_API_KEY = "`cat ~/Public/openrouter`";
+      OPENAI_API_KEY = "`cat ~/Public/openai`";
     };
 
     home.pointerCursor = {
