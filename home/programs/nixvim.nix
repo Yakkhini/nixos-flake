@@ -300,6 +300,33 @@
         options.desc = "Go to the left window";
       }
       {
+        mode = [
+          "n"
+          "v"
+        ];
+        action = "<cmd>lua if vim.g.neovide then vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1 end<CR>";
+        key = "<C-=>";
+        options.desc = "Increase Neovide scale";
+      }
+      {
+        mode = [
+          "n"
+          "v"
+        ];
+        action = "<cmd>lua if vim.g.neovide then vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1 end<CR>";
+        key = "<C-->";
+        options.desc = "Decrease Neovide scale";
+      }
+      {
+        mode = [
+          "n"
+          "v"
+        ];
+        action = "<cmd>lua if vim.g.neovide then vim.g.neovide_scale_factor = 1 end<CR>";
+        key = "<C-0>";
+        options.desc = "Reset Neovide scale";
+      }
+      {
         mode = "n";
         action = "<C-w>j";
         key = "<C-j>";
