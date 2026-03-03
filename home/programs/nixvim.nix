@@ -83,25 +83,6 @@
         enable = true;
         settings.auto_restore_last_session = true;
       };
-      avante = {
-        enable = true;
-        settings = {
-          auto_suggestions_provider = "copilot";
-          provider = "openrouter";
-          providers = {
-            openrouter = {
-              __inherited_from = "openai";
-              endpoint = "https://openrouter.ai/api/v1";
-              api_key_name = "OPENROUTER_API_KEY";
-              model = "anthropic/claude-sonnet-4";
-            };
-          };
-          selector = {
-            provider = "telescope";
-            provider_opts = {};
-          };
-        };
-      };
       blink-cmp = {
         enable = true;
         settings.keymap.preset = "enter";
@@ -111,33 +92,22 @@
           "snippets"
           "buffer"
           "copilot"
-          "avante_commands"
-          "avante_mentions"
-          "avante_files"
+          "minuet"
         ];
         settings.completion = {
+          menu.auto_show = true;
           ghost_text.enabled = true;
+          ghost_text.show_with_menu = true;
           list.selection.auto_insert = false;
         };
         settings.signature.enabled = true;
         settings.sources.providers = {
-          avante_commands = {
-            name = "avante_commands";
-            module = "blink.compat.source";
-            score_offset = 90;
-            opts = {};
-          };
-          avante_files = {
-            name = "avante_files";
-            module = "blink.compat.source";
-            score_offset = 100;
-            opts = {};
-          };
-          avante_mentions = {
-            name = "avante_mentions";
-            module = "blink.compat.source";
-            score_offset = 1000;
-            opts = {};
+          minuet = {
+            async = true;
+            module = "minuet.blink";
+            name = "minuet";
+            score_offset = 50;
+            timeout_ms = 3000;
           };
           copilot = {
             async = true;
@@ -159,7 +129,6 @@
         };
       };
       blink-copilot.enable = true;
-      blink-compat.enable = true;
       bufferline = {
         enable = true;
         settings.options = {
@@ -217,6 +186,37 @@
         };
       };
       markdown-preview.enable = true;
+      opencode = {
+        enable = true;
+        settings = {};
+      };
+      minuet = {
+        enable = true;
+        settings = {
+          provider = "openai_compatible";
+          request_timeout = 3;
+          provider_options = {
+            openai = {
+              model = "gpt-5-mini";
+              optional = {
+                max_completion_tokens = 256;
+                reasoning_effort = "minimal";
+              };
+            };
+            openai_compatible = {
+              api_key = "OPENROUTER_API_KEY";
+              end_point = "https://openrouter.ai/api/v1/chat/completions";
+              model = "mistralai/devstral-small";
+              name = "OpenRouter";
+              stream = true;
+              optional = {
+                max_tokens = 256;
+                top_p = 0.9;
+              };
+            };
+          };
+        };
+      };
       # neorg.enable = true;
       noice = {
         enable = true;
@@ -428,6 +428,33 @@
         action = "<cmd>Gitsigns preview_hunk_inline<CR>";
         key = "<leader>gp";
         options.desc = "Preview git hunk";
+      }
+      {
+        mode = [
+          "n"
+          "x"
+        ];
+        action = "<cmd>lua require('opencode').ask('@this: ', { submit = true })<CR>";
+        key = "<leader>oa";
+        options.desc = "Ask OpenCode";
+      }
+      {
+        mode = [
+          "n"
+          "x"
+        ];
+        action = "<cmd>lua require('opencode').select()<CR>";
+        key = "<leader>ox";
+        options.desc = "OpenCode action picker";
+      }
+      {
+        mode = [
+          "n"
+          "t"
+        ];
+        action = "<cmd>lua require('opencode').toggle()<CR>";
+        key = "<C-o>";
+        options.desc = "Toggle OpenCode terminal";
       }
     ];
   };
