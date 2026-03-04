@@ -12,6 +12,7 @@
 
   programs.lazygit.enable = true;
   programs.delta.enable = true;
+  programs.gh.enable = true;
 
   programs.jujutsu = {
     enable = true;
