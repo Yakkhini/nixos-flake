@@ -7,7 +7,7 @@
 }: {
   imports = [
     ./base.nix
-    ./clash.nix
+    ./vpn.nix
     ./display.nix
     ./users.nix
     ./network.nix
