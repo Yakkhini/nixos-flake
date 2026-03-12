@@ -40,7 +40,7 @@
     pkgs.telegram-desktop
     pkgs.wemeet
     pkgs.feishu
-    pkgs.nur.repos.xddxdd.dingtalk
+    pkgs.nur.repos.yakkhini.dingtalk
     pkgs.qq
     pkgs.wechat
     pkgs.discord
