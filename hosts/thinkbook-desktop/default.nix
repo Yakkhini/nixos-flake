@@ -54,6 +54,16 @@
     enable32Bit = true;
   };
 
+  # Sunshine for game streaming
+  # TODO: No need to declare uinput group and enable `hardware.uinput`
+  # manually after https://github.com/NixOS/nixpkgs/pull/493109 merged.
+  hardware.uinput.enable = true;
+  services.sunshine = {
+    enable = true;
+    autoStart = true;
+    capSysAdmin = true;
+  };
+
   # hardware.intelgpu.driver = "xe";
 
   # This option defines the first version of NixOS you have installed on this particular machine,
