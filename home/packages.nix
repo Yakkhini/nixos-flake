@@ -18,7 +18,8 @@
     pkgs.cowsay
     pkgs.viu
     pkgs.vanilla-dmz
-    pkgs.orchis-theme
+    pkgs.adw-gtk3
+    pkgs.nwg-look
     ## others
     pkgs.nautilus
 
