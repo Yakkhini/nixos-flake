@@ -14,7 +14,7 @@
     ranger
     ncdu
     btop
-    light
+    brightnessctl
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -29,7 +29,6 @@
     git.enable = true;
     zsh.enable = true;
     dconf.enable = true;
-    light.enable = true;
     yazi.enable = true;
   };
 }
