@@ -10,6 +10,14 @@
     };
   };
 
+  services.openssh = {
+    enable = true;
+    ports = [22112];
+    settings = {
+      PermitRootLogin = "no";
+    };
+  };
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
