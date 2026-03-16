@@ -13,6 +13,7 @@
   # Also search tailscale clash verge on web for more information.
   services.tailscale = {
     enable = true;
+    openFirewall = true;
 
     # Use userspace networking as a socks5 proxy
     # to avoid conflicts with clash TUN mode.
