@@ -41,9 +41,7 @@
     pkgs.wemeet
     pkgs.feishu
     pkgs.nur.repos.yakkhini.dingtalk
-    pkgs.qq
     pkgs.wechat
-    pkgs.discord
     pkgs.thunderbird
 
     # Media
@@ -52,7 +50,6 @@
     pkgs.nomacs # Images viewer
     pkgs.kdePackages.okular # PDF reader
     pkgs.vlc
-    pkgs.zoom-us
 
     # Writing
     pkgs.obsidian
