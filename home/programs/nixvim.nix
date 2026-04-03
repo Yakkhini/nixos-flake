@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{...}: {
   programs.nixvim = {
     enable = true;
     opts = {
@@ -387,7 +387,7 @@
         options.desc = "Close all unpin buffers";
       }
       {
-        mode = "n";
+        mode = ["n" "v"];
         action = "<cmd>lua require('conform').format({lsp_fallback=true})<CR>";
         key = "<leader>cf";
         options.desc = "Format the current buffer";
