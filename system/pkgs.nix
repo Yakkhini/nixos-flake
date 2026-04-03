@@ -7,7 +7,6 @@
     man-pages
     man-pages-posix
     cifs-utils
-    tuigreet
     fastfetch
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
