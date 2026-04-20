@@ -70,6 +70,7 @@
     xdg.userDirs = {
       enable = true;
       createDirectories = true;
+      setSessionVariables = true;
     };
 
     catppuccin.gtk.icon = {
@@ -81,6 +82,7 @@
       enable = true;
       font.name = "sans-serif";
       font.size = 14;
+      gtk4.theme = null;
     };
   };
 }

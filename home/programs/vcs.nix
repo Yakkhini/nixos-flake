@@ -1,6 +1,7 @@
-{pkgs, ...}: {
+{...}: {
   programs.git = {
     enable = true;
+    signing.format = "openpgp";
     signing.key = "F27FB4A20C9CCAC0";
     signing.signByDefault = true;
     settings = {
