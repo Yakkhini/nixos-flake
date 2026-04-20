@@ -4,7 +4,6 @@
 
   programs.noctalia-shell = {
     enable = true;
-    systemd.enable = true;
   };
 
   # Ref: https://wiki.nixos.org/wiki/Swayidle
