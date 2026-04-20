@@ -42,7 +42,10 @@
     lsp = {
       inlayHints.enable = true;
       servers.clangd.enable = true;
-      servers.hls.enable = true;
+      servers.hls = {
+        enable = true;
+        package = null;
+      };
       servers.metals = {
         enable = true;
         config = {
@@ -71,6 +74,7 @@
           formatterMode = "typstyle";
         };
       };
+      servers.ty.enable = true;
       servers.verible.enable = true;
       servers.zls.enable = true;
     };
