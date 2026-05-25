@@ -210,7 +210,7 @@
             openai_compatible = {
               api_key = "OPENROUTER_API_KEY";
               end_point = "https://openrouter.ai/api/v1/chat/completions";
-              model = "mistralai/devstral-small";
+              model = "xiaomi/mimo-v2-flash";
               name = "OpenRouter";
               stream = true;
               optional = {
