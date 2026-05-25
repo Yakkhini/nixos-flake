@@ -2,12 +2,8 @@
   pkgs,
   config,
   nur,
-  hyprwm-contrib,
   ...
 }: {
-  nixpkgs.overlays = [
-    hyprwm-contrib.overlays.default
-  ];
   nixpkgs.config = {
     allowUnfree = true;
     permittedInsecurePackages = [

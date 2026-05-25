@@ -5,13 +5,9 @@
     pkgs.wl-clipboard
     pkgs.wlsunset
     pkgs.swayidle
-    pkgs.hypridle
-    pkgs.hyprlock
     pkgs.sway-contrib.grimshot
     pkgs.grim
     pkgs.xwayland-satellite
-    ## hyprwm contrib
-    pkgs.grimblast
     ## icons & themes
     pkgs.pipes-rs # Just for fun
     pkgs.sl

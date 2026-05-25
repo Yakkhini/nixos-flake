@@ -1,9 +1,4 @@
 {
-  config,
-  lib,
-  pkgs,
-  nixpkgs,
-  home-manager,
   nix-index-database,
   nur,
   catppuccin,
@@ -18,11 +13,7 @@
 
   home-manager.extraSpecialArgs = specialArgs;
 
-  home-manager.users.yakkhini = {
-    pkgs,
-    nixpkgs,
-    ...
-  }: {
+  home-manager.users.yakkhini = {nixpkgs, ...}: {
     nix.registry.pkgs.flake = nixpkgs;
     home.stateVersion = "22.11";
     imports = [
@@ -38,7 +29,6 @@
       ./packages.nix
       ./services.nix
       ./waylandSway.nix
-      ./waylandHyprland
       ./waylandNiri
     ];
 
