@@ -1,7 +1,7 @@
-{nixpkgs, ...}: {
+{...}: {
   programs.nixvim = {
     enable = true;
-    nixpkgs.source = nixpkgs;
+    nixpkgs.useGlobalPackages = true;
     opts = {
       number = true;
       relativenumber = true;
