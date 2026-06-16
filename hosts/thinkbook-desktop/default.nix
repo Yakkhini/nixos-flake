@@ -1,8 +1,5 @@
 {
-  config,
   lib,
-  nixpkgs,
-  catppuccin,
   pkgs,
   ...
 }: {
@@ -39,6 +36,8 @@
   ];
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nix.settings.trusted-users = ["root" "@wheel"];
+  nix.settings.extra-substituters = ["https://noctalia.cachix.org"];
+  nix.settings.extra-trusted-public-keys = ["noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="];
 
   # Systemwide nixpkgs config
   nixpkgs.config = {

@@ -2,15 +2,15 @@
   programs.niri.enable = true;
   programs.niri.package = pkgs.niri;
 
-  programs.noctalia-shell = {
+  programs.noctalia = {
     enable = true;
   };
 
   # Ref: https://wiki.nixos.org/wiki/Swayidle
   services.swayidle = let
     # Lock command
-    # lock = "if pidof quickshell; then noctalia-shell ipc call lockScreen lock; else pidof hyprlock || ${pkgs.niri}/bin/niri msg action spawn -- hyprlock; fi";
-    lock = "if ${pkgs.procps}/bin/pidof quickshell; then ${pkgs.niri}/bin/niri msg action spawn -- noctalia-shell ipc call lockScreen lock; else pidof hyprlock || ${pkgs.niri}/bin/niri msg action spawn -- hyprlock; fi";
+    # lock = "if pidof noctalia; then noctalia msg session lock; else pidof hyprlock || ${pkgs.niri}/bin/niri msg action spawn -- hyprlock; fi";
+    lock = "if ${pkgs.procps}/bin/pidof noctalia; then ${pkgs.niri}/bin/niri msg action spawn -- noctalia msg session lock; else pidof hyprlock || ${pkgs.niri}/bin/niri msg action spawn -- hyprlock; fi";
     # TODO: modify "display" function based on your window manager
     # Sway
     # display = status: "${pkgs.sway}/bin/swaymsg 'output * power ${status}'";
