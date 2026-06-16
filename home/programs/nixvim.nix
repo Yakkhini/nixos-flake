@@ -172,6 +172,7 @@
           markdown = ["autocorrect"];
         };
       };
+      diffview.enable = true;
       direnv.enable = true;
       gitsigns = {
         enable = true;
