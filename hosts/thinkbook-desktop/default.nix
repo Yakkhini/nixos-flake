@@ -28,7 +28,10 @@
 
   nix.channel.enable = false;
 
+  catppuccin.enable = true;
+  catppuccin.autoEnable = false;
   catppuccin.cache.enable = true;
+
   nix.settings.substituters = [
     "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
     "https://mirrors.ustc.edu.cn/nix-channels/store"
