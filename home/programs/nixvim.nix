@@ -101,8 +101,8 @@
         ];
         settings.completion = {
           menu.auto_show = true;
-          ghost_text.enabled = true;
-          ghost_text.show_with_menu = true;
+          documentation.auto_show = true;
+          ghost_text.enabled = false;
           list.selection.auto_insert = false;
         };
         settings.signature.enabled = true;
@@ -212,7 +212,7 @@
             openai_compatible = {
               api_key = "OPENROUTER_API_KEY";
               end_point = "https://openrouter.ai/api/v1/chat/completions";
-              model = "xiaomi/mimo-v2-flash";
+              model = "xiaomi/mimo-v2.5";
               name = "OpenRouter";
               stream = true;
               optional = {
@@ -245,6 +245,18 @@
         enable = true;
         settings = {
           explore.enable = true;
+        };
+      };
+      supermaven = {
+        enable = true;
+        settings = {
+          disable_inline_completion = false;
+          disable_keymaps = false;
+          keymaps = {
+            accept_suggestion = "<C-M-CR>";
+            accept_word = "<C-M-l>";
+            clear_suggestion = "<C-M-]>";
+          };
         };
       };
       telescope = {
