@@ -69,6 +69,9 @@
 
   hardware.intelgpu.driver = "xe";
 
+  # i2c support for ddcutil for external monitor brightness control
+  hardware.i2c.enable = true;
+
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
   #
