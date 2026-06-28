@@ -2,6 +2,10 @@
   programs.nixvim = {
     enable = true;
     nixpkgs.useGlobalPackages = true;
+    globals = {
+      neovide_opacity = 0.9;
+      neovide_normal_opacity = 0.9;
+    };
     opts = {
       number = true;
       relativenumber = true;
@@ -27,19 +31,26 @@
       register = "unnamedplus"; # Use the system clipboard
       providers.wl-copy.enable = true;
     };
-    colorschemes.catppuccin = {
-      enable = true;
-      settings = {
-        styles = {
-          conditionals = ["standout"];
+    colorscheme = "kanagawa-dragon";
+    colorschemes = {
+      catppuccin = {
+        enable = true;
+        settings = {
+          styles = {
+            conditionals = ["standout"];
+          };
+          flavour = "mocha";
+          term_colors = true;
+          default_integrations = true;
         };
-        flavour = "mocha";
-        term_colors = true;
-        default_integrations = true;
       };
+      github-theme.enable = true;
+      kanagawa.enable = true;
+      modus.enable = true;
+      monokai-pro.enable = true;
+      onedark.enable = true;
+      oxocarbon.enable = true;
     };
-    colorscheme = "github_light";
-    colorschemes.github-theme.enable = true;
     lsp = {
       inlayHints.enable = true;
       servers.clangd.enable = true;
