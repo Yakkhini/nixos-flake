@@ -108,7 +108,7 @@
           "snippets"
           "buffer"
           "copilot"
-          "minuet"
+          "supermaven"
         ];
         settings.completion = {
           menu.auto_show = true;
@@ -118,12 +118,31 @@
         };
         settings.signature.enabled = true;
         settings.sources.providers = {
-          minuet = {
-            async = true;
-            module = "minuet.blink";
-            name = "minuet";
+          supermaven = {
+            name = "supermaven";
+            module = "blink.compat.source";
             score_offset = 50;
-            timeout_ms = 3000;
+            timeout_ms = 1000;
+
+            transform_items.__raw = ''
+              function(ctx, items)
+                for _, item in ipairs(items) do
+                  item.kind_icon = ""
+                end
+                return items
+              end
+            '';
+            override.get_completions.__raw = ''
+              function(source, ctx, callback)
+                return source:get_completions(ctx, function(response)
+                  if response ~= nil then
+                    response.is_incomplete_forward = true
+                    response.is_incomplete_backward = true
+                  end
+                  callback(response)
+                end)
+              end
+            '';
           };
           copilot = {
             async = true;
@@ -144,6 +163,7 @@
           };
         };
       };
+      blink-compat.enable = true;
       blink-copilot.enable = true;
       bufferline = {
         enable = true;
@@ -207,33 +227,6 @@
         enable = true;
         settings = {};
       };
-      minuet = {
-        enable = true;
-        settings = {
-          provider = "openai_compatible";
-          request_timeout = 3;
-          provider_options = {
-            openai = {
-              model = "gpt-5-mini";
-              optional = {
-                max_completion_tokens = 256;
-                reasoning_effort = "minimal";
-              };
-            };
-            openai_compatible = {
-              api_key = "OPENROUTER_API_KEY";
-              end_point = "https://openrouter.ai/api/v1/chat/completions";
-              model = "xiaomi/mimo-v2.5";
-              name = "OpenRouter";
-              stream = true;
-              optional = {
-                max_tokens = 256;
-                top_p = 0.9;
-              };
-            };
-          };
-        };
-      };
       # neorg.enable = true;
       noice = {
         enable = true;
@@ -264,9 +257,7 @@
           disable_inline_completion = false;
           disable_keymaps = false;
           keymaps = {
-            accept_suggestion = "<C-M-CR>";
-            accept_word = "<C-M-l>";
-            clear_suggestion = "<C-M-]>";
+            accept_word = "<C-l>";
           };
         };
       };
@@ -323,12 +314,6 @@
         options.desc = "Yank selection to clipboard in visual mode with mouse";
       }
       {
-        mode = "n";
-        action = "<C-w>h";
-        key = "<C-h>";
-        options.desc = "Go to the left window";
-      }
-      {
         mode = [
           "n"
           "v"
@@ -354,6 +339,18 @@
         action = "<cmd>lua if vim.g.neovide then vim.g.neovide_scale_factor = 1 end<CR>";
         key = "<C-0>";
         options.desc = "Reset Neovide scale";
+      }
+      {
+        mode = "i";
+        key = "<C-Right>";
+        action = "<cmd>lua require('supermaven-nvim.completion_preview').on_accept_suggestion_word()<CR>";
+        options.desc = "Supermaven accept word";
+      }
+      {
+        mode = "n";
+        action = "<C-w>h";
+        key = "<C-h>";
+        options.desc = "Go to the left window";
       }
       {
         mode = "n";
