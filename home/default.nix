@@ -13,8 +13,8 @@
 
   home-manager.extraSpecialArgs = specialArgs;
 
-  home-manager.users.yakkhini = {nixpkgs, ...}: {
-    nix.registry.pkgs.flake = nixpkgs;
+  home-manager.users.yakkhini = {nixpkgs-unfree, ...}: {
+    nix.registry.pkgs.flake = nixpkgs-unfree; # Only use nixpkgs-unfree for registry
     home.stateVersion = "22.11";
     imports = [
       nur.modules.homeManager.default
