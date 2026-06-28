@@ -62,6 +62,7 @@
     pkgs.autocorrect
 
     #Code
+    pkgs.llm-agents.omp
     pkgs.ruby
     pkgs.ruby.gems.solargraph
     pkgs.gnumake

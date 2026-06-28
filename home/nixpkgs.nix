@@ -1,9 +1,9 @@
 {
-  pkgs,
-  config,
+  llm-agents,
   nur,
   ...
 }: {
+  nixpkgs.overlays = [llm-agents.overlays.default];
   nixpkgs.config = {
     allowUnfree = true;
     permittedInsecurePackages = [
