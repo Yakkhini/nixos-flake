@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  zen-browser,
+  ...
+}: {
   home.packages = [
     # Desktop Env
     ## Wayland
@@ -30,6 +34,7 @@
     pkgs.podman-compose
 
     # Browsers
+    zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     pkgs.firefox
 
     # Communication

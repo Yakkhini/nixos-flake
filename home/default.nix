@@ -49,7 +49,7 @@
       SDL_VIDEO_WAYLAND_SCALE_TO_DISPLAY = 0;
       XDG_SESSION_TYPE = "wayland";
       XDG_SCREENSHOTS_DIR = "$HOME/Pictures/ScreenShots";
-      BROWSER = "firefox";
+      BROWSER = "zen";
       OPENROUTER_API_KEY = "`cat ~/Public/openrouter`";
       OPENAI_API_KEY = "`cat ~/Public/openai`";
     };
