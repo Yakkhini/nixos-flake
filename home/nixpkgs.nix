@@ -3,7 +3,7 @@
   nur,
   ...
 }: {
-  nixpkgs.overlays = [llm-agents.overlays.default];
+  nixpkgs.overlays = [llm-agents.overlays.shared-nixpkgs];
   nixpkgs.config = {
     allowUnfree = true;
     permittedInsecurePackages = [
