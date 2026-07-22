@@ -55,6 +55,7 @@
     };
 
     home.pointerCursor = {
+      enable = true;
       size = 32;
       hyprcursor.enable = true;
     };
