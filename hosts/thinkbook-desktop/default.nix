@@ -36,8 +36,16 @@
   ];
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nix.settings.trusted-users = ["root" "@wheel"];
-  nix.settings.extra-substituters = ["https://noctalia.cachix.org"];
-  nix.settings.extra-trusted-public-keys = ["noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="];
+  nix.settings.extra-substituters = [
+    "https://noctalia.cachix.org"
+    "https://cache.numtide.com"
+    "https://yakkhini.cachix.org"
+  ];
+  nix.settings.extra-trusted-public-keys = [
+    "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+    "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
+    "yakkhini.cachix.org-1:VEkiR+cHXNFEpx4XosK1aC0N1AgzZj5EEBOVH3EbcEs="
+  ];
 
   # Systemwide nixpkgs config
   nixpkgs.config = {
