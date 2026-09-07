@@ -4,7 +4,6 @@
   catppuccin,
   nixvim,
   niri,
-  noctalia,
   specialArgs,
   ...
 }: {
@@ -21,7 +20,6 @@
       catppuccin.homeModules.catppuccin
       nixvim.homeModules.nixvim
       niri.homeModules.niri
-      noctalia.homeModules.default
       nix-index-database.homeModules.nix-index
       ./programs
       ./i18n.nix
