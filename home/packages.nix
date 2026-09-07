@@ -47,6 +47,7 @@
 
     # Media
     pkgs.nur.repos.yakkhini.vutronmusic
+    pkgs.cider-2
     pkgs.pavucontrol
     pkgs.nomacs # Images viewer
     pkgs.kdePackages.okular # PDF reader
