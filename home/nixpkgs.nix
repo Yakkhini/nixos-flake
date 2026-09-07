@@ -7,7 +7,7 @@
   nixpkgs.config = {
     allowUnfree = true;
     permittedInsecurePackages = [
-      "openssl-1.1.1w"
+      "dingtalk-8.2.8.260818002"
     ];
     packageOverrides = pkgs: {
       fcitx5-rime = pkgs.fcitx5-rime.override {
