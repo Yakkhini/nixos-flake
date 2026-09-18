@@ -39,13 +39,13 @@
   };
 
   outputs = inputs @ {flake-parts, ...}:
-  # https://flake.parts/module-arguments.html
-    flake-parts.lib.mkFlake {inherit inputs;} (top @ {
-      config,
-      withSystem,
-      moduleWithSystem,
-      ...
-    }: {
+    flake-parts.lib.mkFlake {inherit inputs;} {
+      imports = [
+        ./modules/hosts/dell-desktop
+        ./modules/hosts/thinkbook-desktop
+        ./modules/hosts/thinkbook-wsl
+      ];
+
       systems = ["x86_64-linux"];
 
       perSystem = {
@@ -55,40 +55,5 @@
       }: {
         formatter = pkgs.alejandra;
       };
-
-      flake = {
-        nixosConfigurations.yaksis-dell-desktop = inputs.nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = inputs;
-          modules = [
-            inputs.home-manager.nixosModules.home-manager
-            inputs.nur.modules.nixos.default
-            ./hosts/dell-desktop
-          ];
-        };
-
-        nixosConfigurations.yaksis-thinkbook-wsl = inputs.nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = inputs;
-          modules = [
-            inputs.home-manager.nixosModules.home-manager
-            inputs.catppuccin.nixosModules.catppuccin
-            inputs.nur.modules.nixos.default
-            inputs.wsl.nixosModules.wsl
-            ./hosts/thinkbook-wsl
-          ];
-        };
-        nixosConfigurations.yaksis-thinkbook-desktop = inputs.nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = inputs;
-          modules = [
-            inputs.home-manager.nixosModules.home-manager
-            inputs.catppuccin.nixosModules.catppuccin
-            inputs.nur.modules.nixos.default
-            inputs.nixos-hardware.nixosModules.common-cpu-intel
-            ./hosts/thinkbook-desktop
-          ];
-        };
-      };
-    });
+    };
 }
