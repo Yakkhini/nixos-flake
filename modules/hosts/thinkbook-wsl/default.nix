@@ -1,11 +1,15 @@
-{inputs, ...}: {
+{
+  config,
+  inputs,
+  ...
+}: {
   flake.nixosConfigurations.yaksis-thinkbook-wsl = inputs.nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
     specialArgs = inputs;
     modules = [
-      inputs.home-manager.nixosModules.home-manager
+      config.flake.modules.nixos.nix
+
       inputs.catppuccin.nixosModules.catppuccin
-      inputs.nur.modules.nixos.default
       inputs.wsl.nixosModules.wsl
 
       {
@@ -24,14 +28,7 @@
         nix.channel.enable = false;
 
         catppuccin.cache.enable = true;
-        nix.settings.substituters = [
-          "https://mirrors.cernet.edu.cn/nix-channels/store"
-          "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
-          "https://mirrors.ustc.edu.cn/nix-channels/store"
-          "https://cache.nixos.org/"
-        ];
-        nix.settings.experimental-features = ["nix-command" "flakes"];
-        nix.settings.trusted-users = ["root" "@wheel"];
+
         nix.settings.auto-optimise-store = true;
 
         wsl.enable = true;

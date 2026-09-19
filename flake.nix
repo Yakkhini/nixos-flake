@@ -41,6 +41,10 @@
   outputs = inputs @ {flake-parts, ...}:
     flake-parts.lib.mkFlake {inherit inputs;} {
       imports = [
+        inputs.flake-parts.flakeModules.modules
+
+        ./modules/nix.nix
+
         ./modules/hosts/dell-desktop
         ./modules/hosts/thinkbook-desktop
         ./modules/hosts/thinkbook-wsl

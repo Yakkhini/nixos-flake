@@ -7,8 +7,7 @@
     system = "x86_64-linux";
     specialArgs = inputs;
     modules = [
-      inputs.home-manager.nixosModules.home-manager
-      inputs.nur.modules.nixos.default
+      config.flake.modules.nixos.nix
 
       {
         imports = [
@@ -23,18 +22,7 @@
       ({pkgs, ...}: {
         nix.channel.enable = false;
 
-        nix.settings.substituters = [
-          "https://mirrors.cernet.edu.cn/nix-channels/store"
-          "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
-          "https://mirrors.ustc.edu.cn/nix-channels/store"
-        ];
-        nix.settings.experimental-features = ["nix-command" "flakes"];
-        nix.settings.trusted-users = ["root" "@wheel"];
         nix.registry.pkgs.flake = inputs.nixpkgs;
-        # Systemwide nixpkgs config
-        nixpkgs.config = {
-          allowUnfree = true;
-        };
 
         hardware.opengl = {
           enable = true;
