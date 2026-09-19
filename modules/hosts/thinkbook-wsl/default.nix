@@ -7,7 +7,7 @@
     system = "x86_64-linux";
     specialArgs = inputs;
     modules = [
-      config.flake.modules.nixos.nix
+      config.flake.modules.nixos.common
 
       inputs.catppuccin.nixosModules.catppuccin
       inputs.wsl.nixosModules.wsl
@@ -15,7 +15,6 @@
       {
         imports = [
           ../../../home/minimal.nix
-          ../../../system/minimal.nix
         ];
       }
 

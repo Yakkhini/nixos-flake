@@ -7,7 +7,8 @@
     system = "x86_64-linux";
     specialArgs = inputs;
     modules = [
-      config.flake.modules.nixos.nix
+      config.flake.modules.nixos.common
+      config.flake.modules.nixos.desktop-base
 
       inputs.catppuccin.nixosModules.catppuccin
       inputs.nixos-hardware.nixosModules.common-cpu-intel
@@ -16,7 +17,6 @@
         imports = [
           ./_hardware.nix
           ./_mount.nix
-          ../../../system
           ../../../home
         ];
       }

@@ -44,6 +44,8 @@
         inputs.flake-parts.flakeModules.modules
 
         ./modules/nix.nix
+        ./modules/common.nix
+        ./modules/desktop-base.nix
 
         ./modules/hosts/dell-desktop
         ./modules/hosts/thinkbook-desktop

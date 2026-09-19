@@ -7,14 +7,14 @@
     system = "x86_64-linux";
     specialArgs = inputs;
     modules = [
-      config.flake.modules.nixos.nix
+      config.flake.modules.nixos.common
+      config.flake.modules.nixos.desktop-base
 
       {
         imports = [
           ./_hardware.nix
           ./_boot.nix
           ./_mount.nix
-          ../../../system
           ../../../home
         ];
       }
