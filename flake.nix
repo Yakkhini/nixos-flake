@@ -7,7 +7,10 @@
       url = "github:numtide/nixpkgs-unfree";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     flake-parts.url = "github:hercules-ci/flake-parts";
+    import-tree.url = "github:denful/import-tree";
+
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nur.url = "github:nix-community/NUR";
     nix-index-database = {
@@ -42,14 +45,7 @@
     flake-parts.lib.mkFlake {inherit inputs;} {
       imports = [
         inputs.flake-parts.flakeModules.modules
-
-        ./modules/nix.nix
-        ./modules/common.nix
-        ./modules/desktop-base.nix
-
-        ./modules/hosts/dell-desktop
-        ./modules/hosts/thinkbook-desktop
-        ./modules/hosts/thinkbook-wsl
+        (inputs.import-tree ./modules)
       ];
 
       systems = ["x86_64-linux"];
