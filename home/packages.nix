@@ -74,9 +74,5 @@
     pkgs.rustup
     pkgs.clang
     pkgs.clang-tools
-
-    # Security
-    pkgs.gopass
-    pkgs.gopass-jsonapi
   ];
 }

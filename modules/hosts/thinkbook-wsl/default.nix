@@ -9,12 +9,17 @@
     modules = [
       config.flake.modules.nixos.common
 
-      inputs.catppuccin.nixosModules.catppuccin
       inputs.wsl.nixosModules.wsl
 
       {
-        imports = [
-          ../../../home/minimal.nix
+        home-manager.users.yakkhini = {};
+
+        home-manager.sharedModules = [
+          inputs.vscode-server.homeModules.default
+
+          {
+            services.vscode-server.enable = true;
+          }
         ];
       }
 

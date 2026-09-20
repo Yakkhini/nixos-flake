@@ -7,17 +7,9 @@
   specialArgs,
   ...
 }: {
-  home-manager.useGlobalPkgs = false;
-  home-manager.useUserPackages = true;
-
-  home-manager.extraSpecialArgs = specialArgs;
-
   home-manager.users.yakkhini = {nixpkgs-unfree, ...}: {
     nix.registry.pkgs.flake = nixpkgs-unfree; # Only use nixpkgs-unfree for registry
-    home.stateVersion = "22.11";
     imports = [
-      nur.modules.homeManager.default
-      catppuccin.homeModules.catppuccin
       nixvim.homeModules.nixvim
       niri.homeModules.niri
       nix-index-database.homeModules.nix-index
@@ -56,12 +48,6 @@
       enable = true;
       size = 32;
       hyprcursor.enable = true;
-    };
-
-    xdg.userDirs = {
-      enable = true;
-      createDirectories = true;
-      setSessionVariables = true;
     };
 
     catppuccin.gtk.icon = {

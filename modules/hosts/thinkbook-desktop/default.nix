@@ -10,7 +10,6 @@
       config.flake.modules.nixos.common
       config.flake.modules.nixos.desktop-base
 
-      inputs.catppuccin.nixosModules.catppuccin
       inputs.nixos-hardware.nixosModules.common-cpu-intel
 
       {
