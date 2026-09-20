@@ -1,17 +1,13 @@
-{
-  config,
-  inputs,
-  ...
-}: {
+{config, ...}: {
   flake.modules.nixos.common = {
     imports = [
       config.flake.modules.nixos.nix
 
-      ../system/users.nix
-      ../system/network.nix
-      ../system/fonts.nix
-      ../system/pkgs.nix
-      ../system/i18n.nix
+      config.flake.modules.nixos.users
+      config.flake.modules.nixos.network
+      config.flake.modules.nixos.fonts
+      config.flake.modules.nixos.pkgs
+      config.flake.modules.nixos.i18n
     ];
 
     # Set your time zone.

@@ -1,8 +1,8 @@
-{...}: {
+{config, ...}: {
   flake.modules.nixos.desktop-base = {pkgs, ...}: {
     imports = [
-      ../system/display.nix
-      ../system/vpn.nix
+      config.flake.modules.nixos.display
+      config.flake.modules.nixos.vpn
     ];
 
     #console
