@@ -11,7 +11,7 @@
         animation = "dur_file";
         bigclock = "en";
         full_color = true;
-        dur_file_path = "/home/yakkhini/Pictures/WallPapers/blackhole-smooth-240x67.dur";
+        dur_file_path = "${../assets/blackhole-smooth-240x67.dur}";
       };
     };
 
