@@ -12,8 +12,6 @@
       inputs.wsl.nixosModules.wsl
 
       {
-        home-manager.users.yakkhini = {};
-
         home-manager.sharedModules = [
           inputs.vscode-server.homeModules.default
 

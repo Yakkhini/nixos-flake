@@ -16,7 +16,6 @@
         imports = [
           ./_hardware.nix
           ./_mount.nix
-          ../../../home
         ];
       }
 

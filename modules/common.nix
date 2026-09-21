@@ -55,6 +55,8 @@
     };
 
     # Home Manager
+    home-manager.users.yakkhini = {};
+
     home-manager.sharedModules = [
       config.flake.modules.homeManager.common
     ];
@@ -74,14 +76,21 @@
       config.flake.modules.homeManager.simple-editor
       config.flake.modules.homeManager.ssh
       config.flake.modules.homeManager.vcs
-
-      ../home/programs/direnv.nix
     ];
 
     home.packages = [
       pkgs.pipes-rs # Just for fun
       pkgs.sl
       pkgs.cowsay
+
+      # Tool
+      pkgs.just
+      pkgs.kalker # Calculator
+      pkgs.p7zip
+      pkgs.alejandra
+      pkgs.hydra-check # Check the status of hydra jobs
+      pkgs.podman-tui
+      pkgs.podman-compose
 
       # Security
       pkgs.gopass
@@ -93,6 +102,8 @@
       createDirectories = true;
       setSessionVariables = true;
     };
+
+    programs.rclone.enable = true;
 
     home.stateVersion = "22.11";
   };

@@ -1,4 +1,8 @@
-{config, ...}: {
+{
+  config,
+  inputs,
+  ...
+}: {
   flake.modules.nixos.desktop-base = {pkgs, ...}: {
     home-manager.sharedModules = [
       config.flake.modules.homeManager.desktop-base
@@ -77,16 +81,26 @@
   };
 
   flake.modules.homeManager.desktop-base = {pkgs, ...}: {
-    imports = [
-      ../home/i18n.nix
-      ../home/programs/alacritty.nix
-    ];
-
     home.packages = [
+      inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
       pkgs.firefox
       pkgs.nautilus
       pkgs.vscode-fhs
+      pkgs.ueberzugpp # Image Preview for alacritty
     ];
+
+    i18n.inputMethod = {
+      enable = true;
+      type = "fcitx5";
+      fcitx5 = {
+        addons = with pkgs; [
+          fcitx5-rime
+          qt6Packages.fcitx5-chinese-addons
+          fcitx5-gtk
+        ];
+        waylandFrontend = true;
+      };
+    };
 
     catppuccin.enable = true;
     catppuccin.autoEnable = false;
@@ -94,6 +108,19 @@
     catppuccin.cursors = {
       accent = "dark";
       enable = true;
+    };
+
+    catppuccin.alacritty.enable = true;
+    programs.alacritty = {
+      enable = true;
+      settings = {
+        window.opacity = 0.9;
+        font = {
+          normal.family = "monospace";
+          bold.family = "MonaspiceKr Nerd Font Mono";
+          size = 14.0;
+        };
+      };
     };
 
     home.sessionVariables = {

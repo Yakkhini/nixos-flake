@@ -15,7 +15,6 @@
           ./_hardware.nix
           ./_boot.nix
           ./_mount.nix
-          ../../../home
         ];
       }
 

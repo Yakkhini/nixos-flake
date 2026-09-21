@@ -61,5 +61,12 @@
 
     programs.nix-index.enable = true;
     programs.nix-index-database.comma.enable = true;
+
+    programs.direnv = {
+      enable = true;
+      enableBashIntegration = true;
+      enableZshIntegration = true;
+      enableNushellIntegration = true;
+    };
   };
 }
