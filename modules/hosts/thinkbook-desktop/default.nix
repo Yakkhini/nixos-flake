@@ -22,9 +22,12 @@
 
       {
         home-manager.sharedModules = [
+          config.flake.modules.homeManager.communication
           config.flake.modules.homeManager.development
+          config.flake.modules.homeManager.media
           config.flake.modules.homeManager.niri
           config.flake.modules.homeManager.nixvim
+          config.flake.modules.homeManager.research
         ];
       }
 

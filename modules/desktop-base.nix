@@ -85,6 +85,7 @@
     home.packages = [
       pkgs.firefox
       pkgs.nautilus
+      pkgs.vscode-fhs
     ];
 
     catppuccin.enable = true;

@@ -16,30 +16,5 @@
 
     # Browsers
     zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-
-    # Communication
-    pkgs.telegram-desktop
-    pkgs.wemeet
-    pkgs.feishu
-    pkgs.nur.repos.yakkhini.dingtalk
-    pkgs.wechat
-    pkgs.thunderbird
-
-    # Media
-    pkgs.nur.repos.yakkhini.vutronmusic
-    pkgs.cider-2
-    pkgs.tsukimi
-    pkgs.pavucontrol
-    pkgs.nomacs # Images viewer
-    pkgs.kdePackages.okular # PDF reader
-    pkgs.vlc
-
-    # Writing
-    pkgs.obsidian
-    pkgs.vscode-fhs
-    pkgs.zotero
-    pkgs.typst
-    pkgs.tinymist
-    pkgs.typstyle
   ];
 }
