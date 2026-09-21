@@ -70,14 +70,12 @@
       inputs.catppuccin.homeModules.catppuccin
       inputs.nur.modules.homeManager.default
 
-      ../home/programs/bash.nix
+      config.flake.modules.homeManager.shell
+      config.flake.modules.homeManager.simple-editor
+      config.flake.modules.homeManager.ssh
+      config.flake.modules.homeManager.vcs
+
       ../home/programs/direnv.nix
-      ../home/programs/helix.nix
-      ../home/programs/shelltools.nix
-      ../home/programs/ssh.nix
-      ../home/programs/vcs.nix
-      ../home/programs/vim.nix
-      ../home/programs/zsh.nix
     ];
 
     home.packages = [
