@@ -41,18 +41,6 @@
     pkgs.typst
     pkgs.tinymist
     pkgs.typstyle
-    pkgs.autocorrect
 
-    #Code
-    pkgs.llm-agents.omp
-    pkgs.ruby
-    pkgs.ruby.gems.solargraph
-    pkgs.gnumake
-    pkgs.uv
-    pkgs.ruff
-    pkgs.nixd
-    pkgs.rustup
-    pkgs.clang
-    pkgs.clang-tools
   ];
 }
