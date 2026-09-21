@@ -35,14 +35,6 @@
     };
     xdg.sounds.enable = true;
 
-    # Podman
-    virtualisation = {
-      podman = {
-        enable = true;
-        dockerCompat = true;
-      };
-    };
-
     #Blueman
     services.blueman.enable = true;
 

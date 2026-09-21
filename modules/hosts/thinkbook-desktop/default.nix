@@ -9,6 +9,7 @@
     modules = [
       config.flake.modules.nixos.common
       config.flake.modules.nixos.desktop-base
+      config.flake.modules.nixos.virtualization
 
       inputs.nixos-hardware.nixosModules.common-cpu-intel
 
@@ -56,9 +57,6 @@
 
         services.thermald.enable = lib.mkDefault true;
         services.upower.enable = true;
-
-        virtualisation.libvirtd.enable = true;
-        programs.virt-manager.enable = true;
 
         # Steam need 32bit libs
         hardware.graphics = {
