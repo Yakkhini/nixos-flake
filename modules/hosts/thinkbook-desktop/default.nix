@@ -20,6 +20,12 @@
         ];
       }
 
+      {
+        home-manager.sharedModules = [
+          config.flake.modules.homeManager.nixvim
+        ];
+      }
+
       ({
         lib,
         pkgs,
