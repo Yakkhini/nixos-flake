@@ -27,15 +27,12 @@
       ({pkgs, ...}: {
         nix.channel.enable = false;
 
-        nix.registry.pkgs.flake = inputs.nixpkgs;
-
-        hardware.opengl = {
+        hardware.graphics = {
           enable = true;
-          driSupport = true;
-          driSupport32Bit = true;
+          enable32Bit = true;
+
           extraPackages = [
             pkgs.intel-media-driver
-            pkgs.mesa.drivers
           ];
         };
 
