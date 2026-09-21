@@ -41,6 +41,5 @@
     pkgs.typst
     pkgs.tinymist
     pkgs.typstyle
-
   ];
 }

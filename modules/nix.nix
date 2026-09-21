@@ -1,9 +1,20 @@
-{inputs, ...}: {
+{
+  config,
+  inputs,
+  ...
+}: {
   flake.modules.nixos.nix = {
+    home-manager.sharedModules = [
+      inputs.nix-index-database.homeModules.nix-index
+      config.flake.modules.homeManager.nix
+    ];
+
     imports = [
       inputs.home-manager.nixosModules.home-manager
       inputs.nur.modules.nixos.default
     ];
+
+    nix.registry.pkgs.flake = inputs.nixpkgs-unfree; # Only use nixpkgs-unfree for registry
 
     nix.settings.substituters = [
       "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
@@ -27,5 +38,28 @@
     nixpkgs.config = {
       allowUnfree = true;
     };
+
+    programs.nix-ld.enable = true;
+  };
+
+  flake.modules.homeManager.nix = {
+    nixpkgs.overlays = [
+      inputs.llm-agents.overlays.shared-nixpkgs
+    ];
+
+    nixpkgs.config = {
+      allowUnfree = true;
+      permittedInsecurePackages = [
+        "dingtalk-8.2.8.260818002"
+      ];
+      packageOverrides = pkgs: {
+        fcitx5-rime = pkgs.fcitx5-rime.override {
+          librime = inputs.nur.legacyPackages."x86_64-linux".repos.xddxdd.lantianCustomized.librime-with-plugins;
+        };
+      };
+    };
+
+    programs.nix-index.enable = true;
+    programs.nix-index-database.comma.enable = true;
   };
 }

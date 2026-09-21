@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.modules.nixos.common = {
+  flake.modules.nixos.common = {pkgs, ...}: {
     imports = [
       inputs.catppuccin.nixosModules.catppuccin
 
@@ -12,7 +12,6 @@
       config.flake.modules.nixos.users
       config.flake.modules.nixos.network
       config.flake.modules.nixos.fonts
-      config.flake.modules.nixos.pkgs
       config.flake.modules.nixos.i18n
     ];
 
@@ -21,7 +20,39 @@
 
     # Documentation.
     documentation.enable = true;
+
     documentation.dev.enable = true;
+    # List packages installed in system profile. To search, run:
+    # $ nix search wget
+    environment.systemPackages = with pkgs; [
+      android-tools
+      nixd
+      man-pages
+      man-pages-posix
+      cifs-utils
+      fastfetch
+      vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+      wget
+      ranger
+      ncdu
+      btop
+      brightnessctl
+      ddcutil
+    ];
+
+    # Some programs need SUID wrappers, can be configured further or are
+    # started in user sessions.
+    programs = {
+      gnupg.agent = {
+        enable = true;
+        enableSSHSupport = true;
+        pinentryPackage = pkgs.pinentry-qt;
+      };
+      git.enable = true;
+      zsh.enable = true;
+      dconf.enable = true;
+      yazi.enable = true;
+    };
 
     # Home Manager
     home-manager.sharedModules = [
@@ -39,7 +70,6 @@
       inputs.catppuccin.homeModules.catppuccin
       inputs.nur.modules.homeManager.default
 
-      ../home/nixpkgs.nix
       ../home/programs/bash.nix
       ../home/programs/direnv.nix
       ../home/programs/helix.nix
@@ -49,8 +79,6 @@
       ../home/programs/vim.nix
       ../home/programs/zsh.nix
     ];
-
-    nix.registry.pkgs.flake = inputs.nixpkgs-unfree; # Only use nixpkgs-unfree for registry
 
     home.packages = [
       pkgs.pipes-rs # Just for fun
