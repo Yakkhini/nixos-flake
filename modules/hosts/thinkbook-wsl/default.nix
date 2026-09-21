@@ -29,8 +29,6 @@
         # https://github.com/nix-community/NixOS-WSL
         nix.channel.enable = false;
 
-        catppuccin.cache.enable = true;
-
         nix.settings.auto-optimise-store = true;
 
         wsl.enable = true;

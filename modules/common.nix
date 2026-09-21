@@ -22,6 +22,7 @@
     documentation.enable = true;
 
     documentation.dev.enable = true;
+
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [
@@ -53,6 +54,10 @@
       dconf.enable = true;
       yazi.enable = true;
     };
+
+    catppuccin.enable = true;
+    catppuccin.autoEnable = false;
+    catppuccin.cache.enable = true;
 
     # Home Manager
     home-manager.users.yakkhini = {};
@@ -104,6 +109,10 @@
     };
 
     programs.rclone.enable = true;
+
+    catppuccin.enable = true;
+    catppuccin.autoEnable = false;
+    catppuccin.flavor = "mocha";
 
     home.stateVersion = "22.11";
   };

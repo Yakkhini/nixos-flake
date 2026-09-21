@@ -51,10 +51,6 @@
 
         nix.channel.enable = false;
 
-        catppuccin.enable = true;
-        catppuccin.autoEnable = false;
-        catppuccin.cache.enable = true;
-
         services.thermald.enable = lib.mkDefault true;
         services.upower.enable = true;
 
