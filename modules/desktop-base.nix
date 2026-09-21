@@ -106,7 +106,7 @@
         window.opacity = 0.9;
         font = {
           normal.family = "monospace";
-          bold.family = "MonaspiceKr Nerd Font Mono";
+          bold.family = "Monaspace Krypton NF";
           size = 14.0;
         };
       };

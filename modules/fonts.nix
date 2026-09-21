@@ -2,7 +2,6 @@
   flake.modules.nixos.fonts = {pkgs, ...}: {
     # fonts
     fonts.packages = with pkgs; [
-      nerd-fonts.monaspace
       nerd-fonts.symbols-only
       times-newer-roman
       atkinson-hyperlegible-next
@@ -25,8 +24,8 @@
       defaultFonts = {
         emoji = ["OpenMoji Color"];
         monospace = ["Monaspace Neon" "Symbols Nerd Font Mono" "OpenMoji Color" "Source Han Mono SC"];
-        sansSerif = ["IBM Plex Sans" "OpenMoji Color" "Source Han Sans SC" "Symbols Nerd Font Mono"];
-        serif = ["IBM Plex Serif" "OpenMoji Color" "Source Han Serif SC" "Symbols Nerd Font Mono"];
+        sansSerif = ["IBM Plex Sans" "Source Han Sans SC" "Symbols Nerd Font Mono"];
+        serif = ["IBM Plex Serif" "Source Han Serif SC" "Symbols Nerd Font Mono"];
       };
     };
   };

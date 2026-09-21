@@ -19,12 +19,12 @@
       enable = true;
       settings = {
         font = {
-          normal = ["MonaspiceAr Nerd Font Mono"];
+          normal = ["Monaspace Argon NF"];
           italic = {
-            family = "MonaspiceRn Nerd Font Mono";
+            family = "Monaspace Radon NF";
           };
           bold = {
-            family = "MonaspiceKr Nerd Font Mono";
+            family = "Monaspace Krypton NF";
           };
           size = 14.0;
         };
@@ -49,7 +49,7 @@
       autosave = "on_focus_change";
       ui_font_family = "IBM Plex Sans";
       ui_font_size = 22;
-      buffer_font_family = "MonaspiceAr Nerd Font Mono";
+      buffer_font_family = "Monaspace Argon NF";
       buffer_font_size = 20;
       helix_mode = true;
       vim = {
