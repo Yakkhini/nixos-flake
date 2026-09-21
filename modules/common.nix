@@ -53,6 +53,10 @@
     nix.registry.pkgs.flake = inputs.nixpkgs-unfree; # Only use nixpkgs-unfree for registry
 
     home.packages = [
+      pkgs.pipes-rs # Just for fun
+      pkgs.sl
+      pkgs.cowsay
+
       # Security
       pkgs.gopass
       pkgs.gopass-jsonapi

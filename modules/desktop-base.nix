@@ -79,11 +79,14 @@
   flake.modules.homeManager.desktop-base = {pkgs, ...}: {
     imports = [
       ../home/i18n.nix
-
       ../home/programs/alacritty.nix
-      ../home/programs/tofi.nix
-      ../home/programs/waybar.nix
     ];
+
+    home.packages = [
+      pkgs.firefox
+      pkgs.nautilus
+    ];
+
     catppuccin.enable = true;
     catppuccin.autoEnable = false;
     catppuccin.flavor = "mocha";

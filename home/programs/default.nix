@@ -4,8 +4,6 @@
     ./nix-index.nix
     ./nushell.nix
     ./rclone.nix
-    ./sioyek.nix
-    ./swaylock.nix
     ./zed-editor.nix
   ];
 }

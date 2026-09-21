@@ -19,6 +19,12 @@
         ];
       }
 
+      {
+        home-manager.sharedModules = [
+          config.flake.modules.homeManager.niri
+        ];
+      }
+
       ({pkgs, ...}: {
         nix.channel.enable = false;
 

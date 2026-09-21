@@ -4,25 +4,6 @@
   ...
 }: {
   home.packages = [
-    # Desktop Env
-    ## Wayland
-    pkgs.wl-clipboard
-    pkgs.wlsunset
-    pkgs.swayidle
-    pkgs.sway-contrib.grimshot
-    pkgs.grim
-    pkgs.xwayland-satellite
-    ## icons & themes
-    pkgs.pipes-rs # Just for fun
-    pkgs.sl
-    pkgs.cowsay
-    pkgs.viu
-    pkgs.vanilla-dmz
-    pkgs.adw-gtk3
-    pkgs.nwg-look
-    ## others
-    pkgs.nautilus
-
     # Tool
     pkgs.just
     pkgs.kalker # Calculator
@@ -35,7 +16,6 @@
 
     # Browsers
     zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-    pkgs.firefox
 
     # Communication
     pkgs.telegram-desktop
