@@ -12,11 +12,14 @@
       config.flake.modules.nixos.users
       config.flake.modules.nixos.network
       config.flake.modules.nixos.fonts
-      config.flake.modules.nixos.i18n
     ];
 
     # Set your time zone.
     time.timeZone = "Asia/Shanghai";
+
+    i18n.defaultLocale = "en_US.UTF-8";
+    i18n.extraLocaleSettings = {LANGUAGE = "en_US.UTF-8";};
+    i18n.supportedLocales = ["en_US.UTF-8/UTF-8" "zh_CN.UTF-8/UTF-8"];
 
     # Documentation.
     documentation.enable = true;
