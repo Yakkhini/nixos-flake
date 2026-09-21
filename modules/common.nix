@@ -39,6 +39,7 @@
       inputs.catppuccin.homeModules.catppuccin
       inputs.nur.modules.homeManager.default
 
+      ../home/nixpkgs.nix
       ../home/programs/bash.nix
       ../home/programs/direnv.nix
       ../home/programs/helix.nix

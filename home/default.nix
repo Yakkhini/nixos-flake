@@ -8,58 +8,15 @@
   ...
 }: {
   home-manager.users.yakkhini = {nixpkgs-unfree, ...}: {
-    nix.registry.pkgs.flake = nixpkgs-unfree; # Only use nixpkgs-unfree for registry
     imports = [
       nixvim.homeModules.nixvim
       niri.homeModules.niri
       nix-index-database.homeModules.nix-index
       ./programs
-      ./i18n.nix
-      ./nixpkgs.nix
       ./packages.nix
       ./services.nix
       ./waylandSway.nix
       ./waylandNiri
     ];
-
-    catppuccin.enable = true;
-    catppuccin.autoEnable = false;
-    catppuccin.flavor = "mocha";
-    catppuccin.cursors = {
-      accent = "dark";
-      enable = true;
-    };
-
-    home.sessionVariables = {
-      QT_AUTO_SCREEN_SCALE_FACTOR = 1;
-      QT_QPA_PLATFORM = "wayland;xcb";
-      QT_WAYLAND_DISABLE_WINDOWDECORATION = 1;
-      QT_QPA_PLATFORMTHEME = "qt5ct";
-      SDL_VIDEODRIVER = "wayland";
-      SDL_VIDEO_WAYLAND_SCALE_TO_DISPLAY = 0;
-      XDG_SESSION_TYPE = "wayland";
-      XDG_SCREENSHOTS_DIR = "$HOME/Pictures/ScreenShots";
-      BROWSER = "zen";
-      OPENROUTER_API_KEY = "`cat ~/Public/openrouter`";
-      OPENAI_API_KEY = "`cat ~/Public/openai`";
-    };
-
-    home.pointerCursor = {
-      enable = true;
-      size = 32;
-      hyprcursor.enable = true;
-    };
-
-    catppuccin.gtk.icon = {
-      enable = true;
-      accent = "maroon";
-    };
-
-    gtk = {
-      enable = true;
-      font.name = "sans-serif";
-      font.size = 14;
-      gtk4.theme = null;
-    };
   };
 }

@@ -1,6 +1,5 @@
 {...}: {
   imports = [
-    ./alacritty.nix
     ./neovide.nix
     ./nix-index.nix
     ./nixvim.nix
@@ -8,8 +7,6 @@
     ./rclone.nix
     ./sioyek.nix
     ./swaylock.nix
-    ./tofi.nix
-    ./waybar.nix
     ./zed-editor.nix
   ];
 }
