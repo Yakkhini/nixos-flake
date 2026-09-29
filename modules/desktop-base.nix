@@ -73,13 +73,21 @@
   };
 
   flake.modules.homeManager.desktop-base = {pkgs, ...}: {
+    imports = [
+      inputs.zen-browser.homeModules.twilight
+    ];
+
     home.packages = [
-      inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
       pkgs.firefox
       pkgs.nautilus
       pkgs.vscode-fhs
       pkgs.ueberzugpp # Image Preview for alacritty
     ];
+
+    programs.zen-browser = {
+      enable = true;
+      setAsDefaultBrowser = true;
+    };
 
     i18n.inputMethod = {
       enable = true;
@@ -121,7 +129,6 @@
       SDL_VIDEO_WAYLAND_SCALE_TO_DISPLAY = 0;
       XDG_SESSION_TYPE = "wayland";
       XDG_SCREENSHOTS_DIR = "$HOME/Pictures/ScreenShots";
-      BROWSER = "zen";
       OPENROUTER_API_KEY = "`cat ~/Public/openrouter`";
       OPENAI_API_KEY = "`cat ~/Public/openai`";
     };
