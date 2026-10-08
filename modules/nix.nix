@@ -43,10 +43,6 @@
   };
 
   flake.modules.homeManager.nix = {
-    nixpkgs.overlays = [
-      inputs.llm-agents.overlays.shared-nixpkgs
-    ];
-
     nixpkgs.config = {
       allowUnfree = true;
       permittedInsecurePackages = [

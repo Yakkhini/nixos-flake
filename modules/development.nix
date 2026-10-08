@@ -1,8 +1,9 @@
-{...}: {
+{inputs, ...}: {
   flake.modules.homeManager.development = {pkgs, ...}: {
     home.packages = [
       #Code
-      pkgs.llm-agents.omp
+      inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.omp
+
       pkgs.ruby
       pkgs.ruby.gems.solargraph
       pkgs.gnumake
