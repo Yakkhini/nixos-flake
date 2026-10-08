@@ -28,6 +28,26 @@
             family = "MonaspiceKr Nerd Font Mono";
           };
           size = 14.0;
+          features = let
+            enabled = [
+              "+calt"
+              "+liga"
+              "+ss01"
+              "+ss02"
+              "+ss03"
+              "+ss04"
+              "+ss05"
+              "+ss06"
+              "+ss07"
+              "+ss08"
+              "+ss09"
+              "+ss10"
+            ];
+          in {
+            "MonaspiceAr Nerd Font Mono" = enabled;
+            "MonaspiceRn Nerd Font Mono" = enabled;
+            "MonaspiceKr Nerd Font Mono" = enabled;
+          };
         };
       };
     };
