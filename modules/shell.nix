@@ -1,11 +1,25 @@
 {...}: {
-  flake.modules.homeManager.shell = {pkgs, ...}: {
+  flake.modules.homeManager.shell = {...}: {
     programs.bash.enable = true;
 
     catppuccin.starship.enable = true;
     programs.starship = {
       enable = true;
       presets = ["nerd-font-symbols"];
+
+      # Remove explicit VCS module declare after default list has it in the future
+      # Ref: https://starship.rs/config/#vcs
+      settings = {
+        format = "$all$vcs$line_break$character";
+
+        git_branch.disabled = true;
+        git_commit.disabled = true;
+        git_state.disabled = true;
+        git_metrics.disabled = true;
+        git_status.disabled = true;
+
+        vcs.order = ["jj" "git" "hg" "pijul" "fossil"];
+      };
     };
 
     programs.fzf.enable = true;
