@@ -10,6 +10,8 @@
       globals = {
         neovide_opacity = 0.9;
         neovide_normal_opacity = 0.9;
+
+        neovide_input_ime = false; # Work with neovide-ime auto groups
       };
       opts = {
         number = true;
@@ -513,6 +515,32 @@
           action = "<cmd>lua require('opencode').toggle()<CR>";
           key = "<C-o>";
           options.desc = "Toggle OpenCode terminal";
+        }
+      ];
+
+      autoGroups.neovide_ime.clear = true;
+
+      autoCmd = [
+        {
+          event = ["InsertEnter" "TermEnter"];
+          pattern = "*";
+          group = "neovide_ime";
+          desc = "Enable Neovide IME for text input";
+          command = "if exists('g:neovide') | let g:neovide_input_ime = v:true | endif";
+        }
+        {
+          event = "CmdlineEnter";
+          pattern = "[/?]";
+          group = "neovide_ime";
+          desc = "Enable Neovide IME for searching";
+          command = "if exists('g:neovide') | let g:neovide_input_ime = v:true | endif";
+        }
+        {
+          event = ["InsertLeave" "TermLeave" "CmdlineLeave"];
+          pattern = "*";
+          group = "neovide_ime";
+          desc = "Disable Neovide IME after text input";
+          command = "if exists('g:neovide') | let g:neovide_input_ime = v:false | endif";
         }
       ];
     };
